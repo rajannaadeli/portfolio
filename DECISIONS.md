@@ -1,0 +1,43 @@
+# DECISIONS.md — Phase 1
+
+Ambiguity resolutions, logged as required by the build prompt. Newest at top.
+
+## Accessibility vs. design tokens
+
+- **`--text-dim` darkened from the spec value.** Design direction §2 sets `--text-dim: #55555E`. On the true-black canvas that is 2.85:1 — it fails WCAG AA (4.5:1) for the 13px mono meta text it styles, which Lighthouse flags and would cap the accessibility score below the binding ≥95. Precedence (this prompt's performance/Lighthouse budget > design direction) resolves it in favor of accessibility: `--text-dim` is now `#7A7A85` (4.95:1), still clearly dimmer than `--text-muted` (#8A8A93, 6.14:1). The four accents pass ≥4.5:1 on black (orange 6.25, pink 6.29, lime 18.3). Violet was additionally nudged from the spec `#7B5CFF` to `#8267FF` because accent meta labels also sit on `--surface-1` cards (#0C0C0E), where `#7B5CFF` was 4.48:1 (fail); `#8267FF` is 4.96:1 on surface-1 / 5.33:1 on black — visually indistinguishable, AA-clean everywhere.
+
+## Content pipeline
+
+- **Internal production notes stripped from case bodies.** Every `<slug>.md` ends with `## GAPS` (author queries to Rajanna — e.g. "confirm the real number", "multi-tenancy claim vs code") and `## CAPTURE LIST` (screenshot shot lists). These are not publishable content and contain internal uncertainty; publishing them would also violate the "no unverifiable claim" rule. The parser truncates the rendered body at the first heading matching `GAPS|CAPTURE LIST|CAPTURE|OPEN QUESTIONS|NOTES|TODO` and flags it per case in `warnings`. (This also removed the GFM task-list checkboxes those sections produced, which were failing the Lighthouse `label` audit.)
+
+- **No YAML frontmatter exists.** None of the six `<slug>.md` files have frontmatter. All metadata (role, timeline, stack, status, links) lives in the body as a "facts line" (line 5 in each file). The `CaseStudy` type is therefore normalized in code from parsed body content, not from frontmatter. Per-file normalization results are reported in the build report.
+- **Facts line comes in two shapes**, both handled by the normalizer:
+  - *Labeled* (`**Role:** … · **Timeline:** … · **Stack:** … · **Status:** … · **Links:** …`) — rosterbay, docfort; and backtick-labeled (`` `Role: … · Timeline: … · …` ``) — gad, dilpos. Parsed by accumulating `·`-segments under the last seen label.
+  - *Unlabeled positional* (`` `Sole developer · Jan–Jun 2026 · <stack…> · <status> · [Repo]` ``) — whitefleet, planit. Parsed by classifying each `·`-segment (link → links, date/duration → timeline, "developer/solo/full-stack" → role, "production/pilot/live/demo" → status, remainder → stack).
+- **Proof chips** are extracted from the region between the facts line and the first `## ` heading: markdown list items, or standalone `**bold**` / `` `code` `` spans split on `·`. Bold/backtick markers are stripped to plain chip text.
+- **Body rendering** begins at the first `## ` heading. The H1, subtitle (lede), facts line, chips, and separator `---` are consumed by the normalizer and rendered by dedicated components, not by the markdown-to-HTML pass, to avoid duplication.
+- **`> [SCREENSHOT: …]` markers** embedded in the body are placement hints authored for a human. They are stripped before rendering so they never appear as literal blockquotes. Phase 1 places shortlisted screenshots after the body per the manifest; interleaving at these markers is a Phase 3 refinement.
+- **Markdown renderer:** added `marked` (build-time only, synchronous, zero-dep). No renderer was installed; `gray-matter` alone does not render. gray-matter is still used to be robust to any future frontmatter, but currently returns empty data.
+
+## Images
+
+- **Manifest source of truth is `case-images.json`, not `images.json`.** Each case has both. `images.json` (Aug 25) is stale — it references `ui/converted/…` paths and `fileNameBase` values that do **not** match the files actually in `ui/`. `case-images.json` (Aug 27) has `fileNameBase` values matching the real `ui/` files exactly. The pipeline reads `case-images.json` and ignores `images.json`.
+- **`case-images.json` field mapping** to the design-direction §6 schema: `fileNameBase`→file, `formats{avif,webp}`→formats, `rank`, `isShortlisted`→shortlisted, `platform` (web|mobile|desktop-terminal)→frame (browser|phone|browser), `suggestedUse` (hero|feature-highlight|detail-shot|gallery)→bestUsedFor, `altText`→alt, `description`→caption/contains. Fields absent from the manifest (`url`, `proves`, `placement`, `theme`) are left empty/defaulted and listed for Rajanna. `alt`/`caption`/`proves` text is never generated.
+- **Image dimensions** are not in either manifest. Captured once from the real AVIF/WebP files with macOS `sips` into a committed `lib/generated/image-dimensions.json` (77 entries, AVIF and WebP share pixel dimensions). This keeps `next build` free of any dimension-reading dependency (Vercel's Linux builder has no `sips`) and guarantees explicit width/height → zero CLS.
+- **Serving strategy: `<picture>` with `<source type="image/avif">` + `<source type="image/webp">`**, not `next/image`. The screenshots are already pre-encoded as dual-format AVIF+WebP at fixed dimensions; running them back through the Image Optimization API would re-encode already-optimal assets and add a runtime service to a site whose entire thesis is "static artifact." `<picture>` gives AVIF-first + WebP fallback natively, explicit width/height, native lazy loading, and ships zero JS. This is a deliberate, documented deviation from the literal "use `next/image`" instruction in favor of its intent (AVIF-first, WebP fallback, zero CLS, blur placeholder). The hero image is marked `fetchpriority="high"` + eager; everything else lazy.
+- **Image files moved into `public/`.** A prebuild step copies each `cases/<slug>/ui/*.{avif,webp}` to `public/cases/<slug>/`, so the static server serves them directly. The markdown stays where it lives (read in place); only the display binaries are copied. `_originals/` (large source PNGs) are never copied.
+- **Blur placeholders:** low-quality image placeholders (LQIP) generated at author-time from the real files into `lib/generated/blur.json`, base64 inline, shortlisted images only.
+
+## Slugs / naming
+
+- **`gad` vs `gad-builder`.** The design direction and master brief refer to `gad-builder`; the folder, markdown, and manifest on disk use `gad` (public name "GAD Builder", manifest `case: "gad"`). The canonical route slug follows the source of truth on disk: **`gad`** (`/work/gad`). The order-fallback array and accent map are written with `gad`.
+- **Per-case accents** (design direction §2): rosterbay violet · whitefleet orange · gad lime · docfort pink · planit violet · dilpos orange.
+- **Case ordering:** explicit `order` field if present, else the fixed array `['rosterbay','whitefleet','gad','docfort','planit','dilpos']`.
+
+## Fonts
+
+- All three families self-hosted via `next/font/local`, committed under `public/fonts/` as woff2 (~23KB each): General Sans 500/600 (Fontshare), Inter 400/500, JetBrains Mono 400/500 (Fontsource CDN, latin subset). `display: swap`, exposed as `--font-display`, `--font-body`, `--font-mono`.
+
+## Rendering / static
+
+- No `output: 'export'`. Every route is statically prerendered via `generateStaticParams` + default static rendering; `output: export` is avoided only so nothing silently forces dynamic. No server-side data fetching at request time, no middleware.
