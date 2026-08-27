@@ -1,0 +1,217 @@
+{
+  "case": "docfort",
+  "totalImages": 15,
+  "shortlistedCount": 7,
+  "images": [
+    {
+      "fileNameBase": "01-revision-upload-domain-model-form",
+      "formats": {
+        "avif": "01-revision-upload-domain-model-form.avif",
+        "webp": "01-revision-upload-domain-model-form.webp"
+      },
+      "rank": 1,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Upload Drawing Revision modal for MBH-002 showing the revision as a structured domain object: Revision Type (Minor), Reason for Change (Standardization from a fixed vocabulary), and Disposal Action fields for pipeline and finished goods. Drawing Info and Preview panels alongside.",
+      "altText": "Upload revision modal with revision type, reason, and disposal action fields",
+      "tags": ["revision-model", "domain-object", "structured-form", "controlled-vocabulary", "drawing-workflow"],
+      "suggestedUse": "hero"
+    },
+    {
+      "fileNameBase": "02-drawing-detail-revision-history",
+      "formats": {
+        "avif": "02-drawing-detail-revision-history.avif",
+        "webp": "02-drawing-detail-revision-history.webp"
+      },
+      "rank": 2,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Drawing detail page for MBH-002 showing Drawing Information (issue, revision, total revisions) and Revision History with Rev 00 tagged as minor and Standardization. View PDF, Details, and Download actions per revision. Metadata and Notify To sidebar on the right.",
+      "altText": "Drawing detail page with revision history showing type and reason tags",
+      "tags": ["revision-history", "drawing-details", "structured-record", "audit-trail", "metadata"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "03-real-time-drawing-created-toast",
+      "formats": {
+        "avif": "03-real-time-drawing-created-toast.avif",
+        "webp": "03-real-time-drawing-created-toast.webp"
+      },
+      "rank": 3,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Drawings list page with a green in-app toast notification in the top-right corner: 'New Drawing Created — A new drawing MBH-002 has been created with initial revision.' with a View button. Notification bell shows a live unread badge.",
+      "altText": "Green toast notification announcing new drawing created in real time",
+      "tags": ["real-time-notification", "toast", "in-app", "socket-io", "drawing-event"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "04-notification-inbox-action-required",
+      "formats": {
+        "avif": "04-notification-inbox-action-required.avif",
+        "webp": "04-notification-inbox-action-required.webp"
+      },
+      "rank": 4,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Notification dropdown panel over the Drawings list showing two drawing-created events: MBH-002 marked unread with 'just now' timestamp and MBH-001 from 13 hours ago. Both carry Action Required and medium priority labels with a View all link.",
+      "altText": "Notification inbox dropdown showing two drawing events with priority labels",
+      "tags": ["notification-inbox", "action-required", "priority", "real-time", "event-history"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "05-home-dashboard-quick-access",
+      "formats": {
+        "avif": "05-home-dashboard-quick-access.avif",
+        "webp": "05-home-dashboard-quick-access.webp"
+      },
+      "rank": 5,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Home screen for a Department Head user showing Quick Access cards for Drawings, Technical Data Sheets, and Performance Curves. Recent Updates lists drawing MBH-001 with its author and revision. Department Head Tools section links to the DH Dashboard.",
+      "altText": "Home dashboard with quick access cards and recent drawing updates",
+      "tags": ["dashboard", "home", "quick-access", "role-based", "recent-updates"],
+      "suggestedUse": "hero"
+    },
+    {
+      "fileNameBase": "06-create-drawing-form-with-preview",
+      "formats": {
+        "avif": "06-create-drawing-form-with-preview.avif",
+        "webp": "06-create-drawing-form-with-preview.webp"
+      },
+      "rank": 6,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Create Drawing modal in dark mode showing the Drawing Information form with Code MBH-002, Issue 01, Revision 00, and description. A live Preview panel on the right reflects all inputs alongside a Notify Users field and file size. Next Steps guide the three-stage workflow.",
+      "altText": "Create drawing modal with live preview panel and next steps guide",
+      "tags": ["create-workflow", "form", "live-preview", "notification-setup", "dark-mode"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "07-admin-dashboard-user-approval-gate",
+      "formats": {
+        "avif": "07-admin-dashboard-user-approval-gate.avif",
+        "webp": "07-admin-dashboard-user-approval-gate.webp"
+      },
+      "rank": 7,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Admin Dashboard showing user management: stat cards for Total Users, Pending Approval, Approved Users, and Admins. All Users tab lists Rajesh Adeli with Designer role, Design department, Department Head designation, and Approved status badge.",
+      "altText": "Admin dashboard showing user approval stats and approved user list",
+      "tags": ["admin", "user-management", "approval-gate", "rbac", "status-badge"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "08-drawings-library-column-filters",
+      "formats": {
+        "avif": "08-drawings-library-column-filters.avif",
+        "webp": "08-drawings-library-column-filters.webp"
+      },
+      "rank": 8,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Drawings list with active column filters applied: code prefix Mbh, issue 01, date, creator, and updater. Shows 2 drawings (MBH-001, MBH-002) with Code, Description, Issue, Latest Rev, Created, Created By, and Updated By columns. Add Drawing button top right.",
+      "altText": "Drawings library table with active column filters showing two results",
+      "tags": ["drawings-list", "filter", "table", "search", "library"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "09-create-drawing-file-upload-complete",
+      "formats": {
+        "avif": "09-create-drawing-file-upload-complete.avif",
+        "webp": "09-create-drawing-file-upload-complete.webp"
+      },
+      "rank": 9,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Lower half of the Create Drawing modal showing a successful file upload state for MBH-002_01_00.pdf and the Notification Settings section with Rajesh Adeli selected. A note confirms selected users will receive real-time notifications. Create Drawing CTA is visible.",
+      "altText": "Create drawing modal lower section with file uploaded and notification user selected",
+      "tags": ["file-upload", "notification-settings", "create-workflow", "success-state"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "10-global-search-command-palette",
+      "formats": {
+        "avif": "10-global-search-command-palette.avif",
+        "webp": "10-global-search-command-palette.webp"
+      },
+      "rank": 10,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Global search command palette overlaid on the dark Drawings page. Query 'Dr' surfaces four Navigation results: Drawings, Department Head Dashboard, Department Head Pending Users, and Department Head All Users, demonstrating site-wide navigation search.",
+      "altText": "Global search palette with Dr query showing navigation results on dark background",
+      "tags": ["global-search", "command-palette", "navigation", "keyboard-shortcut", "dark-mode"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "11-bulk-upload-excel-template-flow",
+      "formats": {
+        "avif": "11-bulk-upload-excel-template-flow.avif",
+        "webp": "11-bulk-upload-excel-template-flow.webp"
+      },
+      "rank": 11,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Bulk Upload page (Excel Upload tab) for admin users. Component Type set to Drawing, with required fields listed. Four-step instructions guide: download template, fill details, upload and validate, review and confirm. Drag-and-drop Excel file zone at the bottom.",
+      "altText": "Bulk upload page with drawing component type selected and Excel file drop zone",
+      "tags": ["bulk-upload", "admin", "excel", "import-workflow", "drawings"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "12-bulk-upload-statistics-completion",
+      "formats": {
+        "avif": "12-bulk-upload-statistics-completion.avif",
+        "webp": "12-bulk-upload-statistics-completion.webp"
+      },
+      "rank": 12,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Bulk Upload Statistics tab showing 2 total components and 2 total revisions each at 100% completion rate. Progress bars for Component File Upload Progress and Revision File Upload Progress both show 2/2 complete with 0 missing files. Upload Summary below breaks down by status.",
+      "altText": "Bulk upload statistics tab showing 100% completion for components and revisions",
+      "tags": ["bulk-upload", "statistics", "completion-rate", "progress", "admin"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "13-preferences-dark-mode-notifications",
+      "formats": {
+        "avif": "13-preferences-dark-mode-notifications.avif",
+        "webp": "13-preferences-dark-mode-notifications.webp"
+      },
+      "rank": 13,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Preferences page in dark mode showing the Appearance section (Dark Mode theme toggle, List View layout) and Notifications section with Email, In-App, and Push Notifications all enabled. Notification Summary panel confirms all four channels active.",
+      "altText": "Preferences page dark mode with email in-app and push notifications all enabled",
+      "tags": ["preferences", "dark-mode", "notifications", "three-channel", "settings"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "14-user-profile-account-status",
+      "formats": {
+        "avif": "14-user-profile-account-status.avif",
+        "webp": "14-user-profile-account-status.webp"
+      },
+      "rank": 14,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "User profile page for Rajesh Adeli showing Personal tab with name, email, mobile number, and member date. Account Status sidebar shows Active status, User account type, and join date. Security section lists last password update and account ID.",
+      "altText": "User profile page showing personal info and active account status",
+      "tags": ["profile", "account-status", "user-info", "role", "approved"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "15-preferences-light-mode-notifications",
+      "formats": {
+        "avif": "15-preferences-light-mode-notifications.avif",
+        "webp": "15-preferences-light-mode-notifications.webp"
+      },
+      "rank": 15,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Preferences page in light mode showing Appearance (Dark Mode toggle, List View layout) and Notifications (Email, In-App, Push all enabled). Notification Summary panel shows Email, In-App, Sound, and Push as Enabled. Light-theme variant of the preferences screen.",
+      "altText": "Preferences page light mode with all three notification channels enabled",
+      "tags": ["preferences", "light-mode", "notifications", "three-channel", "settings"],
+      "suggestedUse": "gallery"
+    }
+  ]
+}

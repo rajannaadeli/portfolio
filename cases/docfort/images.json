@@ -1,0 +1,577 @@
+{
+  "$schema": "https://rajeshadeli.com/schemas/portfolio-images/v1.json",
+  "caseSlug": "docfort",
+  "accentHex": "#EC4899",
+  "generatedAt": "2026-08-25T11:57:45Z",
+  "totalImages": 15,
+  "shortlistedCount": 4,
+  "images": [
+    {
+      "fileNameBase": "docfort-01-home",
+      "originalFileName": "docfort-1-home.png",
+      "originalSha256": "08fc01ffcf21af184c2fb91148cec4bc9d6dc70addb6046521346b6d561fca1e",
+      "originalSizeKb": 301,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-01-home.webp",
+          "sizeKb": 84
+        },
+        "avif": {
+          "path": "ui/converted/docfort-01-home.avif",
+          "sizeKb": 43
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1868
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "home",
+      "rank": 1,
+      "isShortlisted": true,
+      "description": "Home screen with top-nav (Drawings, Technical Data Sheets, Performance Curves), quick access tiles, recent updates feed, and Department Head tools — the engineering document management hub for component suppliers.",
+      "tags": [
+        "home",
+        "dashboard",
+        "engineering-docs",
+        "hero"
+      ],
+      "contentHighlights": [
+        "quick access tiles",
+        "recent updates",
+        "DH dashboard link"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-07-upload-revision",
+      "originalFileName": "docfort-8-upload-revision.jpeg",
+      "originalSha256": "9da2e91f8cfb97789b44cca6900d574932a607c9cecc9bf0779acd6658b49341",
+      "originalSizeKb": 354,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-07-upload-revision.webp",
+          "sizeKb": 90
+        },
+        "avif": {
+          "path": "ui/converted/docfort-07-upload-revision.avif",
+          "sizeKb": 49
+        }
+      },
+      "dimensions": {
+        "width": 2921,
+        "height": 1523
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "upload-revision",
+      "rank": 2,
+      "isShortlisted": true,
+      "description": "Upload new revision panel with drag-and-drop file area, revision number auto-increment, and change summary field — the core collaboration workflow for engineering teams.",
+      "tags": [
+        "revision",
+        "upload",
+        "version-control",
+        "hero"
+      ],
+      "contentHighlights": [
+        "file drag-drop",
+        "revision number",
+        "change summary"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-06-drawing-details",
+      "originalFileName": "docfort-7-drawing-details.jpeg",
+      "originalSha256": "7102dc12f7f275b70eec873d82abee13f63ff08a97f9e80c400c98b67c9ea0be",
+      "originalSizeKb": 175,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-06-drawing-details.webp",
+          "sizeKb": 76
+        },
+        "avif": {
+          "path": "ui/converted/docfort-06-drawing-details.avif",
+          "sizeKb": 50
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1545
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "drawing-detail",
+      "rank": 3,
+      "isShortlisted": true,
+      "description": "Drawing detail page showing metadata (code, revision, category), revision history timeline, and file preview — the single source of truth for a component drawing.",
+      "tags": [
+        "drawing-detail",
+        "revision-history",
+        "metadata",
+        "preview"
+      ],
+      "contentHighlights": [
+        "drawing code",
+        "revision timeline",
+        "file preview"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-02-create-drawing",
+      "originalFileName": "docfort-2-create-drawing.jpeg",
+      "originalSha256": "308d61abc659456796756958d8f59af6abd5743664c49b2e1ca9682ab2253ed1",
+      "originalSizeKb": 171,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-02-create-drawing.webp",
+          "sizeKb": 76
+        },
+        "avif": {
+          "path": "ui/converted/docfort-02-create-drawing.avif",
+          "sizeKb": 49
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "create-drawing",
+      "rank": 4,
+      "isShortlisted": true,
+      "description": "Create drawing form with drawing number, title, revision, category selector, and file upload — the intake workflow for adding new technical documents.",
+      "tags": [
+        "create",
+        "form",
+        "drawing",
+        "upload"
+      ],
+      "contentHighlights": [
+        "drawing number field",
+        "revision input",
+        "category selector",
+        "file upload"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-03-create-complete",
+      "originalFileName": "docfort-3-create-drawing-complete.jpeg",
+      "originalSha256": "55ac6994fd615349ba9e7c8feba1f2d3e247a2f7188f38363c0fd3273bbf83a9",
+      "originalSizeKb": 162,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-03-create-complete.webp",
+          "sizeKb": 72
+        },
+        "avif": {
+          "path": "ui/converted/docfort-03-create-complete.avif",
+          "sizeKb": 46
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "create-complete",
+      "rank": 5,
+      "isShortlisted": false,
+      "description": "Completed drawing creation state showing all fields populated and file attached — validates the end-to-end intake workflow before submission.",
+      "tags": [
+        "create",
+        "complete",
+        "validation",
+        "form"
+      ],
+      "contentHighlights": [
+        "filled fields",
+        "attached file",
+        "submit CTA"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-04-notify",
+      "originalFileName": "docfort-5-notify.jpeg",
+      "originalSha256": "844b6c97e31bfb7245430c944427c970d1f573ecf7d7072e51b1ac59a37efe93",
+      "originalSizeKb": 158,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-04-notify.webp",
+          "sizeKb": 71
+        },
+        "avif": {
+          "path": "ui/converted/docfort-04-notify.avif",
+          "sizeKb": 44
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "notify",
+      "rank": 6,
+      "isShortlisted": false,
+      "description": "Notification send panel for alerting stakeholders when a drawing revision is published — closes the revision distribution loop without email dependency.",
+      "tags": [
+        "notify",
+        "distribution",
+        "revision",
+        "stakeholders"
+      ],
+      "contentHighlights": [
+        "recipient selector",
+        "notification message",
+        "send CTA"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-05-notify-navigation",
+      "originalFileName": "docfort-6-notify-navigation.jpeg",
+      "originalSha256": "18fcd49705aebb4403133c4c8eeebca47fd642674dd18fafabfa5612fb387d0c",
+      "originalSizeKb": 166,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-05-notify-navigation.webp",
+          "sizeKb": 77
+        },
+        "avif": {
+          "path": "ui/converted/docfort-05-notify-navigation.avif",
+          "sizeKb": 49
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "notify-navigation",
+      "rank": 7,
+      "isShortlisted": false,
+      "description": "In-app notification navigation showing how recipients are deep-linked directly to the relevant drawing — demonstrates contextual UX depth.",
+      "tags": [
+        "navigation",
+        "deep-link",
+        "notification",
+        "UX"
+      ],
+      "contentHighlights": [
+        "notification panel",
+        "deep-link target",
+        "navigation breadcrumb"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-08-drawing-list",
+      "originalFileName": "docfort-9-drawing-list.jpeg",
+      "originalSha256": "98079ff8470380dadb0cd29421fced98167919d28a64c6a016a6d1802fba53d3",
+      "originalSizeKb": 145,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-08-drawing-list.webp",
+          "sizeKb": 63
+        },
+        "avif": {
+          "path": "ui/converted/docfort-08-drawing-list.avif",
+          "sizeKb": 39
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "drawing-list",
+      "rank": 8,
+      "isShortlisted": false,
+      "description": "Drawing list view with sortable columns (code, title, revision, date, category) and bulk actions — enables large-team navigation across hundreds of component drawings.",
+      "tags": [
+        "list",
+        "drawings",
+        "bulk",
+        "navigation"
+      ],
+      "contentHighlights": [
+        "sortable table",
+        "bulk selection",
+        "category filter"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-09-global-search",
+      "originalFileName": "docfort-10-global-search.jpeg",
+      "originalSha256": "d04a1e83c6ac0870a43164fc4468153ddb72b20f4e9a19f22f243ad566efc986",
+      "originalSizeKb": 183,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-09-global-search.webp",
+          "sizeKb": 43
+        },
+        "avif": {
+          "path": "ui/converted/docfort-09-global-search.avif",
+          "sizeKb": 23
+        }
+      },
+      "dimensions": {
+        "width": 2917,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "global-search",
+      "rank": 9,
+      "isShortlisted": false,
+      "description": "Global search across drawings, technical data sheets, and performance curves — unified discovery surface for the engineering document ecosystem.",
+      "tags": [
+        "search",
+        "global",
+        "discovery",
+        "engineering-docs"
+      ],
+      "contentHighlights": [
+        "search input",
+        "cross-category results"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-13-admin",
+      "originalFileName": "docfort-14-admin.png",
+      "originalSha256": "754b72a8b62cb3996280e8c43600ea0a60012147a78a6229e6ee747761bcc4ad",
+      "originalSizeKb": 265,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-13-admin.webp",
+          "sizeKb": 73
+        },
+        "avif": {
+          "path": "ui/converted/docfort-13-admin.avif",
+          "sizeKb": 38
+        }
+      },
+      "dimensions": {
+        "width": 3248,
+        "height": 1460
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "admin",
+      "rank": 10,
+      "isShortlisted": false,
+      "description": "Admin panel with user management, role assignment, and department configuration — platform governance layer for Department Heads and IT admins.",
+      "tags": [
+        "admin",
+        "user-management",
+        "roles",
+        "governance"
+      ],
+      "contentHighlights": [
+        "user table",
+        "role selector",
+        "department config"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-11-preferences-dark",
+      "originalFileName": "docfort-12-preferences-dark.png",
+      "originalSha256": "6f6619b87f05486178049d294262f6ef75dea8e40fb3c4bbb87c4fe5af6da12f",
+      "originalSizeKb": 311,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-11-preferences-dark.webp",
+          "sizeKb": 84
+        },
+        "avif": {
+          "path": "ui/converted/docfort-11-preferences-dark.avif",
+          "sizeKb": 40
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1866
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "preferences-dark",
+      "rank": 11,
+      "isShortlisted": false,
+      "description": "Preferences panel in dark mode — demonstrates full theme coverage and the platform's dark-first design capability.",
+      "tags": [
+        "preferences",
+        "dark-mode",
+        "theming"
+      ],
+      "contentHighlights": [
+        "dark palette",
+        "same settings layout",
+        "theme toggle"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-10-preferences",
+      "originalFileName": "docfort-11-preferences.png",
+      "originalSha256": "f6d9d7e0c94f77161bd7e3d827be573be608e941011c9ad21d01413e04bfd377",
+      "originalSizeKb": 307,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-10-preferences.webp",
+          "sizeKb": 82
+        },
+        "avif": {
+          "path": "ui/converted/docfort-10-preferences.avif",
+          "sizeKb": 39
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1866
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "preferences",
+      "rank": 12,
+      "isShortlisted": false,
+      "description": "User preferences panel (light mode) with notification settings, display density, and default category — demonstrates personalization depth.",
+      "tags": [
+        "preferences",
+        "settings",
+        "light-mode"
+      ],
+      "contentHighlights": [
+        "notification toggles",
+        "display settings",
+        "default category"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-12-profile",
+      "originalFileName": "docfort-13-profile.png",
+      "originalSha256": "33d8cf6aa59229707c37c7d184786361efab645b6130e6e87dc247877ca660f5",
+      "originalSizeKb": 327,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-12-profile.webp",
+          "sizeKb": 88
+        },
+        "avif": {
+          "path": "ui/converted/docfort-12-profile.avif",
+          "sizeKb": 44
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1860
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "profile",
+      "rank": 13,
+      "isShortlisted": false,
+      "description": "User profile page with name, role, department, and account details — the self-service identity record for engineers within the platform.",
+      "tags": [
+        "profile",
+        "account",
+        "identity"
+      ],
+      "contentHighlights": [
+        "user details",
+        "role badge",
+        "department"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-14-bulk-upload",
+      "originalFileName": "docfort-15-bulk-upload.png",
+      "originalSha256": "c650281600d2733d779fdaae40e2c9735839a6672c6aaa8617643a762139e1a4",
+      "originalSizeKb": 530,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-14-bulk-upload.webp",
+          "sizeKb": 156
+        },
+        "avif": {
+          "path": "ui/converted/docfort-14-bulk-upload.avif",
+          "sizeKb": 69
+        }
+      },
+      "dimensions": {
+        "width": 3248,
+        "height": 3168
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "bulk-upload",
+      "rank": 14,
+      "isShortlisted": false,
+      "description": "Bulk drawing upload interface with multi-file drag-and-drop, progress indicators, and batch metadata assignment — enables initial data migration and large revision batches.",
+      "tags": [
+        "bulk-upload",
+        "migration",
+        "batch",
+        "files"
+      ],
+      "contentHighlights": [
+        "file drop zone",
+        "progress bars",
+        "batch metadata"
+      ]
+    },
+    {
+      "fileNameBase": "docfort-15-bulk-upload-results",
+      "originalFileName": "docfort-17-bulk-upload-results.png",
+      "originalSha256": "6969aff9ddffdf1e6a01d5fa1b3bc746db18f279ae9781bd6d59f519e3960293",
+      "originalSizeKb": 366,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/docfort-15-bulk-upload-results.webp",
+          "sizeKb": 117
+        },
+        "avif": {
+          "path": "ui/converted/docfort-15-bulk-upload-results.avif",
+          "sizeKb": 54
+        }
+      },
+      "dimensions": {
+        "width": 3248,
+        "height": 2028
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "bulk-upload-results",
+      "rank": 15,
+      "isShortlisted": false,
+      "description": "Bulk upload results screen showing success/failure counts, skipped files, and action links for failed items — closes the upload loop with actionable feedback.",
+      "tags": [
+        "bulk-upload",
+        "results",
+        "error-handling",
+        "feedback"
+      ],
+      "contentHighlights": [
+        "success count",
+        "failure list",
+        "retry links"
+      ]
+    }
+  ]
+}

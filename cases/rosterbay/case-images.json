@@ -1,0 +1,231 @@
+{
+  "case": "rosterbay",
+  "totalImages": 16,
+  "shortlistedCount": 8,
+  "images": [
+    {
+      "fileNameBase": "01-admin-dashboard-live-map-kpi",
+      "formats": {
+        "avif": "01-admin-dashboard-live-map-kpi.avif",
+        "webp": "01-admin-dashboard-live-map-kpi.webp"
+      },
+      "rank": 1,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Admin dashboard showing a live Adelaide map with GPS-pinned workers across three active sites, a KPI strip reading 1 on-site, 2 certs expiring, 9 awaiting review, and a needs-attention feed of unfilled shifts and flagged timesheets.",
+      "altText": "RosterBay admin dashboard with live worker map and KPI strip",
+      "tags": ["dashboard", "live-map", "GPS", "KPI", "admin", "multi-site", "attention-feed"],
+      "suggestedUse": "hero"
+    },
+    {
+      "fileNameBase": "02-roster-day-compliance-drag-assign",
+      "formats": {
+        "avif": "02-roster-day-compliance-drag-assign.avif",
+        "webp": "02-roster-day-compliance-drag-assign.webp"
+      },
+      "rank": 2,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Day-view roster grid listing all five client sites on a 24-hour time axis, with draggable workers in the left panel showing Compliant, Expiring, and Expired certification badges and a coverage ribbon across the top.",
+      "altText": "Roster day view with compliance-badged workers on a time grid",
+      "tags": ["roster", "drag-assign", "compliance", "time-grid", "coverage-ribbon", "admin"],
+      "suggestedUse": "hero"
+    },
+    {
+      "fileNameBase": "03-mobile-mid-shift-task-checklist",
+      "formats": {
+        "avif": "03-mobile-mid-shift-task-checklist.avif",
+        "webp": "03-mobile-mid-shift-task-checklist.webp"
+      },
+      "rank": 3,
+      "isShortlisted": true,
+      "platform": "mobile",
+      "description": "Worker app mid-shift screen 8 seconds after clock-in at Westfield Marion, showing a live elapsed timer, 0 of 6 tasks completed, an out-of-zone flag warning, and a red Clock Out button — the always-live seeded demo state.",
+      "altText": "Worker app mid-shift with live timer and unchecked task list",
+      "tags": ["mobile", "mid-shift", "task-checklist", "live-state", "clock-in", "GPS", "worker-app"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "04-roster-week-all-sites-coverage",
+      "formats": {
+        "avif": "04-roster-week-all-sites-coverage.avif",
+        "webp": "04-roster-week-all-sites-coverage.webp"
+      },
+      "rank": 4,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Week roster spanning Monday to Saturday across four sites — Kingsford, North Adelaide Hospital, Riverbank, and Westfield Marion — with shift bars per day, one unfilled indicator, and the coverage ribbon showing daily fill rates.",
+      "altText": "Roster week view with shift bars across five sites",
+      "tags": ["roster", "week-view", "multi-site", "coverage-ribbon", "unfilled", "admin"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "05-timesheet-flagged-gps-variance",
+      "formats": {
+        "avif": "05-timesheet-flagged-gps-variance.avif",
+        "webp": "05-timesheet-flagged-gps-variance.webp"
+      },
+      "rank": 5,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Expanded timesheet for Dylan Murphy at Westfield Marion, flagged late — showing the GPS clock-in map 35 m from site, a −19 m variance bar, a plain-language late explanation, 6 of 6 tasks completed, and Reject / Approve actions.",
+      "altText": "Flagged timesheet with GPS map, variance bar, and approval controls",
+      "tags": ["timesheets", "GPS", "flagged", "variance", "approval", "proof-of-work", "admin"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "06-landing-demo-entry-page",
+      "formats": {
+        "avif": "06-landing-demo-entry-page.avif",
+        "webp": "06-landing-demo-entry-page.webp"
+      },
+      "rank": 6,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "RosterBay public landing page with dual one-click demo entry points — Explore as Agency Admin and Explore as Worker — above a browser-framed roster screenshot, with attribution to Rajanna Adeli and links to rajanna.dev.",
+      "altText": "RosterBay landing page with dual explore-as demo entry buttons",
+      "tags": ["landing", "demo", "entry-page", "product-overview", "browser-mockup"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "07-job-sites-coverage-cert-grid",
+      "formats": {
+        "avif": "07-job-sites-coverage-cert-grid.avif",
+        "webp": "07-job-sites-coverage-cert-grid.webp"
+      },
+      "rank": 7,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Job sites grid showing all five client locations with mini coverage ribbons, required certification chips (White Card, Police Check, SA Security Licence, Working at Heights), task counts, and gap indicators for Kingsford and Riverbank.",
+      "altText": "Job sites grid with coverage ribbons and required certification chips",
+      "tags": ["job-sites", "compliance", "coverage", "certifications", "multi-site", "admin"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "08-workers-compliance-status-list",
+      "formats": {
+        "avif": "08-workers-compliance-status-list.avif",
+        "webp": "08-workers-compliance-status-list.webp"
+      },
+      "rank": 8,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Workers table for 14 field staff showing phone numbers, compliance status (11 Compliant, 2 Expiring, 1 Expired), a weekly-hours bar per worker, and last clock-in time — compliance visible at a glance across the full team.",
+      "altText": "Workers list with compliance status badges and weekly hours bars",
+      "tags": ["workers", "compliance", "HRM", "status", "admin", "team-view"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "09-mobile-shift-tasks-completed",
+      "formats": {
+        "avif": "09-mobile-shift-tasks-completed.avif",
+        "webp": "09-mobile-shift-tasks-completed.webp"
+      },
+      "rank": 9,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Mobile shift details screen for Westfield Marion showing all six tasks checked — food court wipe-down, restroom restock, photo evidence items — alongside the White Card site requirement and the Security Guard role.",
+      "altText": "Mobile shift detail with all six tasks checked",
+      "tags": ["mobile", "shift-details", "tasks", "completed", "worker-app", "proof-of-work"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "10-worker-app-next-shift-card",
+      "formats": {
+        "avif": "10-worker-app-next-shift-card.avif",
+        "webp": "10-worker-app-next-shift-card.webp"
+      },
+      "rank": 10,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Worker home screen greeting Liam with his next shift at Westfield Marion, 2–10pm Sunday, showing address, time-until countdown (13h 49m), White Card site requirement, and a prominent Clock In CTA.",
+      "altText": "Worker app home screen with next shift and Clock In",
+      "tags": ["mobile", "worker-app", "home", "next-shift", "clock-in", "site-requirements"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "11-unfilled-shift-admin-task-drawer",
+      "formats": {
+        "avif": "11-unfilled-shift-admin-task-drawer.avif",
+        "webp": "11-unfilled-shift-admin-task-drawer.webp"
+      },
+      "rank": 11,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Admin roster drawer for an unfilled Riverbank Events Centre shift, showing the Nobody assigned warning, 0 of 5 tasks outstanding (patrol, emergency exits, barrier inspection, photo evidence), and editable start/end schedule fields.",
+      "altText": "Unfilled shift drawer with task checklist and nobody assigned warning",
+      "tags": ["roster", "unfilled", "shift-detail", "tasks", "admin", "drawer"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "12-job-site-geofence-setup-map",
+      "formats": {
+        "avif": "12-job-site-geofence-setup-map.avif",
+        "webp": "12-job-site-geofence-setup-map.webp"
+      },
+      "rank": 12,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Job site detail drawer for Kingsford Corporate Tower with an interactive map, a draggable geofence pin at 25 King William St, and a 120 m radius slider — the boundary that determines valid GPS clock-in for workers on site.",
+      "altText": "Job site detail showing geofence map with adjustable radius slider",
+      "tags": ["job-sites", "geofence", "GPS", "map", "admin", "setup"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "13-worker-wallet-cert-status",
+      "formats": {
+        "avif": "13-worker-wallet-cert-status.avif",
+        "webp": "13-worker-wallet-cert-status.webp"
+      },
+      "rank": 13,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Worker wallet screen showing four valid certifications — SA Security Agents Licence, National Police Check, First Aid, White Card — with expiry dates and a You're job-ready status banner confirming full compliance.",
+      "altText": "Worker wallet showing four valid certifications and job-ready status",
+      "tags": ["mobile", "wallet", "certifications", "compliance", "worker-app"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "14-mobile-schedule-upcoming-shifts",
+      "formats": {
+        "avif": "14-mobile-schedule-upcoming-shifts.avif",
+        "webp": "14-mobile-schedule-upcoming-shifts.webp"
+      },
+      "rank": 14,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Worker schedule tab listing this week's shift at Westfield Marion and two next-week shifts — including a 10pm–6am overnight at Kingsford Corporate Tower — grouped by week with date chips showing days until each shift.",
+      "altText": "Worker schedule showing upcoming shifts grouped by this week and next",
+      "tags": ["mobile", "schedule", "upcoming-shifts", "worker-app", "overnight"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "15-add-cert-document-form",
+      "formats": {
+        "avif": "15-add-cert-document-form.avif",
+        "webp": "15-add-cert-document-form.webp"
+      },
+      "rank": 15,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Add document screen for workers to upload certifications, with a scrollable certificate type picker (First Aid selected), issued and expiry date fields, and camera or library photo upload options before saving to wallet.",
+      "altText": "Mobile add document form with certificate type picker and photo upload",
+      "tags": ["mobile", "certifications", "document-upload", "wallet", "worker-app", "form"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "16-global-search-command-palette",
+      "formats": {
+        "avif": "16-global-search-command-palette.avif",
+        "webp": "16-global-search-command-palette.webp"
+      },
+      "rank": 16,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Global search command palette triggered over the Job Sites page, surfacing top-level navigation grouped into Overview, Operations, and Workforce sections — keyboard-accessible quick navigation to any area of the admin console without reaching for the sidebar.",
+      "altText": "Global search command palette with grouped navigation sections",
+      "tags": ["search", "command-palette", "navigation", "admin", "keyboard-shortcut"],
+      "suggestedUse": "gallery"
+    }
+  ]
+}

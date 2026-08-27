@@ -1,0 +1,119 @@
+{
+  "case": "planit",
+  "totalImages": 8,
+  "shortlistedCount": 6,
+  "images": [
+    {
+      "fileNameBase": "01-weekly-setup-constraints",
+      "formats": {
+        "avif": "01-weekly-setup-constraints.avif",
+        "webp": "01-weekly-setup-constraints.webp"
+      },
+      "rank": 1,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "The weekly setup form where admins enter subject-teacher bindings, each with a type, weekly total and daily-slot cap, above a running 'Total Allocated Hours 42/42' check — the exact input the constraint solver works from, with the 42-hour invariant enforced.",
+      "altText": "PlanIt weekly setup form with subject-teacher bindings totalling 42 hours",
+      "tags": ["constraint-setup", "subject-teacher-binding", "42-hour-invariant", "scheduling", "web"],
+      "suggestedUse": "hero"
+    },
+    {
+      "fileNameBase": "02-generated-weekly-timetable",
+      "formats": {
+        "avif": "02-generated-weekly-timetable.avif",
+        "webp": "02-generated-weekly-timetable.webp"
+      },
+      "rank": 2,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "A generated six-day timetable in the tabular grid — every cell a lecture or practical with its teacher, breaks held in place, and two-hour practicals kept whole — the compliant week the solver produces from the bindings in one click.",
+      "altText": "Generated weekly timetable grid of lectures and practicals",
+      "tags": ["timetable", "schedule-output", "weekly-grid", "solver", "web"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "03-auto-schedule-generator",
+      "formats": {
+        "avif": "03-auto-schedule-generator.avif",
+        "webp": "03-auto-schedule-generator.webp"
+      },
+      "rank": 3,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "The Auto Schedule dialog listing the rules it enforces — weekly totals, per-day limits, correct lecture/practical types — beside a live timetable preview and a Start Auto-Scheduling button, making the constraint solver's logic visible before it commits a week.",
+      "altText": "Auto-schedule dialog with rules and timetable preview",
+      "tags": ["auto-schedule", "constraint-solver", "generator", "rules", "modal"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "04-teacher-schedule-view",
+      "formats": {
+        "avif": "04-teacher-schedule-view.avif",
+        "webp": "04-teacher-schedule-view.webp"
+      },
+      "rank": 4,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "The teacher dashboard for Dr. Anil Sharma showing only his day, notifications, his subjects and schedule-change requests — proof the same dataset renders a role-scoped slice, so a teacher sees just his own timetable, not the whole college's.",
+      "altText": "Teacher dashboard showing one teacher's daily schedule",
+      "tags": ["teacher-view", "role-scoped", "dashboard", "jwt-roles", "web"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "05-admin-analytics-dashboard",
+      "formats": {
+        "avif": "05-admin-analytics-dashboard.avif",
+        "webp": "05-admin-analytics-dashboard.webp"
+      },
+      "rank": 5,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "The admin home summarising teachers, students and subjects with role-distribution and class-distribution charts plus quick actions — the overview an administrator lands on before setting up bindings and generating the week's schedule.",
+      "altText": "Admin dashboard with teacher, student and subject charts",
+      "tags": ["admin-dashboard", "analytics", "charts", "overview", "web"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "06-user-role-management",
+      "formats": {
+        "avif": "06-user-role-management.avif",
+        "webp": "06-user-role-management.webp"
+      },
+      "rank": 6,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "User management with Teachers, Students and Admins tabs and a table mapping each teacher to the subjects they carry — the backing data for the three-role JWT model that decides which timetable slice each person can see.",
+      "altText": "User management table mapping teachers to subjects",
+      "tags": ["user-management", "roles", "teachers", "subjects-mapping"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "07-class-management-student-counts",
+      "formats": {
+        "avif": "07-class-management-student-counts.avif",
+        "webp": "07-class-management-student-counts.webp"
+      },
+      "rank": 7,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Class management listing CS-A, CS-B, IT-A and IT-B with student counts, per-class timetable shortcuts and a students-per-class chart — the admin surface for defining the classes each generated weekly timetable is produced for.",
+      "altText": "Class management table with students-per-class chart",
+      "tags": ["class-management", "classes", "crud", "chart"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "08-subject-management-crud",
+      "formats": {
+        "avif": "08-subject-management-crud.avif",
+        "webp": "08-subject-management-crud.webp"
+      },
+      "rank": 8,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "The subjects manager with a searchable table of subject names and codes and a create/edit modal — the basic CRUD catalogue that feeds the subject dropdowns in the weekly setup form; useful but routine administrative plumbing.",
+      "altText": "Manage subjects table with create-subject modal",
+      "tags": ["subjects", "crud", "modal", "catalogue"],
+      "suggestedUse": "gallery"
+    }
+  ]
+}

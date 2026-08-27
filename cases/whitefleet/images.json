@@ -1,0 +1,614 @@
+{
+  "$schema": "https://rajeshadeli.com/schemas/portfolio-images/v1.json",
+  "caseSlug": "whitefleet",
+  "accentHex": "#F97316",
+  "generatedAt": "2026-08-25T11:57:31Z",
+  "totalImages": 16,
+  "shortlistedCount": 6,
+  "images": [
+    {
+      "fileNameBase": "whitefleet-01-dashboard",
+      "originalFileName": "whitefleet-1-dashboard.png",
+      "originalSha256": "249ab103ad50d1bcd3b58021656d7c6c2e9d15c4f2fc26a4d39da42835688a6c",
+      "originalSizeKb": 402,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-01-dashboard.webp",
+          "sizeKb": 117
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-01-dashboard.avif",
+          "sizeKb": 54
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "dashboard",
+      "rank": 1,
+      "isShortlisted": true,
+      "description": "Admin dashboard showing total employees, attendance today, pending approvals, open tasks, weekly check-in chart, and recent employees — the command centre for workforce managers.",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "workforce",
+        "hero"
+      ],
+      "contentHighlights": [
+        "KPI cards",
+        "weekly check-ins chart",
+        "recent employees"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-03-live-map",
+      "originalFileName": "whitefleet-3-sitemap.png",
+      "originalSha256": "b3c4b924206bbbe66e95dc9cf6a88df8b91ae00d9465e09b2c256b64cc7bd8a9",
+      "originalSizeKb": 4986,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-03-live-map.webp",
+          "sizeKb": 551
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-03-live-map.avif",
+          "sizeKb": 297
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "live-map",
+      "rank": 2,
+      "isShortlisted": true,
+      "description": "Full-screen live map view with geofence circles, worker location pins, and asset markers overlaid on an OSM base map — demonstrates real-time field visibility for distributed operations.",
+      "tags": [
+        "map",
+        "geofence",
+        "live-tracking",
+        "assets",
+        "hero"
+      ],
+      "contentHighlights": [
+        "geofence circle",
+        "worker pins",
+        "asset clusters"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-04-tasks",
+      "originalFileName": "whitefleet-4-tasks.jpeg",
+      "originalSha256": "ecf3a2ca7e758274f36b6f20ddcdcb862a1f661b4dbc86644e61aeda16df66d8",
+      "originalSizeKb": 218,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-04-tasks.webp",
+          "sizeKb": 93
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-04-tasks.avif",
+          "sizeKb": 60
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "tasks",
+      "rank": 3,
+      "isShortlisted": true,
+      "description": "Task management interface with status filters, due dates, assignee, and priority — shows the platform's operational task layer for job completion tracking.",
+      "tags": [
+        "tasks",
+        "checklist",
+        "workflow",
+        "operations"
+      ],
+      "contentHighlights": [
+        "task list",
+        "status filters",
+        "assignee chips"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-02-my-team",
+      "originalFileName": "whitefleet-2-my-team.png",
+      "originalSha256": "45f70fb78de8a206fb2da5f0a94053ced5a2a1a82ea64712cbb4855d62a60316",
+      "originalSizeKb": 415,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-02-my-team.webp",
+          "sizeKb": 114
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-02-my-team.avif",
+          "sizeKb": 49
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "team",
+      "rank": 4,
+      "isShortlisted": false,
+      "description": "Team view showing manager's direct reports with attendance status, role, and department — allows managers to track their own sub-team without full admin access.",
+      "tags": [
+        "team",
+        "attendance",
+        "manager-view"
+      ],
+      "contentHighlights": [
+        "worker cards",
+        "attendance status",
+        "department labels"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-06-global-search",
+      "originalFileName": "whitefleet-6-global-search.jpeg",
+      "originalSha256": "f268272e014b8c93cfb76dbb3aee0c663d2a2b1b8193eb3a5f5a7782382a9980",
+      "originalSizeKb": 83,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-06-global-search.webp",
+          "sizeKb": 26
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-06-global-search.avif",
+          "sizeKb": 15
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "global-search",
+      "rank": 5,
+      "isShortlisted": true,
+      "description": "Global search modal with instant results across employees, departments, and actions — signals enterprise-grade discoverability and keyboard-first UX.",
+      "tags": [
+        "global-search",
+        "command-palette",
+        "navigation"
+      ],
+      "contentHighlights": [
+        "search input",
+        "result categories",
+        "keyboard shortcut"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-05-all-employees",
+      "originalFileName": "whitefleet-5-all-employees.png",
+      "originalSha256": "0917e4da4969c56052462c0bc0f19ffd79a50ac1b08c9a70fe3faec5aad83f25",
+      "originalSizeKb": 429,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-05-all-employees.webp",
+          "sizeKb": 114
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-05-all-employees.avif",
+          "sizeKb": 49
+        }
+      },
+      "dimensions": {
+        "width": 3248,
+        "height": 1692
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "employee-directory",
+      "rank": 6,
+      "isShortlisted": false,
+      "description": "All employees directory with department, designation, status, and quick action buttons — centralized HR record accessible by platform admins.",
+      "tags": [
+        "employees",
+        "directory",
+        "HR",
+        "workforce"
+      ],
+      "contentHighlights": [
+        "employee table",
+        "department filters",
+        "status badges"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-07-admin-dashboard",
+      "originalFileName": "whitefleet-7-admin-dashboard.jpeg",
+      "originalSha256": "d1edf1fb1f97837055da57b0b44d8300d5baa73406f8bb21ffaf4ca1b0d99678",
+      "originalSizeKb": 156,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-07-admin-dashboard.webp",
+          "sizeKb": 59
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-07-admin-dashboard.avif",
+          "sizeKb": 39
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1400
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "admin-panel",
+      "rank": 7,
+      "isShortlisted": false,
+      "description": "Platform admin panel with system-level controls for tenant configuration, feature flags, and billing settings — demonstrates multi-tenant SaaS architecture depth.",
+      "tags": [
+        "admin",
+        "settings",
+        "platform",
+        "multi-tenant"
+      ],
+      "contentHighlights": [
+        "admin controls",
+        "tenant settings",
+        "feature flags"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-09-platform-documents",
+      "originalFileName": "whitefleet-9-platform-documents.png",
+      "originalSha256": "c0d6eb923fbab9d7615915a03dd311fa1b493ceae72fe6eed999c7f4091a7113",
+      "originalSizeKb": 350,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-09-platform-documents.webp",
+          "sizeKb": 105
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-09-platform-documents.avif",
+          "sizeKb": 40
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "platform-documents",
+      "rank": 8,
+      "isShortlisted": false,
+      "description": "Platform documents library for org-wide policy uploads and version management — centralises compliance documents alongside workforce data.",
+      "tags": [
+        "documents",
+        "compliance",
+        "library",
+        "policies"
+      ],
+      "contentHighlights": [
+        "document cards",
+        "version labels",
+        "upload CTA"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-08-audit-logs",
+      "originalFileName": "whitefleet-8-auditlogs.png",
+      "originalSha256": "5de74baa274d2035be3370b891ad4a846ff41379309dbc24d98f13861b09f3d4",
+      "originalSizeKb": 435,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-08-audit-logs.webp",
+          "sizeKb": 133
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-08-audit-logs.avif",
+          "sizeKb": 44
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "audit-logs",
+      "rank": 9,
+      "isShortlisted": false,
+      "description": "Audit log view with timestamped event entries, actor identification, and action type — provides the compliance trail essential for regulated workforce environments.",
+      "tags": [
+        "audit",
+        "compliance",
+        "logs",
+        "security"
+      ],
+      "contentHighlights": [
+        "event timeline",
+        "actor attribution",
+        "action types"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-10-mobile-home",
+      "originalFileName": "whitefleet-10-mobile-home.jpeg",
+      "originalSha256": "d1cfde71c4a34ee16b54dcabacd5b214b0cdfda2f8e306e1ea7e67935a9b9579",
+      "originalSizeKb": 47,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-10-mobile-home.webp",
+          "sizeKb": 34
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-10-mobile-home.avif",
+          "sizeKb": 20
+        }
+      },
+      "dimensions": {
+        "width": 722,
+        "height": 1600
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "worker-home",
+      "rank": 10,
+      "isShortlisted": true,
+      "description": "Worker mobile home with today's shift card, attendance CTA, and upcoming tasks — the field-worker entry point optimised for one-thumb use.",
+      "tags": [
+        "mobile",
+        "worker-app",
+        "attendance",
+        "today"
+      ],
+      "contentHighlights": [
+        "today shift",
+        "clock-in CTA",
+        "task summary"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-13-mobile-tasks",
+      "originalFileName": "whitefleet-13-mobile-tasks.jpeg",
+      "originalSha256": "082cc7d1ca015972a74a0fc561d84aa52e7af6d4c8e62dd06b5afaec0aa63533",
+      "originalSizeKb": 39,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-13-mobile-tasks.webp",
+          "sizeKb": 27
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-13-mobile-tasks.avif",
+          "sizeKb": 15
+        }
+      },
+      "dimensions": {
+        "width": 722,
+        "height": 1600
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "mobile-tasks",
+      "rank": 11,
+      "isShortlisted": true,
+      "description": "Mobile task list showing today's assigned tasks with status and priority — field workers check off deliverables directly from their phone during a shift.",
+      "tags": [
+        "mobile",
+        "tasks",
+        "worker-app",
+        "checklist"
+      ],
+      "contentHighlights": [
+        "task items",
+        "status chips",
+        "priority indicators"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-14-mobile-task-details",
+      "originalFileName": "whitefleet-14-mobile-task-details.jpeg",
+      "originalSha256": "57a71b9be0ded493dbce611366a6cc394c49ab460c49a90729618321048b4cde",
+      "originalSizeKb": 70,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-14-mobile-task-details.webp",
+          "sizeKb": 50
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-14-mobile-task-details.avif",
+          "sizeKb": 30
+        }
+      },
+      "dimensions": {
+        "width": 722,
+        "height": 1600
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "task-detail",
+      "rank": 12,
+      "isShortlisted": false,
+      "description": "Task detail view with description, due time, instructions, and photo proof CTA — the action surface for completing a single accountable task on site.",
+      "tags": [
+        "mobile",
+        "task-detail",
+        "proof",
+        "worker-app"
+      ],
+      "contentHighlights": [
+        "task description",
+        "instructions",
+        "photo CTA"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-12-mobile-notifications",
+      "originalFileName": "whitefleet-12-moobile-notifications.jpeg",
+      "originalSha256": "2bd6e0712f82a24df7631c05f2372cd13390705715806b1acc894f318ad65366",
+      "originalSizeKb": 182,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-12-mobile-notifications.webp",
+          "sizeKb": 41
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-12-mobile-notifications.avif",
+          "sizeKb": 21
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "notifications",
+      "rank": 13,
+      "isShortlisted": false,
+      "description": "Mobile notification centre showing shift reminders, task assignments, and approval updates — keeps field workers in sync with desktop-side manager actions.",
+      "tags": [
+        "mobile",
+        "notifications",
+        "worker-app"
+      ],
+      "contentHighlights": [
+        "notification list",
+        "shift alerts",
+        "task updates"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-11-mobile-profile",
+      "originalFileName": "whitefleet-11-mobile-profile.jpeg",
+      "originalSha256": "ee02d6ebc016b288b7967fc0c5ae3fe091df62a01ad91468f76cd30568744014",
+      "originalSizeKb": 58,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-11-mobile-profile.webp",
+          "sizeKb": 41
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-11-mobile-profile.avif",
+          "sizeKb": 25
+        }
+      },
+      "dimensions": {
+        "width": 722,
+        "height": 1600
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "worker-profile",
+      "rank": 14,
+      "isShortlisted": false,
+      "description": "Mobile worker profile screen with personal details, department, designation, and account settings — the self-service HR record for field staff.",
+      "tags": [
+        "mobile",
+        "profile",
+        "worker-app"
+      ],
+      "contentHighlights": [
+        "profile avatar",
+        "personal details",
+        "settings links"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-16-mobile-task-awaiting",
+      "originalFileName": "whitefleet-16-mobile-task-details-awaiting.jpeg",
+      "originalSha256": "82ac8311970d26a8e679da75ad6abb79f396bd620c3140593c7b4b2cbd4425de",
+      "originalSizeKb": 90,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-16-mobile-task-awaiting.webp",
+          "sizeKb": 75
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-16-mobile-task-awaiting.avif",
+          "sizeKb": 40
+        }
+      },
+      "dimensions": {
+        "width": 722,
+        "height": 1600
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "task-awaiting",
+      "rank": 15,
+      "isShortlisted": false,
+      "description": "Task detail in 'awaiting approval' state after proof submission — the pending state in the manager-to-worker approval loop that closes the accountability cycle.",
+      "tags": [
+        "mobile",
+        "task-awaiting",
+        "approval",
+        "worker-app"
+      ],
+      "contentHighlights": [
+        "awaiting status badge",
+        "submitted proof thumbnail"
+      ]
+    },
+    {
+      "fileNameBase": "whitefleet-15-mobile-task-proof",
+      "originalFileName": "whitefleet-15-mobile-task-proof.jpeg",
+      "originalSha256": "9fb2d591b3d0368135ef9805029f60bc46c5486d86453066c16b4b52f8efb207",
+      "originalSizeKb": 188,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/whitefleet-15-mobile-task-proof.webp",
+          "sizeKb": 44
+        },
+        "avif": {
+          "path": "ui/converted/whitefleet-15-mobile-task-proof.avif",
+          "sizeKb": 22
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "task-proof",
+      "rank": 16,
+      "isShortlisted": false,
+      "description": "Photo proof capture UI where workers photograph task completion as verifiable evidence before marking task done.",
+      "tags": [
+        "mobile",
+        "proof",
+        "photo",
+        "accountability"
+      ],
+      "contentHighlights": [
+        "camera preview",
+        "submit CTA",
+        "task context"
+      ]
+    }
+  ]
+}

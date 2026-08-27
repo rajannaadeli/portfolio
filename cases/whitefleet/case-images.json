@@ -1,0 +1,231 @@
+{
+  "case": "whitefleet",
+  "totalImages": 16,
+  "shortlistedCount": 8,
+  "images": [
+    {
+      "fileNameBase": "01-worker-home-company-switcher",
+      "formats": {
+        "avif": "01-worker-home-company-switcher.avif",
+        "webp": "01-worker-home-company-switcher.webp"
+      },
+      "rank": 1,
+      "isShortlisted": true,
+      "platform": "mobile",
+      "description": "Worker mobile home screen showing the company switcher dropdown set to Whitefleet, with a green 'On the clock' attendance card showing roster-triggered clock-in. Bottom nav exposes Today, Schedule, Tasks, and Wallet surfaces.",
+      "altText": "Worker mobile app home with company switcher and attendance card",
+      "tags": ["mobile", "worker-app", "company-switcher", "multi-membership", "attendance", "expo"],
+      "suggestedUse": "hero"
+    },
+    {
+      "fileNameBase": "02-tasks-kanban-night-shift",
+      "formats": {
+        "avif": "02-tasks-kanban-night-shift.avif",
+        "webp": "02-tasks-kanban-night-shift.webp"
+      },
+      "rank": 2,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Company admin task board for the Night Shift (18:00–06:00) with four columns — To Do, In Progress, Done, Verified — showing 12 tasks total. Cards carry priority tags (High/Medium), due dates, and worker avatars.",
+      "altText": "Admin task kanban board with four status columns and shift header",
+      "tags": ["web", "admin-app", "tasks", "kanban", "operations", "shift-management"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "03-live-worker-map-geofence-view",
+      "formats": {
+        "avif": "03-live-worker-map-geofence-view.avif",
+        "webp": "03-live-worker-map-geofence-view.webp"
+      },
+      "rank": 3,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "OpenStreetMap live map with a blue geofence radius circle centred on a suburb, red worker location pins scattered across the city grid, and filter tabs showing Geofences 3, Workers 6, Assets 7.",
+      "altText": "Live map with geofence circle and worker pins across city streets",
+      "tags": ["web", "admin-app", "live-map", "geofence", "field-operations", "real-time"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "04-mobile-task-completion-evidence",
+      "formats": {
+        "avif": "04-mobile-task-completion-evidence.avif",
+        "webp": "04-mobile-task-completion-evidence.webp"
+      },
+      "rank": 4,
+      "isShortlisted": true,
+      "platform": "mobile",
+      "description": "Worker mobile task screen for 'General inspection of site' showing submitted photo evidence in a green Completion Evidence panel alongside an orange 'Awaiting verification' banner — the task lifecycle from submission to supervisor review.",
+      "altText": "Mobile task screen with photo evidence submitted awaiting supervisor verification",
+      "tags": ["mobile", "worker-app", "tasks", "completion-evidence", "verification", "workflow"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "05-team-compliance-supervisor-view",
+      "formats": {
+        "avif": "05-team-compliance-supervisor-view.avif",
+        "webp": "05-team-compliance-supervisor-view.webp"
+      },
+      "rank": 5,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "My Team table listing six workers across Mining and Construction departments with Clock Status, Active Tasks, Assets, and Compliance columns. One worker shows '1 pending' compliance in orange; a Needs Attention counter flags the issue at the top.",
+      "altText": "Team list showing compliance status, clock status, and tasks per worker",
+      "tags": ["web", "admin-app", "team-management", "compliance", "supervisor", "departments"],
+      "suggestedUse": "feature-highlight"
+    },
+    {
+      "fileNameBase": "06-platform-document-wallet-library",
+      "formats": {
+        "avif": "06-platform-document-wallet-library.avif",
+        "webp": "06-platform-document-wallet-library.webp"
+      },
+      "rank": 6,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "WhiteFleet Platform document library listing Australian labour-hire compliance documents — National Police Check, Forklift Licence (HRWL), Security Licence, White Card, Driver Licence — all typed as Wallet, making each a worker-owned credential.",
+      "altText": "Platform document library listing compliance credentials typed as Wallet",
+      "tags": ["web", "platform-app", "documents", "wallet", "compliance", "credentials"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "07-platform-audit-log-action-trail",
+      "formats": {
+        "avif": "07-platform-audit-log-action-trail.avif",
+        "webp": "07-platform-audit-log-action-trail.webp"
+      },
+      "rank": 7,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Platform-admin audit log with timestamped entries and colour-coded action badges — green for create, orange for update, red for delete — covering role template creation, company registration approvals, and a company deletion event.",
+      "altText": "Platform audit log with colour-coded action badges and timestamps",
+      "tags": ["web", "platform-app", "audit-log", "compliance", "immutable-trail", "admin"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "08-company-admin-dashboard-overview",
+      "formats": {
+        "avif": "08-company-admin-dashboard-overview.avif",
+        "webp": "08-company-admin-dashboard-overview.webp"
+      },
+      "rank": 8,
+      "isShortlisted": true,
+      "platform": "web",
+      "description": "Company admin dashboard for a Whitefleet tenant with four stat cards (Total Employees 6, Attendance Today, Pending Approvals, Open Tasks 11), a Weekly Check-ins bar chart, and a Recent Employees list showing active membership status.",
+      "altText": "Company admin dashboard with employee stats and weekly check-in chart",
+      "tags": ["web", "admin-app", "dashboard", "analytics", "attendance", "overview"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "09-platform-admin-dashboard-companies",
+      "formats": {
+        "avif": "09-platform-admin-dashboard-companies.avif",
+        "webp": "09-platform-admin-dashboard-companies.webp"
+      },
+      "rank": 9,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "WhiteFleet Platform admin dashboard showing 2 companies registered, Active Subscriptions and Pending Approvals stats, a Weekly Activity bar chart of company registrations, and a Quick Actions panel linking to approvals, documents, and role templates.",
+      "altText": "Platform admin dashboard showing two companies and weekly registration activity",
+      "tags": ["web", "platform-app", "dashboard", "multi-tenant", "saas", "admin"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "10-mobile-task-details-payment",
+      "formats": {
+        "avif": "10-mobile-task-details-payment.avif",
+        "webp": "10-mobile-task-details-payment.webp"
+      },
+      "rank": 10,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Worker mobile task detail for 'General inspection of site' listing status (Assigned), priority (High), due date, and a $200.00 fixed payment rate alongside completion requirements and assignee history, with a Start Task CTA.",
+      "altText": "Mobile task detail showing priority, payment, and completion requirements",
+      "tags": ["mobile", "worker-app", "tasks", "payment", "task-detail", "workflow"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "11-all-employees-role-diversity",
+      "formats": {
+        "avif": "11-all-employees-role-diversity.avif",
+        "webp": "11-all-employees-role-diversity.webp"
+      },
+      "rank": 11,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "All Employees table for a company with six members showing role badge variety — Employee, Accountant, Admin, Supervisor — filtered by status and role, with department count and join timestamps per row.",
+      "altText": "Employee table with role badges spanning Employee, Accountant, Admin, Supervisor",
+      "tags": ["web", "admin-app", "employees", "roles", "workforce", "hm"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "12-global-search-navigation-modal",
+      "formats": {
+        "avif": "12-global-search-navigation-modal.avif",
+        "webp": "12-global-search-navigation-modal.webp"
+      },
+      "rank": 12,
+      "isShortlisted": false,
+      "platform": "web",
+      "description": "Global search modal over a dimmed Attendance page backdrop, showing results for 'D' grouped into Overview (Dashboard), People (Departments, Designations), HRM (Attendance, Holidays), Operations (Today's Tasks), and Compliance sections.",
+      "altText": "Global search modal with grouped navigation results over dimmed background",
+      "tags": ["web", "admin-app", "search", "navigation", "ux", "keyboard"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "13-mobile-settings-switch-company",
+      "formats": {
+        "avif": "13-mobile-settings-switch-company.avif",
+        "webp": "13-mobile-settings-switch-company.webp"
+      },
+      "rank": 13,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Worker mobile Settings screen with Account section containing Email, Profile, and Switch Company rows, an Appearance toggle (System/Light/Dark with Light selected), Notifications, and app version v1.0.0.",
+      "altText": "Mobile settings screen showing switch company option and appearance controls",
+      "tags": ["mobile", "worker-app", "settings", "multi-membership", "company-switch", "profile"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "14-mobile-tasks-overdue-status",
+      "formats": {
+        "avif": "14-mobile-tasks-overdue-status.avif",
+        "webp": "14-mobile-tasks-overdue-status.webp"
+      },
+      "rank": 14,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Worker mobile Tasks screen showing a red '1 Overdue' summary card above an Active section with a single inspection task card bearing Assigned and Overdue status badges alongside a $200.00 fixed payment chip.",
+      "altText": "Mobile tasks screen with one overdue task and payment badge",
+      "tags": ["mobile", "worker-app", "tasks", "overdue", "status", "payment"],
+      "suggestedUse": "gallery"
+    },
+    {
+      "fileNameBase": "15-mobile-task-photo-proof-upload",
+      "formats": {
+        "avif": "15-mobile-task-photo-proof-upload.avif",
+        "webp": "15-mobile-task-photo-proof-upload.webp"
+      },
+      "rank": 15,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Add Completion Details modal for a site inspection task with a dashed photo upload zone (camera icon, 'Tap to take or upload a photo', JPG/PNG up to 10 MB) and Cancel/Submit buttons in green.",
+      "altText": "Mobile completion details modal with photo upload zone and submit button",
+      "tags": ["mobile", "worker-app", "tasks", "photo-proof", "completion", "upload"],
+      "suggestedUse": "detail-shot"
+    },
+    {
+      "fileNameBase": "16-mobile-notifications-task-alerts",
+      "formats": {
+        "avif": "16-mobile-notifications-task-alerts.avif",
+        "webp": "16-mobile-notifications-task-alerts.webp"
+      },
+      "rank": 16,
+      "isShortlisted": false,
+      "platform": "mobile",
+      "description": "Worker mobile Notifications screen with two push notification cards: a task overdue alert for 'General inspection of site' dated Aug 2, and a new task assignment notification for the same task.",
+      "altText": "Mobile notifications showing task overdue and new task assigned alerts",
+      "tags": ["mobile", "worker-app", "notifications", "push-alerts", "tasks", "overdue"],
+      "suggestedUse": "detail-shot"
+    }
+  ]
+}

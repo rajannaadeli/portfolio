@@ -1,0 +1,629 @@
+{
+  "$schema": "https://rajeshadeli.com/schemas/portfolio-images/v1.json",
+  "caseSlug": "rosterbay",
+  "accentHex": "#7C3AED",
+  "generatedAt": "2026-08-25T12:05:55Z",
+  "totalImages": 16,
+  "shortlistedCount": 8,
+  "images": [
+    {
+      "fileNameBase": "rosterbay-01-entry",
+      "originalFileName": "rosterbay-1-entry.png",
+      "originalSha256": "cd68eaa9bb21306c65a7c4c1af81e1679026989bacd377986904e54227d6ad62",
+      "originalSizeKb": 1460,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-01-entry.webp",
+          "sizeKb": 118
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-01-entry.avif",
+          "sizeKb": 66
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1680
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "product-landing",
+      "rank": 1,
+      "isShortlisted": true,
+      "description": "RosterBay marketing/demo landing page showing the roster interface in a browser mockup, with 'Explore as Agency Admin' and 'Explore as Worker' entry points — the public face of the platform that frames the dual-persona product proposition.",
+      "tags": [
+        "landing",
+        "entry",
+        "demo",
+        "hero"
+      ],
+      "contentHighlights": [
+        "Explore as Admin CTA",
+        "Explore as Worker CTA",
+        "roster preview mockup"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-02-dashboard",
+      "originalFileName": "rosterbay-2-dashboard.png",
+      "originalSha256": "d0cde609424dc8c0e0f89ef9a3511422f441f6eb82b276925c55c2e319d2abdc",
+      "originalSizeKb": 1315,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-02-dashboard.webp",
+          "sizeKb": 259
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-02-dashboard.avif",
+          "sizeKb": 122
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "dashboard",
+      "rank": 2,
+      "isShortlisted": true,
+      "description": "Admin dashboard showing live shift coverage bar, worker headcount KPIs, recent timesheets, and site overview — the north-star screen communicating operational intelligence at a glance.",
+      "tags": [
+        "dashboard",
+        "roster",
+        "analytics",
+        "hero"
+      ],
+      "contentHighlights": [
+        "shift coverage bar",
+        "worker headcount KPIs",
+        "recent timesheets"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-03-roster-day",
+      "originalFileName": "rosterbay-3-roster-day.png",
+      "originalSha256": "0744802476d4cfa63148161c1fe4f685bd4d51b2fea9a591469afc7ecba793ec",
+      "originalSizeKb": 461,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-03-roster-day.webp",
+          "sizeKb": 131
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-03-roster-day.avif",
+          "sizeKb": 61
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "roster-day",
+      "rank": 3,
+      "isShortlisted": true,
+      "description": "Roster day view showing a single-day Gantt timeline with coverage bar, worker panel, and colour-coded shift blocks per job site — drag-and-drop interface for real-time scheduling with compliance checking before save.",
+      "tags": [
+        "roster",
+        "day-view",
+        "gantt",
+        "scheduling",
+        "hero"
+      ],
+      "contentHighlights": [
+        "Gantt timeline",
+        "coverage bar",
+        "drag-and-drop",
+        "compliance check"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-04-roster-week",
+      "originalFileName": "rosterbay-4-roster-week.png",
+      "originalSha256": "5f53c469ad838419aca3778f396a5c460e128b917e523508de65818cf1c8e7bb",
+      "originalSizeKb": 548,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-04-roster-week.webp",
+          "sizeKb": 171
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-04-roster-week.avif",
+          "sizeKb": 74
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "roster-week",
+      "rank": 4,
+      "isShortlisted": true,
+      "description": "Roster week view showing multi-day shift blocks per job site across a 7-day calendar — enables managers to plan and review a full working week of workforce deployment at once.",
+      "tags": [
+        "roster",
+        "week-view",
+        "calendar",
+        "shifts"
+      ],
+      "contentHighlights": [
+        "7-day grid",
+        "shift blocks",
+        "site grouping",
+        "coverage stats"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-05-tasks",
+      "originalFileName": "rosterbay-5-tasks.png",
+      "originalSha256": "abb9c11b8b1a5c3b15a32d7e54aa858b6b96aa98e34ef97c99acce9bcbeedcac",
+      "originalSizeKb": 773,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-05-tasks.webp",
+          "sizeKb": 86
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-05-tasks.avif",
+          "sizeKb": 39
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "tasks",
+      "rank": 5,
+      "isShortlisted": true,
+      "description": "Task management view showing per-shift checklists with completion status and photo proof requirements — demonstrates accountability layer beyond time-and-attendance.",
+      "tags": [
+        "tasks",
+        "checklists",
+        "accountability",
+        "proof"
+      ],
+      "contentHighlights": [
+        "task checklist",
+        "completion status",
+        "photo proof indicators"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-07-timesheets",
+      "originalFileName": "rosterbay-7-timesheet.png",
+      "originalSha256": "3fbe1a3fabf7dd71dc694f3d8023e012f293b59b2d19835cc4f3683155cbc802",
+      "originalSizeKb": 934,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-07-timesheets.webp",
+          "sizeKb": 187
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-07-timesheets.avif",
+          "sizeKb": 88
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1606
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "timesheets",
+      "rank": 6,
+      "isShortlisted": true,
+      "description": "Timesheet view with GPS-verified clock-in/out records, variance flag, late reason, embedded OSM map showing '35m from site', and 6/6 tasks proof-of-work — the gold-standard audit surface bridging GPS presence to payroll approval.",
+      "tags": [
+        "timesheets",
+        "GPS",
+        "map",
+        "proof-of-work",
+        "payroll",
+        "hero"
+      ],
+      "contentHighlights": [
+        "clock-in times",
+        "GPS map",
+        "Flagged status",
+        "proof-of-work thumbnails"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-08-job-sites",
+      "originalFileName": "rosterbay-8-jobs.png",
+      "originalSha256": "b39c24be6d333127bc0273dde7d7d801d7bbc6d35cafc452817d0bc38298033d",
+      "originalSizeKb": 563,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-08-job-sites.webp",
+          "sizeKb": 146
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-08-job-sites.avif",
+          "sizeKb": 74
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1606
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "job-sites",
+      "rank": 7,
+      "isShortlisted": false,
+      "description": "Job Sites grid showing 5 client locations with mini-map thumbnails, weekly coverage bars, required certifications, geofence radius, and task counts — the operational hub linking clients to workforce compliance.",
+      "tags": [
+        "job-sites",
+        "clients",
+        "compliance",
+        "geofence"
+      ],
+      "contentHighlights": [
+        "site cards",
+        "coverage bars",
+        "cert requirements",
+        "geofence radius"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-06-workers",
+      "originalFileName": "rosterbay-6-workers.png",
+      "originalSha256": "ebabc44564392be60c1cb5c162b2807a48316104658d7ed58bbfb9c218ad93ef",
+      "originalSizeKb": 372,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-06-workers.webp",
+          "sizeKb": 104
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-06-workers.avif",
+          "sizeKb": 45
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1524
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "workers",
+      "rank": 8,
+      "isShortlisted": false,
+      "description": "Worker directory with compliance badge status (Expired / Compliant), licence expiry indicators, and skill tags — centralises workforce credentialling in one searchable list.",
+      "tags": [
+        "workers",
+        "compliance",
+        "credentials",
+        "directory"
+      ],
+      "contentHighlights": [
+        "worker cards",
+        "licence badges",
+        "Expired/Compliant status"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-09-job-details",
+      "originalFileName": "rosterbay-9-job-details.png",
+      "originalSha256": "56a0b2fdff45fbcf48f758c29f5b6987277c52570add7c59c43db26dfa7f07cb",
+      "originalSizeKb": 1185,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-09-job-details.webp",
+          "sizeKb": 151
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-09-job-details.avif",
+          "sizeKb": 79
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1606
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "job-site-detail",
+      "rank": 9,
+      "isShortlisted": false,
+      "description": "Job site detail page with embedded interactive map, geofence configuration, compliance requirements, and task checklist editor — shows the precision of GPS-based clock-in configuration per client location.",
+      "tags": [
+        "job-site-detail",
+        "geofence",
+        "map",
+        "compliance"
+      ],
+      "contentHighlights": [
+        "embedded map",
+        "geofence config",
+        "compliance tab",
+        "task templates"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-10-global-search",
+      "originalFileName": "rosterbay-10-global-search.png",
+      "originalSha256": "68e8eaecf7ecda1b24f7618d7362946e4e473a9d6d23db5f11aa14505ec16a31",
+      "originalSizeKb": 709,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-10-global-search.webp",
+          "sizeKb": 45
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-10-global-search.avif",
+          "sizeKb": 24
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1606
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "global-search",
+      "rank": 10,
+      "isShortlisted": false,
+      "description": "Command-palette style global search modal with categorised navigation (Overview, Operations, Workforce) — highlights the platform's enterprise-grade UX polish and keyboard-first discoverability.",
+      "tags": [
+        "global-search",
+        "command-palette",
+        "navigation",
+        "UX"
+      ],
+      "contentHighlights": [
+        "search input",
+        "categorised results",
+        "keyboard shortcut"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-12-mobile-home",
+      "originalFileName": "rosterbay-12-mobile-home.jpg",
+      "originalSha256": "4a034a539e933dd695cb872dca08f0234a8805a0d91c8beba83e7adb349daeaa",
+      "originalSizeKb": 258,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-12-mobile-home.webp",
+          "sizeKb": 58
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-12-mobile-home.avif",
+          "sizeKb": 30
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "worker-today",
+      "rank": 11,
+      "isShortlisted": true,
+      "description": "Worker mobile home screen showing next shift details (site, time, countdown), site requirements met, and a prominent Clock In CTA — the day-start experience for field workers.",
+      "tags": [
+        "mobile",
+        "worker-app",
+        "clock-in",
+        "today",
+        "hero-mobile"
+      ],
+      "contentHighlights": [
+        "next shift card",
+        "countdown timer",
+        "Clock In button"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-15-mobile-tasks",
+      "originalFileName": "rosterbay-15-mobile-tasks.jpg",
+      "originalSha256": "7c8d935554741b1e47de9466dcaaba655cc89397e9791f7510b61823d48ee308",
+      "originalSizeKb": 353,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-15-mobile-tasks.webp",
+          "sizeKb": 85
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-15-mobile-tasks.avif",
+          "sizeKb": 44
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "active-shift-tasks",
+      "rank": 12,
+      "isShortlisted": true,
+      "description": "Mobile active-shift view with live clock timer, out-of-geofence warning banner, task checklist, and red Clock Out CTA — the real-time accountability loop for on-site workers.",
+      "tags": [
+        "mobile",
+        "active-shift",
+        "geofence",
+        "clock-out",
+        "accountability"
+      ],
+      "contentHighlights": [
+        "live timer",
+        "geofence warning",
+        "task checklist",
+        "Clock Out button"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-11-mobile-document",
+      "originalFileName": "rosterbay-11-mobile-document.jpg",
+      "originalSha256": "b2fefbed5eb2bac1c8e10d1bad90c6cb5e6b9ba0af7d46b41436b09472f6bb02",
+      "originalSizeKb": 284,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-11-mobile-document.webp",
+          "sizeKb": 69
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-11-mobile-document.avif",
+          "sizeKb": 36
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "add-document",
+      "rank": 13,
+      "isShortlisted": false,
+      "description": "Mobile 'Add document' form for workers to self-upload licences (First Aid, White Card, SA Security Licence) with issued/expiry dates — removes admin friction in credentialling.",
+      "tags": [
+        "mobile",
+        "documents",
+        "credentials",
+        "worker-app"
+      ],
+      "contentHighlights": [
+        "certificate type selector",
+        "date pickers",
+        "Add to wallet CTA"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-13-mobile-shift-details",
+      "originalFileName": "rosterbay-13-mobile-shift-details.jpg",
+      "originalSha256": "615e521b0b9008eb86b3db329465ac058c1d88918103582ba63a24a1aac39159",
+      "originalSizeKb": 280,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-13-mobile-shift-details.webp",
+          "sizeKb": 69
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-13-mobile-shift-details.avif",
+          "sizeKb": 31
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "shift-detail",
+      "rank": 14,
+      "isShortlisted": false,
+      "description": "Mobile shift detail view showing site, time, role, requirements met, and task checklist with photo-proof icons — workers see exactly what is expected before arriving.",
+      "tags": [
+        "mobile",
+        "shift-detail",
+        "tasks",
+        "worker-app"
+      ],
+      "contentHighlights": [
+        "task list",
+        "photo-proof icons",
+        "requirements met"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-14-wallet",
+      "originalFileName": "rosterbay-14-wallet.jpg",
+      "originalSha256": "82d7cbb87aff429fae0741e65fc3297926f7ab6023df2d2d4b7281c618fb2d3c",
+      "originalSizeKb": 343,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-14-wallet.webp",
+          "sizeKb": 80
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-14-wallet.avif",
+          "sizeKb": 41
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "wallet",
+      "rank": 15,
+      "isShortlisted": false,
+      "description": "Mobile credentials wallet showing all documents with validity status (SA Security Licence, NPC, First Aid, White Card) and job-ready confirmation banner.",
+      "tags": [
+        "mobile",
+        "wallet",
+        "credentials",
+        "compliance"
+      ],
+      "contentHighlights": [
+        "credential cards",
+        "validity badges",
+        "job-ready status"
+      ]
+    },
+    {
+      "fileNameBase": "rosterbay-16-mobile-schedule",
+      "originalFileName": "rosterbay-16-mobile-schedule.jpg",
+      "originalSha256": "abf5109e1c28d030dbf1fbfccc95af6613d72be12531f74cceb811e047dd8aae",
+      "originalSizeKb": 226,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/rosterbay-16-mobile-schedule.webp",
+          "sizeKb": 52
+        },
+        "avif": {
+          "path": "ui/converted/rosterbay-16-mobile-schedule.avif",
+          "sizeKb": 27
+        }
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 2392
+      },
+      "aspectRatio": "9:19.5",
+      "orientation": "portrait",
+      "surface": "mobile",
+      "primaryView": "schedule",
+      "rank": 16,
+      "isShortlisted": false,
+      "description": "Worker schedule view listing this week and next week's confirmed shifts with date, site, time, and role — the planning anchor for casual and part-time field workers.",
+      "tags": [
+        "mobile",
+        "schedule",
+        "shifts",
+        "worker-app"
+      ],
+      "contentHighlights": [
+        "weekly shift list",
+        "site names",
+        "date headers"
+      ]
+    }
+  ]
+}

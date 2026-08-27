@@ -1,0 +1,315 @@
+{
+  "$schema": "https://rajeshadeli.com/schemas/portfolio-images/v1.json",
+  "caseSlug": "planit",
+  "accentHex": "#7C3AED",
+  "generatedAt": "2026-08-25T11:57:51Z",
+  "totalImages": 8,
+  "shortlistedCount": 4,
+  "images": [
+    {
+      "fileNameBase": "planit-01-dashboard",
+      "originalFileName": "planit-1-dashboard.jpeg",
+      "originalSha256": "884c729bd6f01158ea8ef16d9e3f0cfe525b615f69ecb30d3edad89afb55ae37",
+      "originalSizeKb": 223,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-01-dashboard.webp",
+          "sizeKb": 86
+        },
+        "avif": {
+          "path": "ui/converted/planit-01-dashboard.avif",
+          "sizeKb": 51
+        }
+      },
+      "dimensions": {
+        "width": 2688,
+        "height": 1870
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "dashboard",
+      "rank": 1,
+      "isShortlisted": true,
+      "description": "Admin dashboard showing teacher, student, subject counts with user-role distribution pie chart, class distribution bar chart, and quick actions — the institutional overview for timetable administrators.",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "timetable",
+        "hero"
+      ],
+      "contentHighlights": [
+        "KPI counts",
+        "role pie chart",
+        "class bar chart",
+        "quick actions"
+      ]
+    },
+    {
+      "fileNameBase": "planit-02-weekly-setup",
+      "originalFileName": "planit-2-weeking-setup-form.png",
+      "originalSha256": "11d16a3ba9bdaa9887aab1c64c29e88ff9e53ed2ec6ea5ace7546ccd3c87374c",
+      "originalSizeKb": 853,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-02-weekly-setup.webp",
+          "sizeKb": 230
+        },
+        "avif": {
+          "path": "ui/converted/planit-02-weekly-setup.avif",
+          "sizeKb": 88
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 4518
+      },
+      "aspectRatio": "4:3",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "weekly-setup",
+      "rank": 2,
+      "isShortlisted": true,
+      "description": "Multi-step weekly timetable setup form collecting working days, period count, start time, break periods, and subject-teacher assignments — the configuration wizard feeding the auto-scheduler.",
+      "tags": [
+        "setup",
+        "form",
+        "configuration",
+        "scheduler",
+        "hero"
+      ],
+      "contentHighlights": [
+        "working days selector",
+        "period config",
+        "teacher assignment grid"
+      ]
+    },
+    {
+      "fileNameBase": "planit-03-schedule-result",
+      "originalFileName": "planit-3-auto-schedule-result.jpeg",
+      "originalSha256": "1fd4980b84f08eb795d72db40f83e0f23d459c16d47155376c6fa040e43cbbbb",
+      "originalSizeKb": 511,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-03-schedule-result.webp",
+          "sizeKb": 149
+        },
+        "avif": {
+          "path": "ui/converted/planit-03-schedule-result.avif",
+          "sizeKb": 68
+        }
+      },
+      "dimensions": {
+        "width": 2915,
+        "height": 1593
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "schedule-result",
+      "rank": 3,
+      "isShortlisted": true,
+      "description": "Auto-generated timetable result grid showing day x period matrix with subject and teacher assignments per class — the payoff screen demonstrating the algorithm's conflict-free schedule output.",
+      "tags": [
+        "schedule",
+        "timetable",
+        "auto-generate",
+        "matrix",
+        "hero"
+      ],
+      "contentHighlights": [
+        "day x period grid",
+        "subject blocks",
+        "teacher labels",
+        "conflict-free"
+      ]
+    },
+    {
+      "fileNameBase": "planit-06-timetable-result",
+      "originalFileName": "planit-6-timetable-result.png",
+      "originalSha256": "7f93a9df23e8ecf62b0a6e9ac56cc0a8a44455e32b6bc76cf31ed02bd3d2bd04",
+      "originalSizeKb": 387,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-06-timetable-result.webp",
+          "sizeKb": 167
+        },
+        "avif": {
+          "path": "ui/converted/planit-06-timetable-result.avif",
+          "sizeKb": 59
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1606
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "timetable-result",
+      "rank": 4,
+      "isShortlisted": true,
+      "description": "Timetable result view with per-class colour-coded schedule and print/export options — the final shareable output delivered to teachers and department heads.",
+      "tags": [
+        "timetable",
+        "result",
+        "colour-coded",
+        "export"
+      ],
+      "contentHighlights": [
+        "colour-coded grid",
+        "class selector",
+        "export CTA"
+      ]
+    },
+    {
+      "fileNameBase": "planit-04-subjects",
+      "originalFileName": "planit-4-subjects.png",
+      "originalSha256": "80f9e03a84b3a08e01bad9326ba1ac8f642a2d928975cae67d531a7d88f56510",
+      "originalSizeKb": 245,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-04-subjects.webp",
+          "sizeKb": 56
+        },
+        "avif": {
+          "path": "ui/converted/planit-04-subjects.avif",
+          "sizeKb": 28
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1606
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "subjects",
+      "rank": 5,
+      "isShortlisted": false,
+      "description": "Subject management table with code, name, weekly hours, and class assignment — the data entry layer for curriculum configuration before scheduling.",
+      "tags": [
+        "subjects",
+        "curriculum",
+        "configuration"
+      ],
+      "contentHighlights": [
+        "subject table",
+        "weekly hours",
+        "class assignments"
+      ]
+    },
+    {
+      "fileNameBase": "planit-05-users",
+      "originalFileName": "planit-5-users.png",
+      "originalSha256": "f86176a42d4782f567a9616b83bc12c1a7ae0a6d5e9390752779bba1fe71f961",
+      "originalSizeKb": 370,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-05-users.webp",
+          "sizeKb": 135
+        },
+        "avif": {
+          "path": "ui/converted/planit-05-users.avif",
+          "sizeKb": 53
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1606
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "users",
+      "rank": 6,
+      "isShortlisted": false,
+      "description": "User management page with teacher and student records, role assignments, and class allocations — the roster configuration underlying schedule generation.",
+      "tags": [
+        "users",
+        "teachers",
+        "students",
+        "roles"
+      ],
+      "contentHighlights": [
+        "user table",
+        "role chips",
+        "class assignments"
+      ]
+    },
+    {
+      "fileNameBase": "planit-07-classes",
+      "originalFileName": "planit-7-classes.png",
+      "originalSha256": "157cf2589d427b5ff21372008feb1e6a7d9139506fc037ad781e0ace4bcd30b8",
+      "originalSizeKb": 263,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-07-classes.webp",
+          "sizeKb": 77
+        },
+        "avif": {
+          "path": "ui/converted/planit-07-classes.avif",
+          "sizeKb": 34
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 1774
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "classes",
+      "rank": 7,
+      "isShortlisted": false,
+      "description": "Class management with sections, student count, and subject allocation per class — the organisational unit anchoring teacher and subject assignments.",
+      "tags": [
+        "classes",
+        "sections",
+        "configuration"
+      ],
+      "contentHighlights": [
+        "class cards",
+        "student count",
+        "subject list"
+      ]
+    },
+    {
+      "fileNameBase": "planit-08-teacher-dashboard",
+      "originalFileName": "planit-8-teacher-dashboard.png",
+      "originalSha256": "2a5ec42fffaf48b747d136142882d9c8c31ca8d69aadb9f40b2f3e72079e728c",
+      "originalSizeKb": 417,
+      "formats": {
+        "webp": {
+          "path": "ui/converted/planit-08-teacher-dashboard.webp",
+          "sizeKb": 125
+        },
+        "avif": {
+          "path": "ui/converted/planit-08-teacher-dashboard.avif",
+          "sizeKb": 51
+        }
+      },
+      "dimensions": {
+        "width": 2924,
+        "height": 2758
+      },
+      "aspectRatio": "16:9",
+      "orientation": "landscape",
+      "surface": "desktop",
+      "primaryView": "teacher-dashboard",
+      "rank": 8,
+      "isShortlisted": false,
+      "description": "Teacher-role dashboard showing their weekly schedule, assigned classes, and subject load — the personalised view for educators after admin publishes the timetable.",
+      "tags": [
+        "teacher",
+        "dashboard",
+        "personal-schedule"
+      ],
+      "contentHighlights": [
+        "weekly schedule",
+        "class list",
+        "subject load"
+      ]
+    }
+  ]
+}
