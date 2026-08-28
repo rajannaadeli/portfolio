@@ -30,8 +30,8 @@
       "height": 1674,
       "aspectRatio": "2924:1674",
       "fileSizeBytes": {
-        "avif": 235416,
-        "webp": 186216
+        "avif": 145471,
+        "webp": 215432
       }
     },
     {
@@ -120,8 +120,8 @@
       "height": 1674,
       "aspectRatio": "2924:1674",
       "fileSizeBytes": {
-        "avif": 171341,
-        "webp": 184492
+        "avif": 103961,
+        "webp": 166592
       }
     },
     {
@@ -164,7 +164,7 @@
       "isShortlisted": true,
       "platform": "web",
       "theme": "dark",
-      "description": "Dark-theme workers table listing the fourteen-person field team with phone numbers, compliance badges tallying eleven Compliant, two Expiring and one Expired, a weekly shifts bar per worker, and last clock-in time \u2014 team compliance readable at a glance.",
+      "description": "Dark-theme workers table listing the fourteen-person field team with phone numbers, compliance badges tallying eleven Compliant, two Expiring and one Expired, a weekly shifts bar per worker, and last clock-in time — team compliance readable at a glance.",
       "altText": "Dark workers list with compliance badges and weekly shifts",
       "tags": [
         "workers",
@@ -210,8 +210,8 @@
       "height": 1674,
       "aspectRatio": "2924:1674",
       "fileSizeBytes": {
-        "avif": 174868,
-        "webp": 307348
+        "avif": 64688,
+        "webp": 96204
       }
     },
     {
@@ -224,7 +224,7 @@
       "isShortlisted": false,
       "platform": "web",
       "theme": "dark",
-      "description": "Global search command palette open over a dimmed dark dashboard, surfacing navigation grouped into Overview, Operations and Workforce sections \u2014 keyboard-accessible quick jumps to Dashboard, Roster, Timesheets, Workers or Job Sites without reaching for the sidebar.",
+      "description": "Global search command palette open over a dimmed dark dashboard, surfacing navigation grouped into Overview, Operations and Workforce sections — keyboard-accessible quick jumps to Dashboard, Roster, Timesheets, Workers or Job Sites without reaching for the sidebar.",
       "altText": "Dark command palette with grouped navigation sections",
       "tags": [
         "search",
@@ -253,7 +253,7 @@
       "isShortlisted": false,
       "platform": "web",
       "theme": "dark",
-      "description": "Tight crop of the dark day-view roster grid with sidebar and chrome removed, focusing on the coverage ribbon, five site rows, proportional shift bars and an unfilled highlight \u2014 a detail shot of the scheduling surface itself, no navigation.",
+      "description": "Tight crop of the dark day-view roster grid with sidebar and chrome removed, focusing on the coverage ribbon, five site rows, proportional shift bars and an unfilled highlight — a detail shot of the scheduling surface itself, no navigation.",
       "altText": "Dark roster grid closeup showing shift bars and coverage",
       "tags": [
         "roster",

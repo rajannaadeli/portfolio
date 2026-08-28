@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
@@ -84,6 +84,8 @@ export interface CaseFacts {
   raw: string;
 }
 
+export type ImageTheme = "light" | "dark";
+
 export type ImageFrame = "browser" | "phone";
 export type ImageUse =
   | "hero"
@@ -128,6 +130,9 @@ export interface CaseStudy {
   accentTextVar: string;
   order: number;
   images: CaseImage[];
+  /** Dark-theme screenshots, if the case has a dark-ui manifest (RosterBay).
+   *  Used where the case is shown on a dark band. Empty otherwise. */
+  darkImages: CaseImage[];
   /** Which normalized fields came back empty — surfaced in the build report. */
   warnings: string[];
 }
@@ -338,6 +343,9 @@ interface RawImage {
   altText: string;
   tags: string[];
   suggestedUse: string;
+  // Present in the dark-ui manifest; absent in the main (light) manifest.
+  width?: number;
+  height?: number;
 }
 
 interface RawManifest {
@@ -354,22 +362,35 @@ const FRAME_MAP: Record<string, ImageFrame> = {
 const USE_MAP: Record<string, ImageUse> = {
   hero: "hero",
   "feature-highlight": "featured",
+  "before-after": "comparison",
   "detail-shot": "inline-proof",
+  "mobile-showcase": "mobile-pair",
   gallery: "gallery",
 };
 
 const dims = dimensions as Record<string, number[]>;
 const blurs = blur as Record<string, string>;
 
-function normalizeImages(slug: string, manifest: RawManifest): CaseImage[] {
+function normalizeImages(
+  slug: string,
+  manifest: RawManifest,
+  theme: ImageTheme = "light",
+): CaseImage[] {
+  // Dark screenshots are copied to public/cases/<slug>/dark/ and keyed under a
+  // "<slug>/dark/" namespace in the dimensions/blur maps.
+  const dir = theme === "dark" ? `/cases/${slug}/dark` : `/cases/${slug}`;
+  const ns = theme === "dark" ? `${slug}/dark` : slug;
+
   return manifest.images
     .map((img): CaseImage => {
-      const key = `${slug}/${img.fileNameBase}`;
-      const [width, height] = dims[key] ?? [0, 0];
+      const key = `${ns}/${img.fileNameBase}`;
+      // Dark manifest carries width/height inline; light uses the dims map.
+      const width = img.width ?? dims[key]?.[0] ?? 0;
+      const height = img.height ?? dims[key]?.[1] ?? 0;
       return {
         file: img.fileNameBase,
-        avif: `/cases/${slug}/${img.fileNameBase}.avif`,
-        webp: `/cases/${slug}/${img.fileNameBase}.webp`,
+        avif: `${dir}/${img.fileNameBase}.avif`,
+        webp: `${dir}/${img.fileNameBase}.webp`,
         width,
         height,
         rank: img.rank,
@@ -384,6 +405,14 @@ function normalizeImages(slug: string, manifest: RawManifest): CaseImage[] {
       };
     })
     .sort((a, b) => a.rank - b.rank);
+}
+
+/** Read the optional dark-theme manifest (cases/<slug>/dark-ui/case-images.json). */
+function readDarkImages(slug: string): CaseImage[] {
+  const path = join(CASES_DIR, slug, "dark-ui", "case-images.json");
+  if (!existsSync(path)) return [];
+  const manifest = JSON.parse(readFileSync(path, "utf8")) as RawManifest;
+  return normalizeImages(slug, manifest, "dark");
 }
 
 // ---------------------------------------------------------------------------
@@ -402,6 +431,7 @@ function readCase(slug: CaseSlug): CaseStudy {
     readFileSync(join(CASES_DIR, slug, "case-images.json"), "utf8"),
   ) as RawManifest;
   const images = normalizeImages(slug, manifest);
+  const darkImages = readDarkImages(slug);
 
   const warnings: string[] = [];
   if (!facts.role) warnings.push("facts.role empty");
@@ -429,6 +459,7 @@ function readCase(slug: CaseSlug): CaseStudy {
     accentTextVar: ACCENT_TEXT[accent],
     order: CASE_ORDER.indexOf(slug),
     images,
+    darkImages,
     warnings,
   };
 }
@@ -450,12 +481,19 @@ export function getCase(slug: string): CaseStudy | undefined {
   return getAllCases().find((c) => c.slug === slug);
 }
 
-export function getShortlisted(slug: string): CaseImage[] {
-  return getCase(slug)?.images.filter((i) => i.shortlisted) ?? [];
+export function getShortlisted(slug: string, theme: ImageTheme = "light"): CaseImage[] {
+  const c = getCase(slug);
+  if (!c) return [];
+  const pool = theme === "dark" && c.darkImages.length ? c.darkImages : c.images;
+  return pool.filter((i) => i.shortlisted);
 }
 
-export function getImageByUse(slug: string, use: ImageUse): CaseImage | undefined {
-  const shortlisted = getShortlisted(slug);
+export function getImageByUse(
+  slug: string,
+  use: ImageUse,
+  theme: ImageTheme = "light",
+): CaseImage | undefined {
+  const shortlisted = getShortlisted(slug, theme);
   return shortlisted.find((i) => i.bestUsedFor === use) ?? shortlisted[0];
 }
 

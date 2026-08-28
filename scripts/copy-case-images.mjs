@@ -13,17 +13,12 @@ const CASES = ['rosterbay', 'whitefleet', 'gad', 'docfort', 'planit', 'dilpos'];
 let copied = 0;
 let skipped = 0;
 
-for (const slug of CASES) {
-  const uiDir = join(root, 'cases', slug, 'ui');
-  const outDir = join(root, 'public', 'cases', slug);
-  if (!existsSync(uiDir)) {
-    console.warn(`[copy-case-images] missing ui dir for ${slug}`);
-    continue;
-  }
+function copyDir(srcDir, outDir) {
+  if (!existsSync(srcDir)) return false;
   mkdirSync(outDir, { recursive: true });
-  for (const file of readdirSync(uiDir)) {
+  for (const file of readdirSync(srcDir)) {
     if (!/\.(avif|webp)$/i.test(file)) continue;
-    const src = join(uiDir, file);
+    const src = join(srcDir, file);
     const dest = join(outDir, file);
     if (existsSync(dest) && statSync(dest).size === statSync(src).size) {
       skipped++;
@@ -32,6 +27,16 @@ for (const slug of CASES) {
     copyFileSync(src, dest);
     copied++;
   }
+  return true;
+}
+
+for (const slug of CASES) {
+  // Light theme: cases/<slug>/ui -> public/cases/<slug>/
+  if (!copyDir(join(root, 'cases', slug, 'ui'), join(root, 'public', 'cases', slug))) {
+    console.warn(`[copy-case-images] missing ui dir for ${slug}`);
+  }
+  // Dark theme (optional): cases/<slug>/dark-ui -> public/cases/<slug>/dark/
+  copyDir(join(root, 'cases', slug, 'dark-ui'), join(root, 'public', 'cases', slug, 'dark'));
 }
 
 console.log(`[copy-case-images] copied ${copied}, up-to-date ${skipped}`);

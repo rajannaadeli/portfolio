@@ -1,5 +1,11 @@
 # DECISIONS.md
 
+## RosterBay dark-theme wiring
+
+- **`dark-ui/case-images.json` kept as a separate manifest** (per instruction) — not merged into the main manifest. The content pipeline reads it in place via `readDarkImages(slug)` when `cases/<slug>/dark-ui/case-images.json` exists, using that file's own metadata (width/height inline, altText, description, suggestedUse). Only RosterBay has one today; every other case cleanly falls back to its light set.
+- **Dark images are a parallel set on `CaseStudy.darkImages`**, served from `public/cases/<slug>/dark/` (prebuild copies `dark-ui/*` there). `getShortlisted(slug, theme)` and `getImageByUse(slug, use, theme)` gained a `theme` param (default `light`).
+- **Dark UI is used wherever RosterBay sits on the dark band:** the home featured case (dark hero screenshot) and the RosterBay case page (all 7 dark shortlisted). This resolves the Phase 2 flag — the light screenshots no longer sit as bright rectangles on black. Existing AVIF/WebP binaries were reused as-is (verified, not regenerated); dark LQIP placeholders were generated into `blur.json` under the `rosterbay/dark/` namespace. `suggestedUse` map extended for the dark vocabulary (`before-after`→comparison, `mobile-showcase`→mobile-pair).
+
 ## Phase 2 — Composition, theme bands & motion
 
 - **Light band is a token scope, not a second Tailwind theme.** `.band-light` redeclares the semantic `--color-*` variables (paper `#F7F6F3`, ink `#101014`, ink-muted `#5A5A63`, white cards, hairline `#E4E2DD`). Because Phase 1 utilities compile to `var(--color-*)`, every primitive (Button, Card, Chip, MetaLabel, Prose, DeviceFrame) adapts automatically inside the scope with no per-component work.

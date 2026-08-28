@@ -39,7 +39,10 @@ export default async function CasePage({ params }: CaseParams) {
   const c = getCase(slug);
   if (!c) notFound();
 
-  const shortlisted = getShortlisted(slug);
+  // Case pages render on the dark band, so a case with dark-theme screenshots
+  // (RosterBay) shows its dark UI here; everything else uses its light set.
+  const theme = c.darkImages.length ? "dark" : "light";
+  const shortlisted = getShortlisted(slug, theme);
   const heroImage = shortlisted[0];
   const gallery = shortlisted.slice(1);
   const { prev, next } = getCaseNeighbors(slug);

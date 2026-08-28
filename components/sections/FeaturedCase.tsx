@@ -15,7 +15,9 @@ import { SITE } from "@/lib/site";
 
 export function FeaturedCase() {
   const c = getCase("rosterbay");
-  const hero = getImageByUse("rosterbay", "hero");
+  // Featured sits on the dark band — use RosterBay's dark-theme screenshot so
+  // the UI reads native to the band (design/Phase 2 §1).
+  const hero = getImageByUse("rosterbay", "hero", "dark");
   if (!c) return null;
 
   return (
