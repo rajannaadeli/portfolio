@@ -1,6 +1,6 @@
 # WhiteFleet — a workforce platform where the worker owns the data
 
-A multi-tenant system for Australian labour-hire companies. Three apps, one API, and a data wallet that belongs to the worker instead of the company.
+A workforce platform for Australian labour-hire companies. Three apps and one API, built around a data wallet the worker owns instead of the company.
 
 `Sole developer · Jan–Jun 2026 · Expo + React 19 + Express 5 + Prisma/Postgres + Supabase Auth · Early client pilot · [Repo](https://github.com/rajannaadeli/whitefleet)`
 

@@ -1,6 +1,6 @@
 # RosterBay
 
-A live workforce-operations platform — shift rostering, GPS clock-in, and certification compliance — built for staffing and facility-services companies and running as a fully explorable public demo.
+A live workforce platform for staffing and facility-services companies. Rostering, GPS clock-in, and certification tracking, running as a public demo you can open and click.
 
 **Role:** Solo — data model, design system, web + mobile, ops · **Timeline:** ~6 weeks of evenings and weekends, mid-2026 · **Stack:** React 19 · Postgres/Supabase · Expo SDK 56 · TanStack Query · Tailwind v4 · **Status:** Live public demo, no real users, resets nightly · **Links:** [rosterbay.com](https://rosterbay.com) · [worker.rosterbay.com](https://worker.rosterbay.com)
 

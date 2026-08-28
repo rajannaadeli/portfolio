@@ -86,7 +86,9 @@ export function MetaLabel({ children, as: Tag = "span", className, accent = fals
     <Tag
       className={cn(
         "font-mono text-meta uppercase",
-        accent ? "text-[color:var(--accent)]" : "text-dim",
+        // --accent-text is the AA-safe accent for text: the vivid accent on the
+        // dark band, a darkened variant on paper.
+        accent ? "text-(--accent-text)" : "text-dim",
         className,
       )}
     >

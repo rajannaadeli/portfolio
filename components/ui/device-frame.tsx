@@ -1,32 +1,31 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import type { CaseImage } from "@/lib/content";
+import { ParallaxLayer } from "@/components/motion/ParallaxLayer";
 
 /*
-  DeviceFrame — the single reusable screenshot component (design §5.4).
+  DeviceFrame — the single reusable screenshot component (design §5.4, Phase 2 §1).
 
-  Renders a pre-encoded AVIF+WebP screenshot inside minimal browser chrome
-  (three dots + URL) or phone chrome. Uses a native <picture> element:
-  AVIF first, WebP fallback, explicit width/height (zero CLS), native lazy
-  loading, and a LQIP blur-up background. Ships zero JS. See DECISIONS.md for
-  why this is preferred over next/image for these already-optimal assets.
+  Pre-encoded AVIF+WebP inside minimal browser or phone chrome. Generous inner
+  bezel padding so a raw screenshot edge never touches the band canvas. Native
+  <picture>: AVIF first, WebP fallback, explicit width/height (zero CLS), lazy by
+  default, LQIP blur-up. Band-aware treatment: accent halo on dark, soft neutral
+  shadow on light. NEVER a brightness/contrast filter on the image.
 */
 
 interface DeviceFrameProps {
   image: CaseImage;
-  /** Chrome style. Defaults to the frame recorded in the manifest. */
   frame?: "browser" | "phone";
-  /** URL shown in browser chrome. Falls back to image.url. */
   url?: string;
-  /** ≤6° subtle rotation with perspective (design §5.4). */
   angle?: number;
-  /** Allow the media to bleed slightly wider than its column. */
   bleed?: boolean;
-  /** Hero image only — eager + high priority. Everything else lazy. */
   priority?: boolean;
   className?: string;
-  /** Explicit responsive sizing hint for the image box. */
   sizes?: string;
+  /** Accent-tinted radial halo behind the frame (dark band). */
+  halo?: boolean;
+  /** ≤8% scroll parallax on the image inside the frame. */
+  parallax?: boolean;
 }
 
 export function DeviceFrame({
@@ -38,6 +37,8 @@ export function DeviceFrame({
   priority = false,
   className,
   sizes,
+  halo = false,
+  parallax = false,
 }: DeviceFrameProps) {
   const chrome = frame ?? image.frame;
   const shownUrl = url ?? image.url;
@@ -46,9 +47,27 @@ export function DeviceFrame({
     ? { transform: `perspective(1400px) rotateY(${angle}deg)`, transformOrigin: "center" }
     : undefined;
 
+  const picture = (
+    <picture>
+      <source srcSet={image.avif} type="image/avif" sizes={sizes} />
+      <source srcSet={image.webp} type="image/webp" sizes={sizes} />
+      <img
+        src={image.webp}
+        alt={image.alt}
+        width={image.width || undefined}
+        height={image.height || undefined}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={priority ? "high" : "auto"}
+        sizes={sizes}
+        className="block h-full w-full object-cover"
+      />
+    </picture>
+  );
+
   const mediaBox = (
     <div
-      className="relative overflow-hidden bg-surface-2"
+      className="relative overflow-hidden rounded-[10px] bg-surface-2"
       style={{
         aspectRatio: image.width && image.height ? `${image.width} / ${image.height}` : undefined,
         backgroundImage: image.blurDataURL ? `url(${image.blurDataURL})` : undefined,
@@ -56,55 +75,49 @@ export function DeviceFrame({
         backgroundPosition: "center",
       }}
     >
-      <picture>
-        <source srcSet={image.avif} type="image/avif" sizes={sizes} />
-        <source srcSet={image.webp} type="image/webp" sizes={sizes} />
-        <img
-          src={image.webp}
-          alt={image.alt}
-          width={image.width || undefined}
-          height={image.height || undefined}
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
-          fetchPriority={priority ? "high" : "auto"}
-          sizes={sizes}
-          className="block h-full w-full object-cover"
-        />
-      </picture>
+      {parallax ? <ParallaxLayer>{picture}</ParallaxLayer> : picture}
     </div>
   );
 
   if (chrome === "phone") {
     return (
-      <div
-        className={cn("mx-auto w-full", bleed && "max-w-none", className)}
-        style={{ ...wrapperStyle, maxWidth: bleed ? undefined : "320px" }}
-      >
-        <div className="rounded-[2.5rem] border border-border bg-surface-1 p-2.5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)]">
-          <div className="overflow-hidden rounded-[2rem]">{mediaBox}</div>
+      <Halo enabled={halo}>
+        <div
+          className={cn("mx-auto w-full", bleed && "max-w-none", className)}
+          style={{ ...wrapperStyle, maxWidth: bleed ? undefined : "320px" }}
+        >
+          <div className="device-shadow rounded-[2.5rem] border border-border bg-surface-1 p-2.5">
+            <div className="overflow-hidden rounded-[2rem]">{mediaBox}</div>
+          </div>
         </div>
-      </div>
+      </Halo>
     );
   }
 
-  // browser chrome
   return (
-    <div className={cn("w-full", className)} style={wrapperStyle}>
-      <div className="overflow-hidden rounded-media border border-border bg-surface-1 shadow-[0_30px_80px_-50px_rgba(0,0,0,0.9)]">
-        <div className="flex items-center gap-3 border-b border-border bg-surface-1 px-4 py-3">
-          <span className="flex gap-2" aria-hidden>
-            <span className="h-3 w-3 rounded-pill bg-surface-3" />
-            <span className="h-3 w-3 rounded-pill bg-surface-3" />
-            <span className="h-3 w-3 rounded-pill bg-surface-3" />
-          </span>
-          {shownUrl ? (
-            <span className="truncate rounded-pill bg-black/40 px-3 py-1 font-mono text-[11px] text-dim">
-              {shownUrl}
+    <Halo enabled={halo}>
+      <div className={cn("w-full", className)} style={wrapperStyle}>
+        <div className="device-shadow overflow-hidden rounded-media border border-border bg-surface-1">
+          <div className="flex items-center gap-3 border-b border-border px-4 py-3">
+            <span className="flex gap-2" aria-hidden>
+              <span className="h-3 w-3 rounded-pill bg-surface-3" />
+              <span className="h-3 w-3 rounded-pill bg-surface-3" />
+              <span className="h-3 w-3 rounded-pill bg-surface-3" />
             </span>
-          ) : null}
+            {shownUrl ? (
+              <span className="truncate rounded-pill bg-surface-3 px-3 py-1 font-mono text-[11px] text-dim">
+                {shownUrl}
+              </span>
+            ) : null}
+          </div>
+          {/* bezel padding — screenshot never touches the frame edge */}
+          <div className="bg-surface-2 p-2 sm:p-3">{mediaBox}</div>
         </div>
-        {mediaBox}
       </div>
-    </div>
+    </Halo>
   );
+}
+
+function Halo({ enabled, children }: { enabled: boolean; children: ReactNode }) {
+  return enabled ? <div className="frame-halo">{children}</div> : <>{children}</>;
 }

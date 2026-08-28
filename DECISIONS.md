@@ -1,3 +1,15 @@
+# DECISIONS.md
+
+## Phase 2 — Composition, theme bands & motion
+
+- **Light band is a token scope, not a second Tailwind theme.** `.band-light` redeclares the semantic `--color-*` variables (paper `#F7F6F3`, ink `#101014`, ink-muted `#5A5A63`, white cards, hairline `#E4E2DD`). Because Phase 1 utilities compile to `var(--color-*)`, every primitive (Button, Card, Chip, MetaLabel, Prose, DeviceFrame) adapts automatically inside the scope with no per-component work.
+- **Accents fail AA as text on paper, so `--accent-text` was introduced.** On `#F7F6F3` the vivid accents are all < 4.5:1 as text (orange 3.11, violet 3.64, pink 3.09, lime 1.06). New semantic var `--accent-text` = the vivid accent on the dark band, and an AA-safe darkened variant on paper: orange `#C23A15`, violet `#5B3FD6`, pink `#C71E63`, lime→olive `#5F6B00` (all ≥4.9:1 on paper). `MetaLabel accent` and all light-band eyebrows/links use `--accent-text`; the vivid accent stays for decoration (dots, halos, borders). Light-band dim is `#6B6B73` (4.9:1). This keeps the design's "accent on eyebrow and link" intent while passing AA. Vivid accents are unchanged as decoration.
+- **Case ledes rewritten in the source markdown** (one plain voice, ≤1 em-dash), which is the single source, so it also updates each case page's subtitle and its `<meta description>`. No new claims introduced.
+- **RosterBay imagery is still light-UI.** The `[RAJANNA ACTION]` dark-theme recapture has not landed, so the featured case uses the current light screenshot inside the dark band (violet halo + bezel mediate it, no brightness filter). Flagged in the report; swap when dark captures arrive.
+- **Contact endpoint calls the Resend REST API via `fetch`, no SDK dependency.** Honeypot (`company`) + validation. With `RESEND_API_KEY` unset it returns an honest 503 ("email isn't configured yet, email me directly") rather than pretending to send. Needs env: `RESEND_API_KEY`, optional `CONTACT_TO` / `CONTACT_FROM` (verified sender).
+- **Reveals use `gsap.from` (content visible at rest).** Before GSAP's lazy chunk loads, and under reduced-motion / no-JS, everything is in final visible state; the hidden "from" state is applied only once GSAP runs, then animates back. Accepted tradeoff: a brief first-load settle in exchange for content that never depends on JS to be visible (protects LCP, reduced-motion, and no-JS). GSAP library stays code-split (68KB lazy chunk, absent from initial JS).
+- **Display font swap left in place.** `app/fonts.ts` now points the display face at a user-supplied `public/fonts/out-sans.ttf`; kept per instruction (build passes, same `--font-general-sans` variable downstream).
+
 # DECISIONS.md — Phase 1
 
 Ambiguity resolutions, logged as required by the build prompt. Newest at top.

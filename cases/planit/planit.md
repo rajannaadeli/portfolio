@@ -1,6 +1,6 @@
 # planIt — a timetable generator for colleges
 
-A web app that builds a college's weekly class schedule from subject-teacher bindings, so nobody has to solve the puzzle by hand.
+A web app that builds a college's weekly class timetable from subject-teacher bindings, so nobody has to solve the puzzle by hand.
 
 `Solo developer (full stack + deploy) · 2025, ~3 months · React + Vite · Node/Express · MongoDB · In production` · [Repo](https://github.com/rajannaadeli/timetable-generator)
 

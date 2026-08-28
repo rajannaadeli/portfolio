@@ -1,6 +1,6 @@
 # DocFort — a drawing vault for LHP Motors
 
-A revision-controlled store for engineering component drawings, built so one motor manufacturer stops shipping outdated PDFs to the shop floor.
+A revision-controlled vault for engineering drawings, built so one motor manufacturer stops sending outdated PDFs to the shop floor.
 
 **Role:** Sole developer (backend, frontend, desktop, deployment) · **Timeline:** 2024, ~6 months · **Stack:** Node/Express · MongoDB · Socket.IO + Redis/Bull · React 19 · Electron · **Status:** In production at LHP Motors, Solapur · **Links:** [Repo](https://github.com/rajannaadeli/component-store)
 

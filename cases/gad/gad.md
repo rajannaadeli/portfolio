@@ -1,6 +1,6 @@
 # GAD Builder
 
-A drawing-customization tool built for LHP Motors in Solapur, so their engineers could assemble a general arrangement drawing by picking components instead of redrawing one by one.
+A drawing tool for LHP Motors in Solapur. Their engineers assemble a general arrangement drawing by picking components, instead of redrawing one by one.
 
 `Role: Sole developer · Timeline: 2023–2024 (~1 year) · Stack: React 19, Express, MongoDB, SVGO, Electron · Status: In production · [Repo](https://github.com/rajannaadeli/GAD-Builder-Up)`
 

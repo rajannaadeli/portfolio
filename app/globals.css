@@ -79,8 +79,85 @@
 */
 :root {
   --accent: var(--color-accent-violet);
+  /* Accent used AS TEXT — equals the vivid accent on dark; darkened per-case
+     on paper (set in .band-light). */
+  --accent-text: var(--accent);
   --container-max: 1320px;
   --measure: 62ch;
+}
+
+/*
+  LIGHT BAND — a token scope, not a second Tailwind theme (Phase 2 §1). It
+  re-declares the semantic `--color-*` variables so every Phase 1 primitive
+  (Button, Card, Chip, MetaLabel, Prose, DeviceFrame) adapts automatically.
+  Paper canvas, ink text, white cards, hairline borders. Accents are unchanged
+  as decoration; `--accent-text` carries an AA-safe darkened accent for text.
+*/
+.band-light {
+  --color-black: #f7f6f3; /* paper canvas */
+  --color-text: #101014; /* ink */
+  --color-muted: #5a5a63; /* ink-muted (6.3:1 on paper) */
+  --color-dim: #6b6b73; /* 4.9:1 on paper */
+  --color-surface-1: #ffffff; /* cards */
+  --color-surface-2: #ffffff; /* frame bezel */
+  --color-surface-3: #efede8; /* chrome dots, inputs */
+  --color-border: #e4e2dd; /* hairline */
+  --color-border-hover: #cfccc5;
+  /* Darkened per-case accent-as-text (AA on paper); overridden per row. */
+  --accent-text: #5b3fd6;
+
+  background-color: var(--color-black);
+  color: var(--color-muted);
+}
+
+/* Band boundary: hard edge carrying a 1px hairline (Phase 2 §1). */
+.band-edge {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Screenshot halo (dark band) — soft accent-tinted radial behind a frame. */
+.frame-halo {
+  position: relative;
+}
+.frame-halo::before {
+  content: "";
+  position: absolute;
+  inset: -8% -6% -6%;
+  z-index: -1;
+  background: radial-gradient(
+    60% 60% at 50% 40%,
+    color-mix(in srgb, var(--accent) 12%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Marquee — continuous horizontal scroll, pauses on hover (design §4). Under
+   reduced-motion the global rule below collapses the animation to static. */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: inline-flex;
+  min-width: max-content;
+  animation: marquee-x 32s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Device-frame shadow — deep and dark on the dark band, soft neutral on paper
+   (Phase 2 §1). Never a brightness/contrast filter on the screenshot itself. */
+.device-shadow {
+  box-shadow: 0 30px 80px -50px rgba(0, 0, 0, 0.9);
+}
+.band-light .device-shadow {
+  box-shadow: 0 24px 60px rgba(16, 16, 20, 0.1);
 }
 
 /* Global base */

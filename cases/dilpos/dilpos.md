@@ -1,6 +1,6 @@
 # DilPos — a multi-tenant POS for Australian corner shops
 
-A point-of-sale and inventory system built for small AU retailers — newsagents first — where the till has to keep selling even when the internet drops.
+A point-of-sale and inventory system for small Australian retailers, newsagents first, where the till keeps selling even when the internet drops.
 
 `Role: Full-stack (1 of 3) · Timeline: 2025, ~4 months · Stack: NestJS · Prisma/PostgreSQL · React 19 · Tauri · Dexie · Status: In production with early retailers · [Repo](https://github.com/rajannaadeli/pos-system)`
 

@@ -56,6 +56,15 @@ const ACCENT_VAR: Record<AccentName, string> = {
   lime: "var(--color-accent-lime)",
 };
 
+// Darkened accent-as-text values, AA (≥4.5:1) on the paper canvas (#F7F6F3).
+// Used inside the light band where the vivid accents fail contrast as text.
+const ACCENT_TEXT: Record<AccentName, string> = {
+  violet: "#5b3fd6",
+  orange: "#c23a15",
+  pink: "#c71e63",
+  lime: "#5f6b00",
+};
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -115,6 +124,8 @@ export interface CaseStudy {
   bodyHtml: string;
   accent: AccentName;
   accentVar: string;
+  /** AA-safe darkened accent for use as text inside the light band. */
+  accentTextVar: string;
   order: number;
   images: CaseImage[];
   /** Which normalized fields came back empty — surfaced in the build report. */
@@ -415,6 +426,7 @@ function readCase(slug: CaseSlug): CaseStudy {
     bodyHtml: marked.parse(bodyMarkdown, { async: false }) as string,
     accent,
     accentVar: ACCENT_VAR[accent],
+    accentTextVar: ACCENT_TEXT[accent],
     order: CASE_ORDER.indexOf(slug),
     images,
     warnings,
