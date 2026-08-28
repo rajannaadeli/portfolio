@@ -12,10 +12,23 @@
       "rank": 1,
       "isShortlisted": true,
       "platform": "desktop-terminal",
-      "description": "The till mid-sale on Register 1 — a Confectionery product grid of real Australian lines with SKUs and prices on the left, three items building in the cart on the right with quantity steppers, and a running GST-inclusive subtotal underneath.",
+      "description": "The till mid-sale on Register 1 \u2014 a Confectionery product grid of real Australian lines with SKUs and prices on the left, three items building in the cart on the right with quantity steppers, and a running GST-inclusive subtotal underneath.",
       "altText": "POS till screen with product grid and three-item cart",
-      "tags": ["point-of-sale", "till", "cart", "product-grid", "terminal"],
-      "suggestedUse": "hero"
+      "tags": [
+        "point-of-sale",
+        "till",
+        "cart",
+        "product-grid",
+        "terminal"
+      ],
+      "suggestedUse": "hero",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 56274,
+        "webp": 92618
+      }
     },
     {
       "fileNameBase": "02-cash-tender-checkout",
@@ -26,10 +39,23 @@
       "rank": 2,
       "isShortlisted": true,
       "platform": "desktop-terminal",
-      "description": "The payment screen tendering a $12.30 sale — Cash, Card, Split and Other methods across the top, an amount keypad, and Australian note buttons from $5 to $100 plus Exact, with an open-till prompt once the cash is counted.",
+      "description": "The payment screen tendering a $12.30 sale \u2014 Cash, Card, Split and Other methods across the top, an amount keypad, and Australian note buttons from $5 to $100 plus Exact, with an open-till prompt once the cash is counted.",
       "altText": "Payment screen with cash denomination buttons and keypad",
-      "tags": ["payment", "cash-tender", "checkout", "denominations", "terminal"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "payment",
+        "cash-tender",
+        "checkout",
+        "denominations",
+        "terminal"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 57567,
+        "webp": 100518
+      }
     },
     {
       "fileNameBase": "03-multi-tenant-store-dashboard",
@@ -40,10 +66,23 @@
       "rank": 3,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The store admin home for the Railway News Agency tenant — a tenant switcher up top, sales stat cards, a 'Pair till — required' banner and a POS entry button, the back office each newsagent manages on the shared platform.",
+      "description": "The store admin home for the Railway News Agency tenant \u2014 a tenant switcher up top, sales stat cards, a 'Pair till \u2014 required' banner and a POS entry button, the back office each newsagent manages on the shared platform.",
       "altText": "Multi-tenant store admin dashboard with tenant switcher",
-      "tags": ["multi-tenant", "admin-dashboard", "back-office", "tenant-switcher", "web"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "multi-tenant",
+        "admin-dashboard",
+        "back-office",
+        "tenant-switcher",
+        "web"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 73681,
+        "webp": 114364
+      }
     },
     {
       "fileNameBase": "04-barcode-catalog-product-add",
@@ -54,10 +93,23 @@
       "rank": 4,
       "isShortlisted": true,
       "platform": "web",
-      "description": "Step one of the add-product wizard, searching 'Banana' and matching against Open Food Facts and a Coles catalog by barcode — how a shop populates its catalogue from shared product data instead of typing every line by hand.",
+      "description": "Step one of the add-product wizard, searching 'Banana' and matching against Open Food Facts and a Coles catalog by barcode \u2014 how a shop populates its catalogue from shared product data instead of typing every line by hand.",
       "altText": "Add-product wizard matching a barcode against catalog data",
-      "tags": ["product-catalog", "barcode", "open-food-facts", "product-add", "web"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "product-catalog",
+        "barcode",
+        "open-food-facts",
+        "product-add",
+        "web"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 62874,
+        "webp": 128784
+      }
     },
     {
       "fileNameBase": "05-multi-store-australian-onboarding",
@@ -68,10 +120,23 @@
       "rank": 5,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The add-store wizard's owner-details step, capturing company name, ABN, owner contact, Sydney timezone, AUD currency and Australia as the locked business country — the multi-store setup that stands up a new location under one organisation.",
+      "description": "The add-store wizard's owner-details step, capturing company name, ABN, owner contact, Sydney timezone, AUD currency and Australia as the locked business country \u2014 the multi-store setup that stands up a new location under one organisation.",
       "altText": "Add-store wizard with ABN, AUD and Australian timezone fields",
-      "tags": ["multi-store", "onboarding", "abn", "australian", "web"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "multi-store",
+        "onboarding",
+        "abn",
+        "australian",
+        "web"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 70874,
+        "webp": 112074
+      }
     },
     {
       "fileNameBase": "06-terminal-pairing-code",
@@ -82,10 +147,23 @@
       "rank": 6,
       "isShortlisted": true,
       "platform": "desktop-terminal",
-      "description": "The desktop terminal's pairing screen, where a till links to a store by entering an eight-character Register ID and an activation code that expires after fifteen minutes — proof the terminal is a separate device, not a browser tab.",
+      "description": "The desktop terminal's pairing screen, where a till links to a store by entering an eight-character Register ID and an activation code that expires after fifteen minutes \u2014 proof the terminal is a separate device, not a browser tab.",
       "altText": "POS terminal pairing screen with register ID and code fields",
-      "tags": ["terminal", "device-pairing", "activation-code", "tauri", "desktop"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "terminal",
+        "device-pairing",
+        "activation-code",
+        "tauri",
+        "desktop"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 55480,
+        "webp": 101946
+      }
     },
     {
       "fileNameBase": "07-sales-reports-gst-summary",
@@ -96,10 +174,23 @@
       "rank": 7,
       "isShortlisted": false,
       "platform": "web",
-      "description": "The reports section's sales dashboard, listing weekly earnings, payment breakdown, register sessions and a sidebar of documents including a GST/BAS summary — the reporting layer a newsagent owner uses to reconcile takings and prepare tax.",
+      "description": "The reports section's sales dashboard, listing weekly earnings, payment breakdown, register sessions and a sidebar of documents including a GST/BAS summary \u2014 the reporting layer a newsagent owner uses to reconcile takings and prepare tax.",
       "altText": "Sales reports dashboard with GST and BAS summary links",
-      "tags": ["reports", "sales-dashboard", "gst-bas", "reconciliation", "web"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "reports",
+        "sales-dashboard",
+        "gst-bas",
+        "reconciliation",
+        "web"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 83690,
+        "webp": 129004
+      }
     },
     {
       "fileNameBase": "08-roles-permissions-matrix",
@@ -110,10 +201,23 @@
       "rank": 8,
       "isShortlisted": false,
       "platform": "web",
-      "description": "The roles and permissions screen with four system roles — cashier, inventory staff, manager and owner — each showing its permission scopes and user count, the access model deciding what staff can do at the till and in admin.",
+      "description": "The roles and permissions screen with four system roles \u2014 cashier, inventory staff, manager and owner \u2014 each showing its permission scopes and user count, the access model deciding what staff can do at the till and in admin.",
       "altText": "Roles and permissions table with four system roles",
-      "tags": ["rbac", "roles", "permissions", "access-control", "web"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "rbac",
+        "roles",
+        "permissions",
+        "access-control",
+        "web"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 62943,
+        "webp": 133896
+      }
     },
     {
       "fileNameBase": "09-cart-line-item-edit",
@@ -124,10 +228,23 @@
       "rank": 9,
       "isShortlisted": false,
       "platform": "desktop-terminal",
-      "description": "A line-item editor over the till for a Flat White, tabbed across Quantity, Price, Discount and Notes with a quick-quantity keypad and live line total — the per-item overrides a cashier applies without leaving the sale.",
+      "description": "A line-item editor over the till for a Flat White, tabbed across Quantity, Price, Discount and Notes with a quick-quantity keypad and live line total \u2014 the per-item overrides a cashier applies without leaving the sale.",
       "altText": "Line-item edit modal with quantity, price and discount tabs",
-      "tags": ["cart", "line-item", "discount", "quantity", "terminal"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "cart",
+        "line-item",
+        "discount",
+        "quantity",
+        "terminal"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 35179,
+        "webp": 61764
+      }
     },
     {
       "fileNameBase": "10-product-quick-setup-stock",
@@ -138,10 +255,23 @@
       "rank": 10,
       "isShortlisted": false,
       "platform": "web",
-      "description": "A quick product-setup slide-over showing sell price, supplier cost and margin for Banana chips, with an out-of-stock prompt and a stock-adjustment control that logs a reason — the inventory detail behind a single catalogue line.",
+      "description": "A quick product-setup slide-over showing sell price, supplier cost and margin for Banana chips, with an out-of-stock prompt and a stock-adjustment control that logs a reason \u2014 the inventory detail behind a single catalogue line.",
       "altText": "Product quick-setup panel with pricing and stock adjustment",
-      "tags": ["inventory", "product-detail", "pricing", "stock-adjust", "web"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "inventory",
+        "product-detail",
+        "pricing",
+        "stock-adjust",
+        "web"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 68704,
+        "webp": 107806
+      }
     },
     {
       "fileNameBase": "11-terminal-register-sync",
@@ -154,8 +284,21 @@
       "platform": "desktop-terminal",
       "description": "The terminal's post-pairing sync step for Register 1, confirming the register is licensed, the catalog is synced and offering shared or custom home layouts before a cashier signs in and enters the opening cash float.",
       "altText": "Terminal sync screen confirming register and catalog status",
-      "tags": ["terminal", "register-sync", "catalog-sync", "cash-float", "desktop"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "terminal",
+        "register-sync",
+        "catalog-sync",
+        "cash-float",
+        "desktop"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 50139,
+        "webp": 89934
+      }
     },
     {
       "fileNameBase": "12-employee-user-management",
@@ -166,10 +309,23 @@
       "rank": 12,
       "isShortlisted": false,
       "platform": "web",
-      "description": "The HRM user list mapping each staff member to a role — cashiers and the owner for this tenant — the roster of people the roles and permissions model governs, kept per store within the shared platform.",
+      "description": "The HRM user list mapping each staff member to a role \u2014 cashiers and the owner for this tenant \u2014 the roster of people the roles and permissions model governs, kept per store within the shared platform.",
       "altText": "Employee user management table with assigned roles",
-      "tags": ["hrm", "users", "staff", "roles", "web"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "hrm",
+        "users",
+        "staff",
+        "roles",
+        "web"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 56146,
+        "webp": 95536
+      }
     },
     {
       "fileNameBase": "13-analytics-overview-dashboard",
@@ -180,10 +336,23 @@
       "rank": 13,
       "isShortlisted": false,
       "platform": "web",
-      "description": "An analytics variant of the admin home with top-selling and low-stock panels, recent sales and an order-statistics heatmap — a denser overview that largely repeats the primary store dashboard's ground rather than adding a new surface.",
+      "description": "An analytics variant of the admin home with top-selling and low-stock panels, recent sales and an order-statistics heatmap \u2014 a denser overview that largely repeats the primary store dashboard's ground rather than adding a new surface.",
       "altText": "Analytics dashboard with top-selling and low-stock panels",
-      "tags": ["analytics", "dashboard", "heatmap", "overview", "web"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "analytics",
+        "dashboard",
+        "heatmap",
+        "overview",
+        "web"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 59120,
+        "webp": 91504
+      }
     },
     {
       "fileNameBase": "14-store-dashboard-login",
@@ -194,10 +363,22 @@
       "rank": 14,
       "isShortlisted": false,
       "platform": "web",
-      "description": "The store dashboard sign-in screen on a dark backdrop with the DilPos mark, email and password fields and a create-account link — the routine authentication entry point, useful for completeness but carrying little product-specific weight.",
+      "description": "The store dashboard sign-in screen on a dark backdrop with the DilPos mark, email and password fields and a create-account link \u2014 the routine authentication entry point, useful for completeness but carrying little product-specific weight.",
       "altText": "DilPos dark-themed store dashboard login screen",
-      "tags": ["login", "authentication", "sign-in", "web"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "login",
+        "authentication",
+        "sign-in",
+        "web"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2688,
+      "height": 1538,
+      "aspectRatio": "2688:1538",
+      "fileSizeBytes": {
+        "avif": 21924,
+        "webp": 39786
+      }
     }
   ]
 }

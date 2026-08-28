@@ -14,8 +14,21 @@
       "platform": "web",
       "description": "Upload Drawing Revision modal for MBH-002 showing the revision as a structured domain object: Revision Type (Minor), Reason for Change (Standardization from a fixed vocabulary), and Disposal Action fields for pipeline and finished goods. Drawing Info and Preview panels alongside.",
       "altText": "Upload revision modal with revision type, reason, and disposal action fields",
-      "tags": ["revision-model", "domain-object", "structured-form", "controlled-vocabulary", "drawing-workflow"],
-      "suggestedUse": "hero"
+      "tags": [
+        "revision-model",
+        "domain-object",
+        "structured-form",
+        "controlled-vocabulary",
+        "drawing-workflow"
+      ],
+      "suggestedUse": "hero",
+      "width": 2921,
+      "height": 1523,
+      "aspectRatio": "2921:1523",
+      "fileSizeBytes": {
+        "avif": 51017,
+        "webp": 92996
+      }
     },
     {
       "fileNameBase": "02-drawing-detail-revision-history",
@@ -28,8 +41,21 @@
       "platform": "web",
       "description": "Drawing detail page for MBH-002 showing Drawing Information (issue, revision, total revisions) and Revision History with Rev 00 tagged as minor and Standardization. View PDF, Details, and Download actions per revision. Metadata and Notify To sidebar on the right.",
       "altText": "Drawing detail page with revision history showing type and reason tags",
-      "tags": ["revision-history", "drawing-details", "structured-record", "audit-trail", "metadata"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "revision-history",
+        "drawing-details",
+        "structured-record",
+        "audit-trail",
+        "metadata"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1545,
+      "aspectRatio": "2688:1545",
+      "fileSizeBytes": {
+        "avif": 51508,
+        "webp": 77910
+      }
     },
     {
       "fileNameBase": "03-real-time-drawing-created-toast",
@@ -40,10 +66,23 @@
       "rank": 3,
       "isShortlisted": true,
       "platform": "web",
-      "description": "Drawings list page with a green in-app toast notification in the top-right corner: 'New Drawing Created — A new drawing MBH-002 has been created with initial revision.' with a View button. Notification bell shows a live unread badge.",
+      "description": "Drawings list page with a green in-app toast notification in the top-right corner: 'New Drawing Created \u2014 A new drawing MBH-002 has been created with initial revision.' with a View button. Notification bell shows a live unread badge.",
       "altText": "Green toast notification announcing new drawing created in real time",
-      "tags": ["real-time-notification", "toast", "in-app", "socket-io", "drawing-event"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "real-time-notification",
+        "toast",
+        "in-app",
+        "socket-io",
+        "drawing-event"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 45340,
+        "webp": 73006
+      }
     },
     {
       "fileNameBase": "04-notification-inbox-action-required",
@@ -56,8 +95,21 @@
       "platform": "web",
       "description": "Notification dropdown panel over the Drawings list showing two drawing-created events: MBH-002 marked unread with 'just now' timestamp and MBH-001 from 13 hours ago. Both carry Action Required and medium priority labels with a View all link.",
       "altText": "Notification inbox dropdown showing two drawing events with priority labels",
-      "tags": ["notification-inbox", "action-required", "priority", "real-time", "event-history"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "notification-inbox",
+        "action-required",
+        "priority",
+        "real-time",
+        "event-history"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 50672,
+        "webp": 79190
+      }
     },
     {
       "fileNameBase": "05-home-dashboard-quick-access",
@@ -70,8 +122,21 @@
       "platform": "web",
       "description": "Home screen for a Department Head user showing Quick Access cards for Drawings, Technical Data Sheets, and Performance Curves. Recent Updates lists drawing MBH-001 with its author and revision. Department Head Tools section links to the DH Dashboard.",
       "altText": "Home dashboard with quick access cards and recent drawing updates",
-      "tags": ["dashboard", "home", "quick-access", "role-based", "recent-updates"],
-      "suggestedUse": "hero"
+      "tags": [
+        "dashboard",
+        "home",
+        "quick-access",
+        "role-based",
+        "recent-updates"
+      ],
+      "suggestedUse": "hero",
+      "width": 2924,
+      "height": 1868,
+      "aspectRatio": "2924:1868",
+      "fileSizeBytes": {
+        "avif": 44407,
+        "webp": 86992
+      }
     },
     {
       "fileNameBase": "06-create-drawing-form-with-preview",
@@ -84,8 +149,21 @@
       "platform": "web",
       "description": "Create Drawing modal in dark mode showing the Drawing Information form with Code MBH-002, Issue 01, Revision 00, and description. A live Preview panel on the right reflects all inputs alongside a Notify Users field and file size. Next Steps guide the three-stage workflow.",
       "altText": "Create drawing modal with live preview panel and next steps guide",
-      "tags": ["create-workflow", "form", "live-preview", "notification-setup", "dark-mode"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "create-workflow",
+        "form",
+        "live-preview",
+        "notification-setup",
+        "dark-mode"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 50537,
+        "webp": 78732
+      }
     },
     {
       "fileNameBase": "07-admin-dashboard-user-approval-gate",
@@ -98,8 +176,21 @@
       "platform": "web",
       "description": "Admin Dashboard showing user management: stat cards for Total Users, Pending Approval, Approved Users, and Admins. All Users tab lists Rajesh Adeli with Designer role, Design department, Department Head designation, and Approved status badge.",
       "altText": "Admin dashboard showing user approval stats and approved user list",
-      "tags": ["admin", "user-management", "approval-gate", "rbac", "status-badge"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "admin",
+        "user-management",
+        "approval-gate",
+        "rbac",
+        "status-badge"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 3248,
+      "height": 1460,
+      "aspectRatio": "3248:1460",
+      "fileSizeBytes": {
+        "avif": 39375,
+        "webp": 75374
+      }
     },
     {
       "fileNameBase": "08-drawings-library-column-filters",
@@ -112,8 +203,21 @@
       "platform": "web",
       "description": "Drawings list with active column filters applied: code prefix Mbh, issue 01, date, creator, and updater. Shows 2 drawings (MBH-001, MBH-002) with Code, Description, Issue, Latest Rev, Created, Created By, and Updated By columns. Add Drawing button top right.",
       "altText": "Drawings library table with active column filters showing two results",
-      "tags": ["drawings-list", "filter", "table", "search", "library"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "drawings-list",
+        "filter",
+        "table",
+        "search",
+        "library"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 40642,
+        "webp": 65336
+      }
     },
     {
       "fileNameBase": "09-create-drawing-file-upload-complete",
@@ -126,8 +230,20 @@
       "platform": "web",
       "description": "Lower half of the Create Drawing modal showing a successful file upload state for MBH-002_01_00.pdf and the Notification Settings section with Rajesh Adeli selected. A note confirms selected users will receive real-time notifications. Create Drawing CTA is visible.",
       "altText": "Create drawing modal lower section with file uploaded and notification user selected",
-      "tags": ["file-upload", "notification-settings", "create-workflow", "success-state"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "file-upload",
+        "notification-settings",
+        "create-workflow",
+        "success-state"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 47931,
+        "webp": 74654
+      }
     },
     {
       "fileNameBase": "10-global-search-command-palette",
@@ -140,8 +256,21 @@
       "platform": "web",
       "description": "Global search command palette overlaid on the dark Drawings page. Query 'Dr' surfaces four Navigation results: Drawings, Department Head Dashboard, Department Head Pending Users, and Department Head All Users, demonstrating site-wide navigation search.",
       "altText": "Global search palette with Dr query showing navigation results on dark background",
-      "tags": ["global-search", "command-palette", "navigation", "keyboard-shortcut", "dark-mode"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "global-search",
+        "command-palette",
+        "navigation",
+        "keyboard-shortcut",
+        "dark-mode"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2917,
+      "height": 1524,
+      "aspectRatio": "2917:1524",
+      "fileSizeBytes": {
+        "avif": 24446,
+        "webp": 44634
+      }
     },
     {
       "fileNameBase": "11-bulk-upload-excel-template-flow",
@@ -154,8 +283,21 @@
       "platform": "web",
       "description": "Bulk Upload page (Excel Upload tab) for admin users. Component Type set to Drawing, with required fields listed. Four-step instructions guide: download template, fill details, upload and validate, review and confirm. Drag-and-drop Excel file zone at the bottom.",
       "altText": "Bulk upload page with drawing component type selected and Excel file drop zone",
-      "tags": ["bulk-upload", "admin", "excel", "import-workflow", "drawings"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "bulk-upload",
+        "admin",
+        "excel",
+        "import-workflow",
+        "drawings"
+      ],
+      "suggestedUse": "gallery",
+      "width": 3248,
+      "height": 3168,
+      "aspectRatio": "3248:3168",
+      "fileSizeBytes": {
+        "avif": 71349,
+        "webp": 160206
+      }
     },
     {
       "fileNameBase": "12-bulk-upload-statistics-completion",
@@ -168,8 +310,21 @@
       "platform": "web",
       "description": "Bulk Upload Statistics tab showing 2 total components and 2 total revisions each at 100% completion rate. Progress bars for Component File Upload Progress and Revision File Upload Progress both show 2/2 complete with 0 missing files. Upload Summary below breaks down by status.",
       "altText": "Bulk upload statistics tab showing 100% completion for components and revisions",
-      "tags": ["bulk-upload", "statistics", "completion-rate", "progress", "admin"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "bulk-upload",
+        "statistics",
+        "completion-rate",
+        "progress",
+        "admin"
+      ],
+      "suggestedUse": "gallery",
+      "width": 3248,
+      "height": 2028,
+      "aspectRatio": "3248:2028",
+      "fileSizeBytes": {
+        "avif": 56030,
+        "webp": 120414
+      }
     },
     {
       "fileNameBase": "13-preferences-dark-mode-notifications",
@@ -182,8 +337,21 @@
       "platform": "web",
       "description": "Preferences page in dark mode showing the Appearance section (Dark Mode theme toggle, List View layout) and Notifications section with Email, In-App, and Push Notifications all enabled. Notification Summary panel confirms all four channels active.",
       "altText": "Preferences page dark mode with email in-app and push notifications all enabled",
-      "tags": ["preferences", "dark-mode", "notifications", "three-channel", "settings"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "preferences",
+        "dark-mode",
+        "notifications",
+        "three-channel",
+        "settings"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1866,
+      "aspectRatio": "2924:1866",
+      "fileSizeBytes": {
+        "avif": 41068,
+        "webp": 86520
+      }
     },
     {
       "fileNameBase": "14-user-profile-account-status",
@@ -196,8 +364,21 @@
       "platform": "web",
       "description": "User profile page for Rajesh Adeli showing Personal tab with name, email, mobile number, and member date. Account Status sidebar shows Active status, User account type, and join date. Security section lists last password update and account ID.",
       "altText": "User profile page showing personal info and active account status",
-      "tags": ["profile", "account-status", "user-info", "role", "approved"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "profile",
+        "account-status",
+        "user-info",
+        "role",
+        "approved"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2924,
+      "height": 1860,
+      "aspectRatio": "2924:1860",
+      "fileSizeBytes": {
+        "avif": 45305,
+        "webp": 90220
+      }
     },
     {
       "fileNameBase": "15-preferences-light-mode-notifications",
@@ -210,8 +391,21 @@
       "platform": "web",
       "description": "Preferences page in light mode showing Appearance (Dark Mode toggle, List View layout) and Notifications (Email, In-App, Push all enabled). Notification Summary panel shows Email, In-App, Sound, and Push as Enabled. Light-theme variant of the preferences screen.",
       "altText": "Preferences page light mode with all three notification channels enabled",
-      "tags": ["preferences", "light-mode", "notifications", "three-channel", "settings"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "preferences",
+        "light-mode",
+        "notifications",
+        "three-channel",
+        "settings"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2924,
+      "height": 1866,
+      "aspectRatio": "2924:1866",
+      "fileSizeBytes": {
+        "avif": 40695,
+        "webp": 84386
+      }
     }
   ]
 }

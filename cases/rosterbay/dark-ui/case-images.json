@@ -16,8 +16,23 @@
       "theme": "dark",
       "description": "Dark-theme admin dashboard on a true-black canvas: a live Adelaide map with GPS-pinned workers across five sites, a KPI strip reading on-site now, unfilled today, certs expiring and awaiting review, plus a needs-attention feed and activity log.",
       "altText": "Dark admin dashboard with live worker map and KPI strip",
-      "tags": ["dashboard", "dark-theme", "live-map", "GPS", "KPI", "admin", "attention-feed"],
-      "suggestedUse": "hero"
+      "tags": [
+        "dashboard",
+        "dark-theme",
+        "live-map",
+        "GPS",
+        "KPI",
+        "admin",
+        "attention-feed"
+      ],
+      "suggestedUse": "hero",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 235416,
+        "webp": 186216
+      }
     },
     {
       "fileNameBase": "02-roster-day-drag-assign-dark",
@@ -31,8 +46,23 @@
       "theme": "dark",
       "description": "Day-view roster on black: five client sites laid across a 24-hour time axis with proportional shift bars, a left panel of draggable workers carrying Compliant, Expiring and Expired certification badges, and a coverage ribbon running along the top.",
       "altText": "Dark day-view roster with compliance-badged workers on a time grid",
-      "tags": ["roster", "dark-theme", "day-view", "drag-assign", "compliance", "coverage-ribbon", "admin"],
-      "suggestedUse": "before-after"
+      "tags": [
+        "roster",
+        "dark-theme",
+        "day-view",
+        "drag-assign",
+        "compliance",
+        "coverage-ribbon",
+        "admin"
+      ],
+      "suggestedUse": "before-after",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 130996,
+        "webp": 114646
+      }
     },
     {
       "fileNameBase": "03-roster-week-all-sites-dark",
@@ -46,8 +76,23 @@
       "theme": "dark",
       "description": "Week roster in dark theme spanning Monday to Saturday across all client sites, each day column packed with per-site shift bars including overnight 10pm-6am wraps, unfilled indicators, and the coverage ribbon along the top showing daily fill rates.",
       "altText": "Dark week roster with shift bars across all sites",
-      "tags": ["roster", "dark-theme", "week-view", "multi-site", "coverage-ribbon", "unfilled", "admin"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "roster",
+        "dark-theme",
+        "week-view",
+        "multi-site",
+        "coverage-ribbon",
+        "unfilled",
+        "admin"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 155665,
+        "webp": 140814
+      }
     },
     {
       "fileNameBase": "04-timesheet-flagged-gps-variance-dark",
@@ -61,8 +106,23 @@
       "theme": "dark",
       "description": "Dark-theme timesheet review with Dylan Murphy's entry flagged late: a radar-style GPS clock-in map 15 metres from site, a variance readout, a plain-language late explanation, six of six proof-of-work tasks completed, and Reject or Approve actions.",
       "altText": "Dark flagged timesheet with GPS map and approval controls",
-      "tags": ["timesheets", "dark-theme", "GPS", "flagged", "variance", "proof-of-work", "admin"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "timesheets",
+        "dark-theme",
+        "GPS",
+        "flagged",
+        "variance",
+        "proof-of-work",
+        "admin"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 171341,
+        "webp": 184492
+      }
     },
     {
       "fileNameBase": "05-worker-documents-cert-wallet-dark",
@@ -76,8 +136,23 @@
       "theme": "dark",
       "description": "Worker profile drawer in dark theme showing Dylan Murphy's document wallet: SA Security Agents Licence, Working at Heights and White Card certifications on a validity timeline with expiry-countdown bars, and per-certificate status cards each marked Valid below.",
       "altText": "Dark worker document wallet with certification validity timelines",
-      "tags": ["workers", "dark-theme", "certifications", "document-wallet", "compliance", "drawer", "admin"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "workers",
+        "dark-theme",
+        "certifications",
+        "document-wallet",
+        "compliance",
+        "drawer",
+        "admin"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 81025,
+        "webp": 184452
+      }
     },
     {
       "fileNameBase": "06-workers-compliance-status-list-dark",
@@ -89,10 +164,25 @@
       "isShortlisted": true,
       "platform": "web",
       "theme": "dark",
-      "description": "Dark-theme workers table listing the fourteen-person field team with phone numbers, compliance badges tallying eleven Compliant, two Expiring and one Expired, a weekly shifts bar per worker, and last clock-in time — team compliance readable at a glance.",
+      "description": "Dark-theme workers table listing the fourteen-person field team with phone numbers, compliance badges tallying eleven Compliant, two Expiring and one Expired, a weekly shifts bar per worker, and last clock-in time \u2014 team compliance readable at a glance.",
       "altText": "Dark workers list with compliance badges and weekly shifts",
-      "tags": ["workers", "dark-theme", "compliance", "status", "team-view", "HRM", "admin"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "workers",
+        "dark-theme",
+        "compliance",
+        "status",
+        "team-view",
+        "HRM",
+        "admin"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 91943,
+        "webp": 83568
+      }
     },
     {
       "fileNameBase": "07-job-site-geofence-map-dark",
@@ -106,8 +196,23 @@
       "theme": "dark",
       "description": "Job-site detail drawer in dark theme for Kingsford Corporate Tower, showing client and address fields beside an interactive map with a teal geofence circle and a radius slider set to 400 metres defining the valid GPS clock-in boundary.",
       "altText": "Dark job-site drawer with geofence map and radius slider",
-      "tags": ["job-sites", "dark-theme", "geofence", "GPS", "map", "setup", "admin"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "job-sites",
+        "dark-theme",
+        "geofence",
+        "GPS",
+        "map",
+        "setup",
+        "admin"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 174868,
+        "webp": 307348
+      }
     },
     {
       "fileNameBase": "08-global-search-command-palette-dark",
@@ -119,10 +224,24 @@
       "isShortlisted": false,
       "platform": "web",
       "theme": "dark",
-      "description": "Global search command palette open over a dimmed dark dashboard, surfacing navigation grouped into Overview, Operations and Workforce sections — keyboard-accessible quick jumps to Dashboard, Roster, Timesheets, Workers or Job Sites without reaching for the sidebar.",
+      "description": "Global search command palette open over a dimmed dark dashboard, surfacing navigation grouped into Overview, Operations and Workforce sections \u2014 keyboard-accessible quick jumps to Dashboard, Roster, Timesheets, Workers or Job Sites without reaching for the sidebar.",
       "altText": "Dark command palette with grouped navigation sections",
-      "tags": ["search", "dark-theme", "command-palette", "navigation", "keyboard-shortcut", "admin"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "search",
+        "dark-theme",
+        "command-palette",
+        "navigation",
+        "keyboard-shortcut",
+        "admin"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1674,
+      "aspectRatio": "2924:1674",
+      "fileSizeBytes": {
+        "avif": 51897,
+        "webp": 270252
+      }
     },
     {
       "fileNameBase": "09-roster-day-closeup-dark",
@@ -134,10 +253,25 @@
       "isShortlisted": false,
       "platform": "web",
       "theme": "dark",
-      "description": "Tight crop of the dark day-view roster grid with sidebar and chrome removed, focusing on the coverage ribbon, five site rows, proportional shift bars and an unfilled highlight — a detail shot of the scheduling surface itself, no navigation.",
+      "description": "Tight crop of the dark day-view roster grid with sidebar and chrome removed, focusing on the coverage ribbon, five site rows, proportional shift bars and an unfilled highlight \u2014 a detail shot of the scheduling surface itself, no navigation.",
       "altText": "Dark roster grid closeup showing shift bars and coverage",
-      "tags": ["roster", "dark-theme", "day-view", "coverage-ribbon", "detail", "closeup", "admin"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "roster",
+        "dark-theme",
+        "day-view",
+        "coverage-ribbon",
+        "detail",
+        "closeup",
+        "admin"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 1886,
+      "height": 930,
+      "aspectRatio": "1886:930",
+      "fileSizeBytes": {
+        "avif": 56423,
+        "webp": 43676
+      }
     }
   ]
 }

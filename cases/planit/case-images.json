@@ -12,10 +12,23 @@
       "rank": 1,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The weekly setup form where admins enter subject-teacher bindings, each with a type, weekly total and daily-slot cap, above a running 'Total Allocated Hours 42/42' check — the exact input the constraint solver works from, with the 42-hour invariant enforced.",
+      "description": "The weekly setup form where admins enter subject-teacher bindings, each with a type, weekly total and daily-slot cap, above a running 'Total Allocated Hours 42/42' check \u2014 the exact input the constraint solver works from, with the 42-hour invariant enforced.",
       "altText": "PlanIt weekly setup form with subject-teacher bindings totalling 42 hours",
-      "tags": ["constraint-setup", "subject-teacher-binding", "42-hour-invariant", "scheduling", "web"],
-      "suggestedUse": "hero"
+      "tags": [
+        "constraint-setup",
+        "subject-teacher-binding",
+        "42-hour-invariant",
+        "scheduling",
+        "web"
+      ],
+      "suggestedUse": "hero",
+      "width": 2924,
+      "height": 4518,
+      "aspectRatio": "2924:4518",
+      "fileSizeBytes": {
+        "avif": 91002,
+        "webp": 235860
+      }
     },
     {
       "fileNameBase": "02-generated-weekly-timetable",
@@ -26,10 +39,23 @@
       "rank": 2,
       "isShortlisted": true,
       "platform": "web",
-      "description": "A generated six-day timetable in the tabular grid — every cell a lecture or practical with its teacher, breaks held in place, and two-hour practicals kept whole — the compliant week the solver produces from the bindings in one click.",
+      "description": "A generated six-day timetable in the tabular grid \u2014 every cell a lecture or practical with its teacher, breaks held in place, and two-hour practicals kept whole \u2014 the compliant week the solver produces from the bindings in one click.",
       "altText": "Generated weekly timetable grid of lectures and practicals",
-      "tags": ["timetable", "schedule-output", "weekly-grid", "solver", "web"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "timetable",
+        "schedule-output",
+        "weekly-grid",
+        "solver",
+        "web"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1606,
+      "aspectRatio": "2924:1606",
+      "fileSizeBytes": {
+        "avif": 60523,
+        "webp": 171248
+      }
     },
     {
       "fileNameBase": "03-auto-schedule-generator",
@@ -40,10 +66,23 @@
       "rank": 3,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The Auto Schedule dialog listing the rules it enforces — weekly totals, per-day limits, correct lecture/practical types — beside a live timetable preview and a Start Auto-Scheduling button, making the constraint solver's logic visible before it commits a week.",
+      "description": "The Auto Schedule dialog listing the rules it enforces \u2014 weekly totals, per-day limits, correct lecture/practical types \u2014 beside a live timetable preview and a Start Auto-Scheduling button, making the constraint solver's logic visible before it commits a week.",
       "altText": "Auto-schedule dialog with rules and timetable preview",
-      "tags": ["auto-schedule", "constraint-solver", "generator", "rules", "modal"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "auto-schedule",
+        "constraint-solver",
+        "generator",
+        "rules",
+        "modal"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2915,
+      "height": 1593,
+      "aspectRatio": "2915:1593",
+      "fileSizeBytes": {
+        "avif": 69753,
+        "webp": 152600
+      }
     },
     {
       "fileNameBase": "04-teacher-schedule-view",
@@ -54,10 +93,23 @@
       "rank": 4,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The teacher dashboard for Dr. Anil Sharma showing only his day, notifications, his subjects and schedule-change requests — proof the same dataset renders a role-scoped slice, so a teacher sees just his own timetable, not the whole college's.",
+      "description": "The teacher dashboard for Dr. Anil Sharma showing only his day, notifications, his subjects and schedule-change requests \u2014 proof the same dataset renders a role-scoped slice, so a teacher sees just his own timetable, not the whole college's.",
       "altText": "Teacher dashboard showing one teacher's daily schedule",
-      "tags": ["teacher-view", "role-scoped", "dashboard", "jwt-roles", "web"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "teacher-view",
+        "role-scoped",
+        "dashboard",
+        "jwt-roles",
+        "web"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 2758,
+      "aspectRatio": "2924:2758",
+      "fileSizeBytes": {
+        "avif": 52432,
+        "webp": 128442
+      }
     },
     {
       "fileNameBase": "05-admin-analytics-dashboard",
@@ -68,10 +120,23 @@
       "rank": 5,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The admin home summarising teachers, students and subjects with role-distribution and class-distribution charts plus quick actions — the overview an administrator lands on before setting up bindings and generating the week's schedule.",
+      "description": "The admin home summarising teachers, students and subjects with role-distribution and class-distribution charts plus quick actions \u2014 the overview an administrator lands on before setting up bindings and generating the week's schedule.",
       "altText": "Admin dashboard with teacher, student and subject charts",
-      "tags": ["admin-dashboard", "analytics", "charts", "overview", "web"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "admin-dashboard",
+        "analytics",
+        "charts",
+        "overview",
+        "web"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1870,
+      "aspectRatio": "2688:1870",
+      "fileSizeBytes": {
+        "avif": 52323,
+        "webp": 88302
+      }
     },
     {
       "fileNameBase": "06-user-role-management",
@@ -82,10 +147,22 @@
       "rank": 6,
       "isShortlisted": true,
       "platform": "web",
-      "description": "User management with Teachers, Students and Admins tabs and a table mapping each teacher to the subjects they carry — the backing data for the three-role JWT model that decides which timetable slice each person can see.",
+      "description": "User management with Teachers, Students and Admins tabs and a table mapping each teacher to the subjects they carry \u2014 the backing data for the three-role JWT model that decides which timetable slice each person can see.",
       "altText": "User management table mapping teachers to subjects",
-      "tags": ["user-management", "roles", "teachers", "subjects-mapping"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "user-management",
+        "roles",
+        "teachers",
+        "subjects-mapping"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1606,
+      "aspectRatio": "2924:1606",
+      "fileSizeBytes": {
+        "avif": 54683,
+        "webp": 138850
+      }
     },
     {
       "fileNameBase": "07-class-management-student-counts",
@@ -96,10 +173,22 @@
       "rank": 7,
       "isShortlisted": false,
       "platform": "web",
-      "description": "Class management listing CS-A, CS-B, IT-A and IT-B with student counts, per-class timetable shortcuts and a students-per-class chart — the admin surface for defining the classes each generated weekly timetable is produced for.",
+      "description": "Class management listing CS-A, CS-B, IT-A and IT-B with student counts, per-class timetable shortcuts and a students-per-class chart \u2014 the admin surface for defining the classes each generated weekly timetable is produced for.",
       "altText": "Class management table with students-per-class chart",
-      "tags": ["class-management", "classes", "crud", "chart"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "class-management",
+        "classes",
+        "crud",
+        "chart"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2924,
+      "height": 1774,
+      "aspectRatio": "2924:1774",
+      "fileSizeBytes": {
+        "avif": 35729,
+        "webp": 79786
+      }
     },
     {
       "fileNameBase": "08-subject-management-crud",
@@ -110,10 +199,22 @@
       "rank": 8,
       "isShortlisted": false,
       "platform": "web",
-      "description": "The subjects manager with a searchable table of subject names and codes and a create/edit modal — the basic CRUD catalogue that feeds the subject dropdowns in the weekly setup form; useful but routine administrative plumbing.",
+      "description": "The subjects manager with a searchable table of subject names and codes and a create/edit modal \u2014 the basic CRUD catalogue that feeds the subject dropdowns in the weekly setup form; useful but routine administrative plumbing.",
       "altText": "Manage subjects table with create-subject modal",
-      "tags": ["subjects", "crud", "modal", "catalogue"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "subjects",
+        "crud",
+        "modal",
+        "catalogue"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2924,
+      "height": 1606,
+      "aspectRatio": "2924:1606",
+      "fileSizeBytes": {
+        "avif": 28704,
+        "webp": 57622
+      }
     }
   ]
 }

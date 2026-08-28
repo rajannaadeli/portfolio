@@ -16,8 +16,23 @@
       "theme": "light",
       "description": "Admin dashboard showing a live Adelaide map with GPS-pinned workers across three active sites, a KPI strip reading 1 on-site, 2 certs expiring, 9 awaiting review, and a needs-attention feed of unfilled shifts and flagged timesheets.",
       "altText": "RosterBay admin dashboard with live worker map and KPI strip",
-      "tags": ["dashboard", "live-map", "GPS", "KPI", "admin", "multi-site", "attention-feed"],
-      "suggestedUse": "hero"
+      "tags": [
+        "dashboard",
+        "live-map",
+        "GPS",
+        "KPI",
+        "admin",
+        "multi-site",
+        "attention-feed"
+      ],
+      "suggestedUse": "hero",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 125748,
+        "webp": 266212
+      }
     },
     {
       "fileNameBase": "02-roster-day-compliance-drag-assign",
@@ -31,8 +46,22 @@
       "theme": "light",
       "description": "Day-view roster grid listing all five client sites on a 24-hour time axis, with draggable workers in the left panel showing Compliant, Expiring, and Expired certification badges and a coverage ribbon across the top.",
       "altText": "Roster day view with compliance-badged workers on a time grid",
-      "tags": ["roster", "drag-assign", "compliance", "time-grid", "coverage-ribbon", "admin"],
-      "suggestedUse": "hero"
+      "tags": [
+        "roster",
+        "drag-assign",
+        "compliance",
+        "time-grid",
+        "coverage-ribbon",
+        "admin"
+      ],
+      "suggestedUse": "hero",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 62838,
+        "webp": 135068
+      }
     },
     {
       "fileNameBase": "03-mobile-mid-shift-task-checklist",
@@ -44,10 +73,25 @@
       "isShortlisted": true,
       "platform": "mobile",
       "theme": "light",
-      "description": "Worker app mid-shift screen 8 seconds after clock-in at Westfield Marion, showing a live elapsed timer, 0 of 6 tasks completed, an out-of-zone flag warning, and a red Clock Out button — the always-live seeded demo state.",
+      "description": "Worker app mid-shift screen 8 seconds after clock-in at Westfield Marion, showing a live elapsed timer, 0 of 6 tasks completed, an out-of-zone flag warning, and a red Clock Out button \u2014 the always-live seeded demo state.",
       "altText": "Worker app mid-shift with live timer and unchecked task list",
-      "tags": ["mobile", "mid-shift", "task-checklist", "live-state", "clock-in", "GPS", "worker-app"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "mobile",
+        "mid-shift",
+        "task-checklist",
+        "live-state",
+        "clock-in",
+        "GPS",
+        "worker-app"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 1080,
+      "height": 2392,
+      "aspectRatio": "1080:2392",
+      "fileSizeBytes": {
+        "avif": 45719,
+        "webp": 87790
+      }
     },
     {
       "fileNameBase": "04-roster-week-all-sites-coverage",
@@ -59,10 +103,24 @@
       "isShortlisted": true,
       "platform": "web",
       "theme": "light",
-      "description": "Week roster spanning Monday to Saturday across four sites — Kingsford, North Adelaide Hospital, Riverbank, and Westfield Marion — with shift bars per day, one unfilled indicator, and the coverage ribbon showing daily fill rates.",
+      "description": "Week roster spanning Monday to Saturday across four sites \u2014 Kingsford, North Adelaide Hospital, Riverbank, and Westfield Marion \u2014 with shift bars per day, one unfilled indicator, and the coverage ribbon showing daily fill rates.",
       "altText": "Roster week view with shift bars across five sites",
-      "tags": ["roster", "week-view", "multi-site", "coverage-ribbon", "unfilled", "admin"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "roster",
+        "week-view",
+        "multi-site",
+        "coverage-ribbon",
+        "unfilled",
+        "admin"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 76526,
+        "webp": 175996
+      }
     },
     {
       "fileNameBase": "05-timesheet-flagged-gps-variance",
@@ -74,10 +132,25 @@
       "isShortlisted": true,
       "platform": "web",
       "theme": "light",
-      "description": "Expanded timesheet for Dylan Murphy at Westfield Marion, flagged late — showing the GPS clock-in map 35 m from site, a −19 m variance bar, a plain-language late explanation, 6 of 6 tasks completed, and Reject / Approve actions.",
+      "description": "Expanded timesheet for Dylan Murphy at Westfield Marion, flagged late \u2014 showing the GPS clock-in map 35 m from site, a \u221219 m variance bar, a plain-language late explanation, 6 of 6 tasks completed, and Reject / Approve actions.",
       "altText": "Flagged timesheet with GPS map, variance bar, and approval controls",
-      "tags": ["timesheets", "GPS", "flagged", "variance", "approval", "proof-of-work", "admin"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "timesheets",
+        "GPS",
+        "flagged",
+        "variance",
+        "approval",
+        "proof-of-work",
+        "admin"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1606,
+      "aspectRatio": "2924:1606",
+      "fileSizeBytes": {
+        "avif": 90773,
+        "webp": 191594
+      }
     },
     {
       "fileNameBase": "06-landing-demo-entry-page",
@@ -89,10 +162,23 @@
       "isShortlisted": true,
       "platform": "web",
       "theme": "light",
-      "description": "RosterBay public landing page with dual one-click demo entry points — Explore as Agency Admin and Explore as Worker — above a browser-framed roster screenshot, with attribution to Rajanna Adeli and links to rajanna.dev.",
+      "description": "RosterBay public landing page with dual one-click demo entry points \u2014 Explore as Agency Admin and Explore as Worker \u2014 above a browser-framed roster screenshot, with attribution to Rajanna Adeli and links to rajanna.dev.",
       "altText": "RosterBay landing page with dual explore-as demo entry buttons",
-      "tags": ["landing", "demo", "entry-page", "product-overview", "browser-mockup"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "landing",
+        "demo",
+        "entry-page",
+        "product-overview",
+        "browser-mockup"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1680,
+      "aspectRatio": "2924:1680",
+      "fileSizeBytes": {
+        "avif": 68307,
+        "webp": 121556
+      }
     },
     {
       "fileNameBase": "07-job-sites-coverage-cert-grid",
@@ -106,8 +192,22 @@
       "theme": "light",
       "description": "Job sites grid showing all five client locations with mini coverage ribbons, required certification chips (White Card, Police Check, SA Security Licence, Working at Heights), task counts, and gap indicators for Kingsford and Riverbank.",
       "altText": "Job sites grid with coverage ribbons and required certification chips",
-      "tags": ["job-sites", "compliance", "coverage", "certifications", "multi-site", "admin"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "job-sites",
+        "compliance",
+        "coverage",
+        "certifications",
+        "multi-site",
+        "admin"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 1606,
+      "aspectRatio": "2924:1606",
+      "fileSizeBytes": {
+        "avif": 76269,
+        "webp": 150212
+      }
     },
     {
       "fileNameBase": "08-workers-compliance-status-list",
@@ -119,10 +219,24 @@
       "isShortlisted": true,
       "platform": "web",
       "theme": "light",
-      "description": "Workers table for 14 field staff showing phone numbers, compliance status (11 Compliant, 2 Expiring, 1 Expired), a weekly-hours bar per worker, and last clock-in time — compliance visible at a glance across the full team.",
+      "description": "Workers table for 14 field staff showing phone numbers, compliance status (11 Compliant, 2 Expiring, 1 Expired), a weekly-hours bar per worker, and last clock-in time \u2014 compliance visible at a glance across the full team.",
       "altText": "Workers list with compliance status badges and weekly hours bars",
-      "tags": ["workers", "compliance", "HRM", "status", "admin", "team-view"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "workers",
+        "compliance",
+        "HRM",
+        "status",
+        "admin",
+        "team-view"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 46827,
+        "webp": 106642
+      }
     },
     {
       "fileNameBase": "09-mobile-shift-tasks-completed",
@@ -134,10 +248,24 @@
       "isShortlisted": false,
       "platform": "mobile",
       "theme": "light",
-      "description": "Mobile shift details screen for Westfield Marion showing all six tasks checked — food court wipe-down, restroom restock, photo evidence items — alongside the White Card site requirement and the Security Guard role.",
+      "description": "Mobile shift details screen for Westfield Marion showing all six tasks checked \u2014 food court wipe-down, restroom restock, photo evidence items \u2014 alongside the White Card site requirement and the Security Guard role.",
       "altText": "Mobile shift detail with all six tasks checked",
-      "tags": ["mobile", "shift-details", "tasks", "completed", "worker-app", "proof-of-work"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "mobile",
+        "shift-details",
+        "tasks",
+        "completed",
+        "worker-app",
+        "proof-of-work"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 1080,
+      "height": 2392,
+      "aspectRatio": "1080:2392",
+      "fileSizeBytes": {
+        "avif": 32730,
+        "webp": 71196
+      }
     },
     {
       "fileNameBase": "10-worker-app-next-shift-card",
@@ -149,10 +277,24 @@
       "isShortlisted": false,
       "platform": "mobile",
       "theme": "light",
-      "description": "Worker home screen greeting Liam with his next shift at Westfield Marion, 2–10pm Sunday, showing address, time-until countdown (13h 49m), White Card site requirement, and a prominent Clock In CTA.",
+      "description": "Worker home screen greeting Liam with his next shift at Westfield Marion, 2\u201310pm Sunday, showing address, time-until countdown (13h 49m), White Card site requirement, and a prominent Clock In CTA.",
       "altText": "Worker app home screen with next shift and Clock In",
-      "tags": ["mobile", "worker-app", "home", "next-shift", "clock-in", "site-requirements"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "mobile",
+        "worker-app",
+        "home",
+        "next-shift",
+        "clock-in",
+        "site-requirements"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 1080,
+      "height": 2392,
+      "aspectRatio": "1080:2392",
+      "fileSizeBytes": {
+        "avif": 30740,
+        "webp": 59622
+      }
     },
     {
       "fileNameBase": "11-unfilled-shift-admin-task-drawer",
@@ -166,8 +308,22 @@
       "theme": "light",
       "description": "Admin roster drawer for an unfilled Riverbank Events Centre shift, showing the Nobody assigned warning, 0 of 5 tasks outstanding (patrol, emergency exits, barrier inspection, photo evidence), and editable start/end schedule fields.",
       "altText": "Unfilled shift drawer with task checklist and nobody assigned warning",
-      "tags": ["roster", "unfilled", "shift-detail", "tasks", "admin", "drawer"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "roster",
+        "unfilled",
+        "shift-detail",
+        "tasks",
+        "admin",
+        "drawer"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 40154,
+        "webp": 88874
+      }
     },
     {
       "fileNameBase": "12-job-site-geofence-setup-map",
@@ -179,10 +335,24 @@
       "isShortlisted": false,
       "platform": "web",
       "theme": "light",
-      "description": "Job site detail drawer for Kingsford Corporate Tower with an interactive map, a draggable geofence pin at 25 King William St, and a 120 m radius slider — the boundary that determines valid GPS clock-in for workers on site.",
+      "description": "Job site detail drawer for Kingsford Corporate Tower with an interactive map, a draggable geofence pin at 25 King William St, and a 120 m radius slider \u2014 the boundary that determines valid GPS clock-in for workers on site.",
       "altText": "Job site detail showing geofence map with adjustable radius slider",
-      "tags": ["job-sites", "geofence", "GPS", "map", "admin", "setup"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "job-sites",
+        "geofence",
+        "GPS",
+        "map",
+        "admin",
+        "setup"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1606,
+      "aspectRatio": "2924:1606",
+      "fileSizeBytes": {
+        "avif": 81757,
+        "webp": 154938
+      }
     },
     {
       "fileNameBase": "13-worker-wallet-cert-status",
@@ -194,10 +364,23 @@
       "isShortlisted": false,
       "platform": "mobile",
       "theme": "light",
-      "description": "Worker wallet screen showing four valid certifications — SA Security Agents Licence, National Police Check, First Aid, White Card — with expiry dates and a You're job-ready status banner confirming full compliance.",
+      "description": "Worker wallet screen showing four valid certifications \u2014 SA Security Agents Licence, National Police Check, First Aid, White Card \u2014 with expiry dates and a You're job-ready status banner confirming full compliance.",
       "altText": "Worker wallet showing four valid certifications and job-ready status",
-      "tags": ["mobile", "wallet", "certifications", "compliance", "worker-app"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "mobile",
+        "wallet",
+        "certifications",
+        "compliance",
+        "worker-app"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 1080,
+      "height": 2392,
+      "aspectRatio": "1080:2392",
+      "fileSizeBytes": {
+        "avif": 42834,
+        "webp": 82102
+      }
     },
     {
       "fileNameBase": "14-mobile-schedule-upcoming-shifts",
@@ -209,10 +392,23 @@
       "isShortlisted": false,
       "platform": "mobile",
       "theme": "light",
-      "description": "Worker schedule tab listing this week's shift at Westfield Marion and two next-week shifts — including a 10pm–6am overnight at Kingsford Corporate Tower — grouped by week with date chips showing days until each shift.",
+      "description": "Worker schedule tab listing this week's shift at Westfield Marion and two next-week shifts \u2014 including a 10pm\u20136am overnight at Kingsford Corporate Tower \u2014 grouped by week with date chips showing days until each shift.",
       "altText": "Worker schedule showing upcoming shifts grouped by this week and next",
-      "tags": ["mobile", "schedule", "upcoming-shifts", "worker-app", "overnight"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "mobile",
+        "schedule",
+        "upcoming-shifts",
+        "worker-app",
+        "overnight"
+      ],
+      "suggestedUse": "gallery",
+      "width": 1080,
+      "height": 2392,
+      "aspectRatio": "1080:2392",
+      "fileSizeBytes": {
+        "avif": 27927,
+        "webp": 53784
+      }
     },
     {
       "fileNameBase": "15-add-cert-document-form",
@@ -226,8 +422,22 @@
       "theme": "light",
       "description": "Add document screen for workers to upload certifications, with a scrollable certificate type picker (First Aid selected), issued and expiry date fields, and camera or library photo upload options before saving to wallet.",
       "altText": "Mobile add document form with certificate type picker and photo upload",
-      "tags": ["mobile", "certifications", "document-upload", "wallet", "worker-app", "form"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "mobile",
+        "certifications",
+        "document-upload",
+        "wallet",
+        "worker-app",
+        "form"
+      ],
+      "suggestedUse": "gallery",
+      "width": 1080,
+      "height": 2392,
+      "aspectRatio": "1080:2392",
+      "fileSizeBytes": {
+        "avif": 37248,
+        "webp": 71128
+      }
     },
     {
       "fileNameBase": "16-global-search-command-palette",
@@ -239,10 +449,23 @@
       "isShortlisted": false,
       "platform": "web",
       "theme": "light",
-      "description": "Global search command palette triggered over the Job Sites page, surfacing top-level navigation grouped into Overview, Operations, and Workforce sections — keyboard-accessible quick navigation to any area of the admin console without reaching for the sidebar.",
+      "description": "Global search command palette triggered over the Job Sites page, surfacing top-level navigation grouped into Overview, Operations, and Workforce sections \u2014 keyboard-accessible quick navigation to any area of the admin console without reaching for the sidebar.",
       "altText": "Global search command palette with grouped navigation sections",
-      "tags": ["search", "command-palette", "navigation", "admin", "keyboard-shortcut"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "search",
+        "command-palette",
+        "navigation",
+        "admin",
+        "keyboard-shortcut"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2924,
+      "height": 1606,
+      "aspectRatio": "2924:1606",
+      "fileSizeBytes": {
+        "avif": 25296,
+        "webp": 47094
+      }
     }
   ]
 }

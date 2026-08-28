@@ -12,10 +12,23 @@
       "rank": 1,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The design viewer with the Mounting Type menu open and Mounting 1 locked as part of the original design, plus GAD and T BOX page tabs — the parametric surface where engineers assemble a drawing by picking components.",
+      "description": "The design viewer with the Mounting Type menu open and Mounting 1 locked as part of the original design, plus GAD and T BOX page tabs \u2014 the parametric surface where engineers assemble a drawing by picking components.",
       "altText": "Design viewer with mounting-type menu open on a motor drawing",
-      "tags": ["design-viewer", "parametric", "component-selection", "dependency-lock", "web"],
-      "suggestedUse": "hero"
+      "tags": [
+        "design-viewer",
+        "parametric",
+        "component-selection",
+        "dependency-lock",
+        "web"
+      ],
+      "suggestedUse": "hero",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 64761,
+        "webp": 145358
+      }
     },
     {
       "fileNameBase": "02-unique-selection-export",
@@ -26,10 +39,23 @@
       "rank": 2,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The export dialog confirming 'This component combination is unique' before offering file export or save to the design library — the visible payoff of SHA-256 fingerprinting that makes duplicate drawings in the catalog structurally impossible.",
+      "description": "The export dialog confirming 'This component combination is unique' before offering file export or save to the design library \u2014 the visible payoff of SHA-256 fingerprinting that makes duplicate drawings in the catalog structurally impossible.",
       "altText": "Export dialog confirming the component combination is unique",
-      "tags": ["export", "deduplication", "sha-256", "unique-selection", "modal"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "export",
+        "deduplication",
+        "sha-256",
+        "unique-selection",
+        "modal"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 45705,
+        "webp": 75478
+      }
     },
     {
       "fileNameBase": "03-project-design-dashboard",
@@ -40,10 +66,23 @@
       "rank": 3,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The dashboard listing projects and designs as cards, each with an embedded motor drawing preview, quick filters and search — the library command centre where engineers find and open the general arrangement drawings they maintain.",
+      "description": "The dashboard listing projects and designs as cards, each with an embedded motor drawing preview, quick filters and search \u2014 the library command centre where engineers find and open the general arrangement drawings they maintain.",
       "altText": "Dashboard listing project and design cards with drawing previews",
-      "tags": ["dashboard", "library", "projects", "designs", "web"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "dashboard",
+        "library",
+        "projects",
+        "designs",
+        "web"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2924,
+      "height": 3576,
+      "aspectRatio": "2924:3576",
+      "fileSizeBytes": {
+        "avif": 92878,
+        "webp": 207782
+      }
     },
     {
       "fileNameBase": "04-general-arrangement-drawing",
@@ -54,10 +93,23 @@
       "rank": 4,
       "isShortlisted": true,
       "platform": "web",
-      "description": "A finished general arrangement drawing for a 250M frame foot-mounted motor rendered full-bleed in read-only view, with title block, tolerances and dimensioned views — the actual engineering output the tool produces from selected components.",
+      "description": "A finished general arrangement drawing for a 250M frame foot-mounted motor rendered full-bleed in read-only view, with title block, tolerances and dimensioned views \u2014 the actual engineering output the tool produces from selected components.",
       "altText": "Full general arrangement drawing of a foot-mounted motor",
-      "tags": ["engineering-drawing", "gad", "motor", "output", "read-only"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "engineering-drawing",
+        "gad",
+        "motor",
+        "output",
+        "read-only"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 59992,
+        "webp": 134380
+      }
     },
     {
       "fileNameBase": "05-multi-page-base-upload",
@@ -68,10 +120,22 @@
       "rank": 5,
       "isShortlisted": true,
       "platform": "web",
-      "description": "The pages manager showing GAD and T BOX sheets with base drawings attached, plus a drag-and-drop SVG upload area and live preview — how a multi-sheet design is composed before components are customized on top.",
+      "description": "The pages manager showing GAD and T BOX sheets with base drawings attached, plus a drag-and-drop SVG upload area and live preview \u2014 how a multi-sheet design is composed before components are customized on top.",
       "altText": "Pages manager with SVG base-drawing upload and preview",
-      "tags": ["pages", "base-drawing", "svg-upload", "multi-sheet"],
-      "suggestedUse": "feature-highlight"
+      "tags": [
+        "pages",
+        "base-drawing",
+        "svg-upload",
+        "multi-sheet"
+      ],
+      "suggestedUse": "feature-highlight",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 38560,
+        "webp": 64244
+      }
     },
     {
       "fileNameBase": "06-project-details-panel",
@@ -82,10 +146,22 @@
       "rank": 6,
       "isShortlisted": true,
       "platform": "web",
-      "description": "A project information panel over the drawing showing name, type, category and description with a change-category control — the organizational layer that groups related designs under one project record for a given motor order.",
+      "description": "A project information panel over the drawing showing name, type, category and description with a change-category control \u2014 the organizational layer that groups related designs under one project record for a given motor order.",
       "altText": "Project information panel over an engineering drawing",
-      "tags": ["project-details", "metadata", "category", "organization"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "project-details",
+        "metadata",
+        "category",
+        "organization"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2688,
+      "height": 1400,
+      "aspectRatio": "2688:1400",
+      "fileSizeBytes": {
+        "avif": 89861,
+        "webp": 156830
+      }
     },
     {
       "fileNameBase": "07-mounting-type-selection",
@@ -96,10 +172,22 @@
       "rank": 7,
       "isShortlisted": false,
       "platform": "web",
-      "description": "The viewer with Mounting 4 selected from the Mounting Type menu, updating the motor drawing to match — demonstrates how choosing a component option re-renders the general arrangement drawing on the fly rather than redrawing by hand.",
+      "description": "The viewer with Mounting 4 selected from the Mounting Type menu, updating the motor drawing to match \u2014 demonstrates how choosing a component option re-renders the general arrangement drawing on the fly rather than redrawing by hand.",
       "altText": "Viewer showing Mounting 4 selected, drawing updated",
-      "tags": ["parametric", "mounting-type", "live-render", "component-option"],
-      "suggestedUse": "detail-shot"
+      "tags": [
+        "parametric",
+        "mounting-type",
+        "live-render",
+        "component-option"
+      ],
+      "suggestedUse": "detail-shot",
+      "width": 2924,
+      "height": 1524,
+      "aspectRatio": "2924:1524",
+      "fileSizeBytes": {
+        "avif": 60664,
+        "webp": 138288
+      }
     },
     {
       "fileNameBase": "08-compact-dashboard-list",
@@ -110,10 +198,22 @@
       "rank": 8,
       "isShortlisted": false,
       "platform": "web",
-      "description": "A compact single-item variant of the dashboard showing one project with a larger drawing preview and list density controls — illustrates responsive list behaviour, but largely repeats the primary dashboard view above it.",
+      "description": "A compact single-item variant of the dashboard showing one project with a larger drawing preview and list density controls \u2014 illustrates responsive list behaviour, but largely repeats the primary dashboard view above it.",
       "altText": "Compact dashboard showing a single project item",
-      "tags": ["dashboard", "compact", "list-view", "responsive"],
-      "suggestedUse": "gallery"
+      "tags": [
+        "dashboard",
+        "compact",
+        "list-view",
+        "responsive"
+      ],
+      "suggestedUse": "gallery",
+      "width": 2924,
+      "height": 2220,
+      "aspectRatio": "2924:2220",
+      "fileSizeBytes": {
+        "avif": 61316,
+        "webp": 135750
+      }
     }
   ]
 }
