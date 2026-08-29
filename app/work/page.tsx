@@ -1,18 +1,70 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/ui/layout";
 import { Heading, Text, MetaLabel } from "@/components/ui/typography";
-import { Card } from "@/components/ui/card";
-import { DeviceFrame } from "@/components/ui/device-frame";
-import { getAllCases } from "@/lib/content";
+import { WorkBento, type Tile } from "@/components/sections/WorkBento";
+import { getAllCases, getShortlisted, getImageByUse } from "@/lib/content";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Six production systems — rostering, workforce, POS, document control, and scheduling.",
+  description: "Six production systems: rostering, workforce, document control, scheduling, and retail POS.",
   alternates: { canonical: "/work" },
 };
 
+const CFG: Record<string, { span: string; ratio: string; portrait: boolean }> = {
+  rosterbay: { span: "lg:col-span-8", ratio: "16 / 10", portrait: false },
+  whitefleet: { span: "lg:col-span-4", ratio: "3 / 4", portrait: true },
+  gad: { span: "lg:col-span-6", ratio: "16 / 10", portrait: false },
+  docfort: { span: "lg:col-span-6", ratio: "16 / 10", portrait: false },
+  planit: { span: "lg:col-span-5", ratio: "3 / 4", portrait: true },
+  dilpos: { span: "lg:col-span-7", ratio: "16 / 10", portrait: false },
+};
+
+function metaRow(timeline: string, role: string, stack: string[]): string {
+  const year = (timeline.match(/20\d\d/) ?? [""])[0];
+  const r = /1 of 3|of 3/i.test(role)
+    ? "Team (1 of 3)"
+    : /sole|solo/i.test(role)
+      ? "Solo build"
+      : "Full-stack";
+  const s = stack.slice(0, 2).join(" + ");
+  return [year, r, s].filter(Boolean).join(" · ").toUpperCase();
+}
+
 export default function WorkIndexPage() {
-  const cases = getAllCases();
+  const tiles: Tile[] = getAllCases().map((c) => {
+    const cfg = CFG[c.slug] ?? { span: "lg:col-span-6", ratio: "16 / 10", portrait: false };
+    const isDarkUI = c.darkImages.length > 0;
+    const theme = isDarkUI ? "dark" : "light";
+    const shortlisted = getShortlisted(c.slug, theme);
+    const hero = getImageByUse(c.slug, "hero", theme);
+    const img =
+      shortlisted.find((i) => (cfg.portrait ? i.height > i.width : i.width > i.height)) ??
+      hero ??
+      shortlisted[0];
+    return {
+      slug: c.slug,
+      name: c.name,
+      lede: c.lede,
+      category: c.category,
+      accentVar: c.accentVar,
+      accentTextVar: c.accentTextVar,
+      order: c.order,
+      meta: metaRow(c.facts.timeline, c.facts.role, c.facts.stack),
+      live: c.slug === "rosterbay" ? SITE.links.rosterbay : undefined,
+      paper: !isDarkUI,
+      span: cfg.span,
+      ratio: cfg.ratio,
+      thumb: {
+        avif: img.avif,
+        webp: img.webp,
+        width: img.width,
+        height: img.height,
+        alt: img.alt,
+        blur: img.blurDataURL,
+      },
+    };
+  });
 
   return (
     <Section className="pt-40 sm:pt-48">
@@ -21,35 +73,11 @@ export default function WorkIndexPage() {
         Six systems, shipped.
       </Heading>
       <Text size="lg" className="mt-6" measure>
-        Rostering, workforce platforms, document control, scheduling, and point of sale — each one a
+        Rostering, workforce platforms, document control, scheduling, and point of sale. Each one a
         production build, described precisely.
       </Text>
 
-      <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-        {cases.map((c) => {
-          const thumb = c.images.find((i) => i.shortlisted);
-          return (
-            <Card
-              key={c.slug}
-              href={`/work/${c.slug}`}
-              style={{ "--accent": c.accentVar } as React.CSSProperties}
-            >
-              {thumb ? (
-                <DeviceFrame image={thumb} className="mb-6" sizes="(min-width: 768px) 640px, 100vw" />
-              ) : null}
-              <div className="flex items-center justify-between">
-                <Heading variant="h3" as="h2">
-                  {c.name}
-                </Heading>
-                <MetaLabel accent>0{c.order + 1}</MetaLabel>
-              </div>
-              <Text className="mt-3" measure>
-                {c.lede}
-              </Text>
-            </Card>
-          );
-        })}
-      </div>
+      <WorkBento tiles={tiles} />
     </Section>
   );
 }

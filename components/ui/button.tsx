@@ -15,7 +15,8 @@ const BASE =
   "px-6 py-3 transition-colors duration-200 select-none whitespace-nowrap";
 
 const VARIANT: Record<ButtonVariant, string> = {
-  primary: "bg-accent-orange text-black hover:bg-[color:var(--color-accent-orange)]/90",
+  // Literal black (not the --black token, which the light band remaps to paper).
+  primary: "bg-accent-orange text-[#0a0a0a] hover:bg-[color:var(--color-accent-orange)]/90",
   secondary:
     "border border-border-hover text-text hover:border-[color:var(--color-text)] hover:bg-surface-1",
   ghost: "text-muted hover:text-text",

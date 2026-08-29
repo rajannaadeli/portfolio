@@ -65,6 +65,17 @@ const ACCENT_TEXT: Record<AccentName, string> = {
   lime: "#5f6b00",
 };
 
+// Case category — drives the hero eyebrow and the /work filter row.
+export type Category = "WORKFORCE" | "DOCUMENTS" | "SCHEDULING" | "RETAIL";
+const CATEGORY: Record<CaseSlug, Category> = {
+  rosterbay: "WORKFORCE",
+  whitefleet: "WORKFORCE",
+  gad: "DOCUMENTS",
+  docfort: "DOCUMENTS",
+  planit: "SCHEDULING",
+  dilpos: "RETAIL",
+};
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -119,6 +130,11 @@ export interface CaseStudy {
   name: string;
   /** Full H1 text (may include a tagline after an em dash). */
   title: string;
+  /** The tagline after the title's dash, if any — used as the hero deck. */
+  deck: string;
+  category: Category;
+  /** `<h2>` section headings (with anchor ids) for the case-page nav. */
+  sections: { id: string; text: string }[];
   /** First paragraph under the H1 — used as the lede. */
   lede: string;
   facts: CaseFacts;
@@ -321,10 +337,11 @@ function parseMarkdown(slug: string, source: string): ParsedBody {
     if (bodyLines.length && bodyLines[bodyLines.length - 1].trim() === "---") bodyLines.pop();
   }
 
-  // Remove any embedded `> [SCREENSHOT: …]` placement markers.
-  const bodyMarkdown = bodyLines
-    .filter((l) => !/^>\s*\[SCREENSHOT/i.test(l.trim()))
-    .join("\n");
+  // Remove ANY bracketed authoring marker so a placeholder can never ship:
+  // `> [SCREENSHOT: …]`, `> [DIAGRAM: …]`, `[TBD]`, etc. (A.2). Matches a line
+  // that is (optionally a blockquote) an all-caps bracketed instruction.
+  const markerRe = /^>?\s*\[[A-Z][A-Z ]{2,}[:\]]/;
+  const bodyMarkdown = bodyLines.filter((l) => !markerRe.test(l.trim())).join("\n");
 
   return { title, lede, facts, proofChips, bodyMarkdown, internalStripped };
 }
@@ -445,15 +462,35 @@ function readCase(slug: CaseSlug): CaseStudy {
   if (internalStripped) warnings.push("internal GAPS/CAPTURE LIST section stripped from body");
 
   const accent = ACCENT[slug];
+  const name = DISPLAY_NAME[slug];
+
+  // Deck = the H1 tagline after the dash (splits the em-dash title, D/C.2).
+  const deck =
+    title.toLowerCase() !== name.toLowerCase()
+      ? title.replace(new RegExp(`^${name}`, "i"), "").replace(/^\s*[—–-]\s*/, "").trim()
+      : "";
+
+  // Render body, inject anchor ids on each <h2>, and collect the section list.
+  let bodyHtml = marked.parse(bodyMarkdown, { async: false }) as string;
+  const sections: { id: string; text: string }[] = [];
+  bodyHtml = bodyHtml.replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner: string) => {
+    const text = inner.replace(/<[^>]+>/g, "").trim();
+    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "").slice(0, 48);
+    sections.push({ id, text });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
 
   return {
     slug,
-    name: DISPLAY_NAME[slug],
+    name,
     title,
+    deck,
+    category: CATEGORY[slug],
+    sections,
     lede,
     facts,
     proofChips,
-    bodyHtml: marked.parse(bodyMarkdown, { async: false }) as string,
+    bodyHtml,
     accent,
     accentVar: ACCENT_VAR[accent],
     accentTextVar: ACCENT_TEXT[accent],
