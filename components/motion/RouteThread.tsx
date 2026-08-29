@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { loadGsap, prefersReducedMotion } from "@/lib/gsap";
-import { sampleSpline, widthArray, buildOutline, pointAt, type Sample } from "@/lib/route-geometry";
+import { sampleSpline, widthArray, buildOutline, pointAtY, type Sample } from "@/lib/route-geometry";
 
 /*
   RouteThread (replaces the straight spine) — one continuous, meandering,
@@ -10,33 +10,49 @@ import { sampleSpline, widthArray, buildOutline, pointAt, type Sample } from "@/
   sites. It weaves behind content, surfaces in front at band boundaries to stitch
   the dark/light bands, and carries a small glowing head at the scroll position.
 
-  Geometry is Catmull-Rom through one anchor per section (uneven amplitude → reads
-  as a route, not wallpaper); width swells at section centres and thins with
-  scroll velocity; reveal is a clip-rect scaleY scrubbed to document progress.
-  All heavy math is cached at mount/resize; the shared GSAP ticker only lerps the
-  head + swaps a precomputed outline. Reduced-motion: fully drawn, static, no head.
-  ≥1280 full system; 768–1279 behind-content only, amplitude compressed; <768 a
-  2px top progress line.
+  Everything you'd tune lives in CONFIG below. Heavy math is cached at
+  mount/resize; the shared GSAP ticker only lerps width + moves the head.
+  ≥1280 full system; 768–1279 behind-content only (amplitude compressed); <768 a
+  2px top progress line. Reduced-motion: fully drawn, static, no head.
 */
 
-// x-fraction per section, top→bottom. Uneven amplitude; crossings land on the
-// three major band boundaries; FAQ runs near-centre (calm) before contact.
-const XF = [
-  0.16, // hero
-  0.74, // stats
-  0.3, // featured
-  0.68, // selected work   (dark→light crossing)
-  0.24, // what I build
-  0.7, // how I work
-  0.32, // testimonial     (light→dark crossing)
-  0.66, // about           (dark→light crossing)
-  0.47, // faq (calm)
-  0.54, // contact
-];
+const CONFIG = {
+  // ── Shape ────────────────────────────────────────────────────────────────
+  // Horizontal position of the ribbon at each section (0 = far left, 1 = far
+  // right), one per home section top→bottom. Uneven values read as a route;
+  // neighbours straddling 0.5 create a crossing (place these on band seams).
+  anchorsX: [0.5, 0.74, 0.3, 0.68, 0.24, 0.7, 0.32, 0.66, 0.47, 0.54],
+  midCompress: 0.6, // tablet: pull amplitude toward centre (0..1)
+  sampleCount: 1000, // centreline resolution
+  overshoot: 400, // px the ribbon extends past top/bottom (hides its ends)
 
+  // ── Thickness (px) ─────────────────────────────────────────────────────────
+  baseWidth: 1, // in the quiet gaps
+  peakWidth: 8, // at each section centre (the swell that replaces nodes)
+
+  // ── Scroll-velocity thinning ────────────────────────────────────────────────
+  velocityThin: 0.4, // max width reduction at fast scroll (0..1)
+  velocityRef: 5000, // scroll speed (px/s) mapped to the full reduction
+  vfLerp: 0.08, // how quickly width responds to velocity
+
+  // ── Head ────────────────────────────────────────────────────────────────────
+  headLead: 0.004, // how far the head leads the revealed edge when scrolling
+  //   fast (0 = locked exactly to the edge)
+  headHaloR: 11, // soft halo radius on dark bands (px)
+
+  // ── Reveal / colour / weave ─────────────────────────────────────────────────
+  scrub: 0.4, // reveal easing lag (seconds)
+  dark: { color: "var(--color-accent-violet)", opacity: 0.9 },
+  light: { color: "#101014", opacity: 0.1 },
+  weaveBandHeight: 140, // px tall stitch zone centred on each band boundary
+
+  // ── Breakpoints ──────────────────────────────────────────────────────────────
+  full: 1280,
+  mid: 768,
+} as const;
+
+// Precomputed velocity-factor buckets → one cached outline each.
 const BUCKETS = [0.6, 0.7, 0.8, 0.9, 1.0];
-const BASE_W = 1.2;
-const PEAK_W = 4.5;
 
 interface Geo {
   vw: number;
@@ -79,7 +95,6 @@ export function RouteThread() {
   const prog = useRef(0);
   const vel = useRef(0);
   const vf = useRef(1);
-  const headProg = useRef(0);
   const bucket = useRef(4);
 
   // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -90,24 +105,30 @@ export function RouteThread() {
     let raf = 0;
     const build = () => {
       const vw = window.innerWidth;
-      const t: "full" | "mid" | "none" = vw >= 1280 ? "full" : vw >= 768 ? "mid" : "none";
+      const t: "full" | "mid" | "none" = vw >= CONFIG.full ? "full" : vw >= CONFIG.mid ? "mid" : "none";
       setTier(t);
       if (t === "none") {
         setGeo(null);
         return;
       }
-      const sections = Array.from(document.querySelectorAll<HTMLElement>("main section")).slice(0, XF.length);
+      const sections = Array.from(document.querySelectorAll<HTMLElement>("main section")).slice(
+        0,
+        CONFIG.anchorsX.length,
+      );
       if (!sections.length) return;
       const docH = document.documentElement.scrollHeight;
-      const compress = t === "mid" ? 0.6 : 1;
+      const compress = t === "mid" ? CONFIG.midCompress : 1;
       const anchors = sections.map((s, i) => {
         const r = s.getBoundingClientRect();
-        return { x: (0.5 + (XF[i] - 0.5) * compress) * vw, y: r.top + window.scrollY + r.height / 2 };
+        return {
+          x: (0.5 + (CONFIG.anchorsX[i] - 0.5) * compress) * vw,
+          y: r.top + window.scrollY + r.height / 2,
+        };
       });
-      const samples = sampleSpline(anchors, 300, 400);
+      const samples = sampleSpline(anchors, CONFIG.sampleCount, CONFIG.overshoot);
       const sectionArcs = anchors.map((a) => nearestArc(samples, a.y));
       const outlines = BUCKETS.map((b) =>
-        buildOutline(samples, widthArray(samples, sectionArcs, BASE_W, PEAK_W, b)),
+        buildOutline(samples, widthArray(samples, sectionArcs, CONFIG.baseWidth, CONFIG.peakWidth, b)),
       );
       const bands = Array.from(document.querySelectorAll<HTMLElement>("[data-band]")).map((b) => {
         const r = b.getBoundingClientRect();
@@ -118,10 +139,7 @@ export function RouteThread() {
         };
       });
       const stops = bands.flatMap((bd) => {
-        const c =
-          bd.theme === "light"
-            ? { color: "#101014", opacity: 0.12 }
-            : { color: "var(--color-accent-violet)", opacity: 0.9 };
+        const c = bd.theme === "light" ? CONFIG.light : CONFIG.dark;
         return [
           { off: bd.top / docH, ...c },
           { off: bd.bottom / docH, ...c },
@@ -163,7 +181,7 @@ export function RouteThread() {
                 trigger: document.body,
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 0.4,
+                scrub: CONFIG.scrub,
                 onUpdate: (self) => {
                   prog.current = self.progress;
                   vel.current = self.getVelocity();
@@ -174,9 +192,10 @@ export function RouteThread() {
         : null;
 
       const tick = () => {
-        // velocity factor → uniform thinning, lerped, restoring at rest
-        const target = 1 - Math.min(0.4, Math.abs(vel.current) / 5000 * 0.4);
-        vf.current += (target - vf.current) * 0.08;
+        // width: velocity-based thinning, lerped, restoring at rest
+        const target =
+          1 - Math.min(CONFIG.velocityThin, (Math.abs(vel.current) / CONFIG.velocityRef) * CONFIG.velocityThin);
+        vf.current += (target - vf.current) * CONFIG.vfLerp;
         vel.current *= 0.9; // decay so it restores when scrolling stops
         const bi = Math.max(0, Math.min(4, Math.round((vf.current - 0.6) / 0.1)));
         if (bi !== bucket.current) {
@@ -184,15 +203,18 @@ export function RouteThread() {
           backPath.current?.setAttribute("d", geo.outlines[bi]);
           frontPath.current?.setAttribute("d", geo.outlines[bi]);
         }
-        // head with velocity lag
-        const lead = ((1 - vf.current) / 0.4) * 0.015 * Math.sign(vel.current || 1);
-        const ht = Math.max(0, Math.min(1, prog.current + lead));
-        headProg.current += (ht - headProg.current) * 0.1;
-        const p = pointAt(geo.samples, headProg.current);
+
+        // HEAD — locked to the *revealed* leading edge. Read the same eased
+        // scaleY the clip uses (same timing), and place the head by Y (same
+        // mapping as the clip's vertical reveal), so it never drifts.
+        const sy = rect ? Number(gsap.getProperty(rect, "scaleY")) || 0 : prog.current;
+        const lead = CONFIG.headLead * ((1 - vf.current) / CONFIG.velocityThin) * Math.sign(vel.current || 1);
+        const headY = Math.max(0, Math.min(1, sy + lead)) * geo.docH;
+        const p = pointAtY(geo.samples, headY);
         head.current?.setAttribute("transform", `translate(${p.x} ${p.y})`);
-        // head band-awareness: violet 5px + halo on dark, ink 4px no halo on light
+        // head band-awareness: violet + halo on dark, ink no halo on light
         if (headDot.current && headHalo.current) {
-          const light = geo.bands.some((b) => p.y >= b.top && p.y < b.bottom && b.theme === "light");
+          const light = geo.bands.some((b) => headY >= b.top && headY < b.bottom && b.theme === "light");
           headDot.current.setAttribute("r", light ? "2" : "2.5");
           headDot.current.setAttribute("fill", light ? "#101014" : "var(--color-accent-violet)");
           headHalo.current.setAttribute("opacity", light ? "0" : "0.18");
@@ -238,7 +260,7 @@ export function RouteThread() {
   }
 
   if (!geo) return null;
-  const restOutline = geo.outlines[4];
+  const restOutline = geo.outlines[10];
 
   return (
     <>
@@ -271,7 +293,14 @@ export function RouteThread() {
             <mask id="routeWeave" maskUnits="userSpaceOnUse">
               <rect x="0" y="0" width={geo.vw} height={geo.docH} fill="black" />
               {geo.boundaries.map((b, i) => (
-                <rect key={i} x="0" y={b - 70} width={geo.vw} height="140" fill="white" />
+                <rect
+                  key={i}
+                  x="0"
+                  y={b - CONFIG.weaveBandHeight / 2}
+                  width={geo.vw}
+                  height={CONFIG.weaveBandHeight}
+                  fill="white"
+                />
               ))}
             </mask>
           ) : null}
@@ -297,12 +326,6 @@ export function RouteThread() {
             clipPath="url(#routeReveal)"
             mask="url(#routeWeave)"
           />
-          {!reduced ? (
-            <g ref={head}>
-              <circle ref={headHalo} cx="0" cy="0" r="11" fill="var(--color-accent-violet)" opacity="0.18" />
-              <circle ref={headDot} cx="0" cy="0" r="3" fill="var(--color-accent-violet)" />
-            </g>
-          ) : null}
         </svg>
       ) : null}
     </>

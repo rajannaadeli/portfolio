@@ -120,7 +120,7 @@ export function buildOutline(samples: Sample[], widths: number[]): string {
   return `M${fwd.join("L")}L${rev.join("L")}Z`;
 }
 
-/** Interpolate a point + width fraction along samples at progress 0..1. */
+/** Interpolate a point along samples at progress 0..1 (by sample index). */
 export function pointAt(samples: Sample[], progress: number): { x: number; y: number } {
   if (!samples.length) return { x: 0, y: 0 };
   const idx = Math.min(samples.length - 1, Math.max(0, progress * (samples.length - 1)));
@@ -129,4 +129,22 @@ export function pointAt(samples: Sample[], progress: number): { x: number; y: nu
   const a = samples[i];
   const b = samples[Math.min(samples.length - 1, i + 1)];
   return { x: a.x + (b.x - a.x) * f, y: a.y + (b.y - a.y) * f };
+}
+
+/** Point on the ribbon at a given document Y — matches the clip-rect reveal,
+ *  which grows by vertical height. Finds the first segment straddling `targetY`
+ *  and interpolates x, so the head lands exactly on the revealed leading edge. */
+export function pointAtY(samples: Sample[], targetY: number): { x: number; y: number } {
+  if (!samples.length) return { x: 0, y: targetY };
+  if (targetY <= samples[0].y) return { x: samples[0].x, y: targetY };
+  for (let i = 0; i < samples.length - 1; i++) {
+    const a = samples[i];
+    const b = samples[i + 1];
+    if ((a.y <= targetY && targetY <= b.y) || (a.y >= targetY && targetY >= b.y)) {
+      const f = (targetY - a.y) / (b.y - a.y || 1);
+      return { x: a.x + (b.x - a.x) * f, y: targetY };
+    }
+  }
+  const last = samples[samples.length - 1];
+  return { x: last.x, y: targetY };
 }
