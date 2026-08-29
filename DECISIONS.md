@@ -1,5 +1,12 @@
 # DECISIONS.md
 
+## Route thread (replaces the spine)
+
+- **The straight scroll spine was deleted entirely** — component, node/label CSS, and page usage — and replaced by `RouteThread`: one continuous, meandering, variable-width filled ribbon (Catmull-Rom through one anchor per section) that weaves behind content and surfaces at band boundaries. No nodes, circles, or section labels anywhere. `useActiveBand()` stays (nav still uses it); the ribbon derives its own band colours from measured band rectangles.
+- **Layering solves the opaque-band problem.** The ribbon must read as "behind content" yet stay visible over the opaque paper of the light bands. So each band's **background** stays on the band `div` (paints below the ribbon), while each band's **content** is raised to `z-10`; the back ribbon sits at `z-0` (above band backgrounds, below content) and the front weave copy at `z-20` (above content, masked to the boundaries). The page wrapper is `relative isolate` to scope the stack.
+- **Anchor x-fractions were re-mapped to the 10 built sections** (the spec's 11 included a `marquee` anchor; the marquee is a `<div>`, not a `<section>`). Adjusted fractions: hero .16, stats .74, featured .30, selected .68, whatIBuild .24, howIWork .70, testimonial .32, about .66, faq .47 (calm), contact .54. This preserves alternating sides, varied amplitude, a calm near-centre FAQ, and — importantly — puts the three left↔right crossings exactly on the three major band boundaries (featured→selected, howIWork→testimonial, testimonial→about) so the weave stitches real transitions.
+- **Velocity width-thinning is bucketed, not per-frame.** Five outline strings (velocityFactor 0.6→1.0) are precomputed at mount; the shared GSAP ticker swaps the `d` attribute only when the quantised bucket changes. This honours the "no expensive per-frame outline rebuild / no layout reads in the loop" ceiling — the loop only lerps the head, swaps a cached string, and sets one `translate`. Reveal is a clip-rect `scaleY` scrubbed to document progress; end caps land off-viewport so a plain polygon close is invisible. System size: **2.8KB gzip** (ceiling 10KB).
+
 ## Phase 3 — Home page final pass
 
 - **Mega numerals use the display face** (amends design-direction §3). At mega scale the display grotesque reads better and matches the reference; mono is retained for meta labels, tech strips, and eyebrows. The `--text-mega` token weight/tracking are unchanged.

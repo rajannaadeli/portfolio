@@ -156,26 +156,6 @@
   mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
-/* Scroll spine nodes (Phase-3 §2). Transitions are opacity/scale/fill only. */
-.spine-node {
-  transition: fill 200ms ease, stroke-opacity 200ms ease;
-}
-.spine-node[data-state="unreached"] {
-  fill: transparent;
-  stroke: currentColor;
-  stroke-opacity: 0.4;
-  stroke-width: 1;
-}
-.spine-node[data-state="reached"] {
-  fill: currentColor;
-  stroke: none;
-}
-.spine-node[data-state="current"] {
-  fill: var(--color-accent-violet);
-  stroke: none;
-  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--color-accent-violet) 70%, transparent));
-}
-
 /* Hero scroll cue (Phase-3 §3). */
 @keyframes cue-bob {
   0%,

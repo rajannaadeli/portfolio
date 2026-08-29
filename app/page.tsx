@@ -10,7 +10,7 @@ import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { FloatingCTA } from "@/components/motion/FloatingCTA";
 import { Marquee } from "@/components/motion/Marquee";
-import { ScrollSpine } from "@/components/motion/ScrollSpine";
+import { RouteThread } from "@/components/motion/RouteThread";
 
 const TECH = [
   "TypeScript", "React 19", "Next.js", "React Native", "Expo", "Node", "NestJS",
@@ -18,63 +18,71 @@ const TECH = [
 ];
 
 /*
-  Home — alternating theme bands (Phase 2 §1). Each band's theme matches the
-  screenshots inside it: dark where RosterBay's dark UI and the type-led moments
-  live, light (paper) where the five light-UI projects and the reading sections
-  live. `data-band` drives the nav's palette inversion; `.band-edge` carries the
-  1px boundary hairline. No section straddles a boundary.
+  Home — alternating theme bands (Phase 2 §1) stitched by the RouteThread ribbon.
+  Each band's background sits below the ribbon (`z-0`); each band's content is
+  raised to `z-10` so the ribbon weaves behind text and cards, then surfaces in
+  front (`z-20`) at the band boundaries. `data-band` drives nav + ribbon colour.
 */
 
 export default function HomePage() {
   return (
-    <>
-      <ScrollSpine />
+    <div className="relative isolate">
+      <RouteThread />
 
       {/* DARK — hero, stats, featured */}
       <div data-band="dark">
-        <Hero />
-        <StatRow />
-        <FeaturedCase />
-        {/* Tech-stack marquee — signature strip at the dark→light boundary,
-            hairline top/bottom, edge-faded and legible (Phase-3 §6). */}
-        <div className="mt-24 border-y border-border py-5">
-          <Marquee>
-            {TECH.map((t) => (
-              <span
-                key={t}
-                className="px-7 font-mono text-meta uppercase tracking-[0.18em] text-dim"
-              >
-                {t}
-              </span>
-            ))}
-          </Marquee>
+        <div className="relative z-10">
+          <Hero />
+          <StatRow />
+          <FeaturedCase />
+          {/* Tech-stack marquee — signature strip at the dark→light boundary. */}
+          <div className="mt-24 border-y border-border py-5">
+            <Marquee>
+              {TECH.map((t) => (
+                <span
+                  key={t}
+                  className="px-7 font-mono text-meta uppercase tracking-[0.18em] text-dim"
+                >
+                  {t}
+                </span>
+              ))}
+            </Marquee>
+          </div>
         </div>
       </div>
 
       {/* LIGHT — the five light-UI projects and the "how" sections */}
       <div data-band="light" className="band-light band-edge">
-        <SelectedWork />
-        <WhatIBuild />
-        <HowIWork />
+        <div className="relative z-10">
+          <SelectedWork />
+          <WhatIBuild />
+          <HowIWork />
+        </div>
       </div>
 
       {/* DARK — testimonial interruption */}
       <div data-band="dark" className="band-edge">
-        <Testimonial />
+        <div className="relative z-10">
+          <Testimonial />
+        </div>
       </div>
 
       {/* LIGHT — about + FAQ */}
       <div data-band="light" className="band-light band-edge">
-        <About />
-        <Faq />
+        <div className="relative z-10">
+          <About />
+          <Faq />
+        </div>
       </div>
 
       {/* DARK — contact (footer follows in the layout) */}
       <div data-band="dark" className="band-edge">
-        <Contact />
+        <div className="relative z-10">
+          <Contact />
+        </div>
       </div>
 
       <FloatingCTA />
-    </>
+    </div>
   );
 }
