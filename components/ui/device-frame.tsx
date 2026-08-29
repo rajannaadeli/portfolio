@@ -6,11 +6,16 @@ import { ParallaxLayer } from "@/components/motion/ParallaxLayer";
 /*
   DeviceFrame — the single reusable screenshot component (design §5.4, Phase 2 §1).
 
-  Pre-encoded AVIF+WebP inside minimal browser or phone chrome. Generous inner
-  bezel padding so a raw screenshot edge never touches the band canvas. Native
-  <picture>: AVIF first, WebP fallback, explicit width/height (zero CLS), lazy by
-  default, LQIP blur-up. Band-aware treatment: accent halo on dark, soft neutral
-  shadow on light. NEVER a brightness/contrast filter on the image.
+  Pre-encoded AVIF+WebP inside minimal browser or phone chrome. The media box's
+  aspect-ratio always equals the source ratio, so the screenshot renders as a
+  WHOLE frame — never letterboxed, never cropped through its own chrome
+  (Phase-3 §1.2/§1.3). Native <picture>: AVIF first, WebP fallback, explicit
+  width/height (zero CLS), lazy by default, LQIP blur-up. Band-aware: accent halo
+  on dark, soft neutral shadow on light. NEVER a brightness/contrast filter.
+
+  `composed`: fill the wrapper the caller provides (drops the phone max-width cap)
+  so the frame can be centred inside a fixed-ratio slot (work rows).
+  `parallax`: drift the whole frame ≤8% on scroll (no internal crop).
 */
 
 interface DeviceFrameProps {
@@ -22,10 +27,9 @@ interface DeviceFrameProps {
   priority?: boolean;
   className?: string;
   sizes?: string;
-  /** Accent-tinted radial halo behind the frame (dark band). */
   halo?: boolean;
-  /** ≤8% scroll parallax on the image inside the frame. */
   parallax?: boolean;
+  composed?: boolean;
 }
 
 export function DeviceFrame({
@@ -39,6 +43,7 @@ export function DeviceFrame({
   sizes,
   halo = false,
   parallax = false,
+  composed = false,
 }: DeviceFrameProps) {
   const chrome = frame ?? image.frame;
   const shownUrl = url ?? image.url;
@@ -75,27 +80,24 @@ export function DeviceFrame({
         backgroundPosition: "center",
       }}
     >
-      {parallax ? <ParallaxLayer>{picture}</ParallaxLayer> : picture}
+      {picture}
     </div>
   );
 
+  let frameEl: ReactNode;
   if (chrome === "phone") {
-    return (
-      <Halo enabled={halo}>
-        <div
-          className={cn("mx-auto w-full", bleed && "max-w-none", className)}
-          style={{ ...wrapperStyle, maxWidth: bleed ? undefined : "320px" }}
-        >
-          <div className="device-shadow rounded-[2.5rem] border border-border bg-surface-1 p-2.5">
-            <div className="overflow-hidden rounded-[2rem]">{mediaBox}</div>
-          </div>
+    frameEl = (
+      <div
+        className={cn("mx-auto w-full", bleed && "max-w-none", className)}
+        style={{ ...wrapperStyle, maxWidth: composed || bleed ? undefined : "320px" }}
+      >
+        <div className="device-shadow rounded-[2.5rem] border border-border bg-surface-1 p-2.5">
+          <div className="overflow-hidden rounded-4xl">{mediaBox}</div>
         </div>
-      </Halo>
+      </div>
     );
-  }
-
-  return (
-    <Halo enabled={halo}>
+  } else {
+    frameEl = (
       <div className={cn("w-full", className)} style={wrapperStyle}>
         <div className="device-shadow overflow-hidden rounded-media border border-border bg-surface-1">
           <div className="flex items-center gap-3 border-b border-border px-4 py-3">
@@ -114,8 +116,11 @@ export function DeviceFrame({
           <div className="bg-surface-2 p-2 sm:p-3">{mediaBox}</div>
         </div>
       </div>
-    </Halo>
-  );
+    );
+  }
+
+  const withParallax = parallax ? <ParallaxLayer>{frameEl}</ParallaxLayer> : frameEl;
+  return <Halo enabled={halo}>{withParallax}</Halo>;
 }
 
 function Halo({ enabled, children }: { enabled: boolean; children: ReactNode }) {

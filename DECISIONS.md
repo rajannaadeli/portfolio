@@ -1,5 +1,14 @@
 # DECISIONS.md
 
+## Phase 3 — Home page final pass
+
+- **Mega numerals use the display face** (amends design-direction §3). At mega scale the display grotesque reads better and matches the reference; mono is retained for meta labels, tech strips, and eyebrows. The `--text-mega` token weight/tracking are unchanged.
+- **Parallax translates the whole frame, not the image inside it.** Image-inside-frame parallax necessarily overscans and cropped RosterBay's left sidebar. The featured screenshot now renders as a whole frame (media box aspect-ratio = source ratio → no crop) and the entire frame drifts ≤8% within the section's padding, so nothing is ever cut through UI chrome or clipped at an edge (§1.2/§5).
+- **Work rows use a fixed 16:10 slot.** Ratios vary wildly (whitefleet phone 0.45, planit portrait 0.65, others ~1.9). A landscape shot fills the slot; a phone/portrait shot is composed centred on a soft accent-tinted panel. Representative-image rule: keep a rank-1 phone shot (composed), but swap a rank-1 *portrait web* capture (PlanIt) for its best landscape shortlisted image, since a shrunk full-page capture reads poorly. All five rows are now the same height (≤1× variance, well under the 1.4× ceiling).
+- **Scroll spine sits above band backgrounds, not behind them.** The spec says "behind content," but the light bands are full-bleed opaque paper that would occlude a gutter element beneath them. The spine is `z-30` (above bands, below nav/CTA), `pointer-events-none`, confined to the left gutter, and band-aware via the shared `useActiveBand()` — so it's always visible and never occludes interactive content.
+- **Spine section-name label is gated to ≥1536px (2xl).** At 1280–1440 the centred 1320px column leaves a thin gutter; the horizontal label overlapped left-aligned work-row text. The spine line, nodes, and now-marker still render at ≥1280; only the text label waits for a genuinely wide gutter. Below 1280 the spine is replaced by a top 2px progress line.
+- **`useActiveBand()` extracted** as the single band-detection source of truth, consumed by both the nav and the spine.
+
 ## RosterBay dark-theme wiring
 
 - **`dark-ui/case-images.json` kept as a separate manifest** (per instruction) — not merged into the main manifest. The content pipeline reads it in place via `readDarkImages(slug)` when `cases/<slug>/dark-ui/case-images.json` exists, using that file's own metadata (width/height inline, altText, description, suggestedUse). Only RosterBay has one today; every other case cleanly falls back to its light set.

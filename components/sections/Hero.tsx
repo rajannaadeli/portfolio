@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { TextReveal } from "@/components/motion/TextReveal";
 import { RosterHero } from "@/components/motion/RosterHero";
+import { ScrollCue } from "@/components/motion/ScrollCue";
 import { SITE } from "@/lib/site";
 
 /*
@@ -34,12 +35,12 @@ export function Hero() {
           lineClassName="text-balance"
         />
 
-        <Text size="lg" className="max-w-[62ch]" measure>
+        <Text size="lg" className="max-w-[52ch]">
           I build rostering, GPS time-tracking, and compliance systems for staffing, cleaning,
           security and care companies, plus the field apps their crews actually use.
         </Text>
 
-        <div className="mt-2 flex flex-wrap gap-3">
+        <div className="mt-2 flex flex-wrap items-center gap-3">
           <Magnetic>
             <Button href={SITE.links.rosterbay} external>
               Open the live demo ↗
@@ -68,6 +69,10 @@ export function Hero() {
             <RosterHero />
           </div>
         </div>
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <ScrollCue />
       </div>
     </Section>
   );

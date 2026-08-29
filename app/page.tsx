@@ -10,6 +10,7 @@ import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { FloatingCTA } from "@/components/motion/FloatingCTA";
 import { Marquee } from "@/components/motion/Marquee";
+import { ScrollSpine } from "@/components/motion/ScrollSpine";
 
 const TECH = [
   "TypeScript", "React 19", "Next.js", "React Native", "Expo", "Node", "NestJS",
@@ -27,16 +28,22 @@ const TECH = [
 export default function HomePage() {
   return (
     <>
+      <ScrollSpine />
+
       {/* DARK — hero, stats, featured */}
       <div data-band="dark">
         <Hero />
         <StatRow />
         <FeaturedCase />
-        {/* Tech-stack marquee — signature strip, hairline top/bottom (design §5). */}
+        {/* Tech-stack marquee — signature strip at the dark→light boundary,
+            hairline top/bottom, edge-faded and legible (Phase-3 §6). */}
         <div className="mt-24 border-y border-border py-5">
           <Marquee>
             {TECH.map((t) => (
-              <span key={t} className="px-6 font-mono text-meta uppercase text-dim">
+              <span
+                key={t}
+                className="px-7 font-mono text-meta uppercase tracking-[0.18em] text-dim"
+              >
                 {t}
               </span>
             ))}

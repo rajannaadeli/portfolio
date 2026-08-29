@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/layout";
-import { Heading, Text, MetaLabel } from "@/components/ui/typography";
+import { Heading, Text } from "@/components/ui/typography";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 
 /*
@@ -32,10 +33,7 @@ function Check() {
 export function HowIWork() {
   return (
     <Section id="how-i-work">
-      <MetaLabel>How I work</MetaLabel>
-      <Heading variant="h2" as="h2" className="mt-4">
-        Clear terms, no games.
-      </Heading>
+      <SectionHeader eyebrow="How I work" lines={["Clear terms, no games."]} />
 
       <Reveal className="mt-12 grid grid-cols-1 gap-gutter md:grid-cols-3">
         {ENGAGEMENT.map((e) => (

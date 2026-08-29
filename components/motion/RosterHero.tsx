@@ -40,6 +40,14 @@ export function RosterHero() {
         { y: -34, opacity: 0, scale: 0.6, duration: 0.6, ease: "back.out(1.7)" },
         "-=0.1",
       );
+
+    // Follow-through: after the load resolves, the now-line drifts continuously
+    // (≈20s loop, ±3% of the 580u axis) so a resting hero is never fully still.
+    tl.to(
+      "[data-nowline]",
+      { x: "+=17", duration: 10, ease: "sine.inOut", yoyo: true, repeat: -1 },
+      ">",
+    );
   });
 
   return (

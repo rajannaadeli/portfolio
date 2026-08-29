@@ -9,6 +9,8 @@ interface SectionProps {
   children: ReactNode;
   /** Removes the max-width container so children can bleed full-width. */
   fullBleed?: boolean;
+  /** Extra vertical breathing room — the featured case's single exception. */
+  air?: boolean;
   className?: string;
   as?: ElementType;
   id?: string;
@@ -20,13 +22,18 @@ interface SectionProps {
 export function Section({
   children,
   fullBleed = false,
+  air = false,
   className,
   as: Tag = "section",
   id,
   style,
 }: SectionProps) {
   return (
-    <Tag id={id} style={style} className={cn("py-section", className)}>
+    <Tag
+      id={id}
+      style={style}
+      className={cn(air ? "py-[clamp(140px,20vh,300px)]" : "py-section", className)}
+    >
       {fullBleed ? children : <Container>{children}</Container>}
     </Tag>
   );

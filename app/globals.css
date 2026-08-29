@@ -150,6 +150,47 @@
 .marquee:hover .marquee-track {
   animation-play-state: paused;
 }
+/* Edge fade so items enter/exit rather than clipping abruptly (Phase-3 §6). */
+.marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* Scroll spine nodes (Phase-3 §2). Transitions are opacity/scale/fill only. */
+.spine-node {
+  transition: fill 200ms ease, stroke-opacity 200ms ease;
+}
+.spine-node[data-state="unreached"] {
+  fill: transparent;
+  stroke: currentColor;
+  stroke-opacity: 0.4;
+  stroke-width: 1;
+}
+.spine-node[data-state="reached"] {
+  fill: currentColor;
+  stroke: none;
+}
+.spine-node[data-state="current"] {
+  fill: var(--color-accent-violet);
+  stroke: none;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--color-accent-violet) 70%, transparent));
+}
+
+/* Hero scroll cue (Phase-3 §3). */
+@keyframes cue-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+}
+.scroll-cue {
+  animation: cue-bob 1.8s ease-in-out infinite;
+}
 
 /* Device-frame shadow — deep and dark on the dark band, soft neutral on paper
    (Phase 2 §1). Never a brightness/contrast filter on the screenshot itself. */

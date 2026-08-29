@@ -1,5 +1,5 @@
 import { Section } from "@/components/ui/layout";
-import { Heading, MetaLabel } from "@/components/ui/typography";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { WorkRow } from "@/components/sections/WorkRow";
 import { getAllCases } from "@/lib/content";
 
@@ -13,10 +13,7 @@ export function SelectedWork() {
 
   return (
     <Section>
-      <MetaLabel accent>Selected work</MetaLabel>
-      <Heading variant="h2" as="h2" className="mt-4">
-        Five more, shipped.
-      </Heading>
+      <SectionHeader eyebrow="Selected work" lines={["Five more, shipped."]} accentEyebrow />
 
       <div className="mt-16 flex flex-col gap-20 md:gap-28">
         {cases.map((c, i) => (

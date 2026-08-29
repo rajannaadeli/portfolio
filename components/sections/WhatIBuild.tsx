@@ -1,6 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 import { Section } from "@/components/ui/layout";
-import { Heading, MetaLabel } from "@/components/ui/typography";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import {
   IconRostering,
@@ -32,10 +32,7 @@ const SERVICES: {
 export function WhatIBuild() {
   return (
     <Section id="services">
-      <MetaLabel>What I build</MetaLabel>
-      <Heading variant="h2" as="h2" className="mt-4">
-        Six things, done properly.
-      </Heading>
+      <SectionHeader eyebrow="What I build" lines={["Six things, done properly."]} />
 
       <Reveal
         className="mt-12 grid grid-cols-1 gap-gutter sm:grid-cols-2 lg:grid-cols-3"

@@ -4,10 +4,11 @@ import { useRef, type ReactNode } from "react";
 import { useGsap } from "@/lib/gsap";
 
 /*
-  ParallaxLayer — translates its (server-rendered) child ≤8% vertically as it
-  scrolls through the viewport (design §4). The child is scaled up slightly so
-  the translation never reveals an edge. transform-only; no-ops under
-  prefers-reduced-motion via the Phase 1 GSAP guard.
+  ParallaxLayer — drifts the whole framed screenshot ≤8% vertically as it scrolls
+  through the viewport (design §4). It translates the entire frame within the
+  section's padding rather than scaling the image inside the frame, so a
+  screenshot is never cropped through its own UI chrome and no edge is ever
+  clipped (Phase-3 §1.2/§5). transform-only; no-ops under reduced-motion.
 */
 
 export function ParallaxLayer({ children }: { children: ReactNode }) {
@@ -23,7 +24,7 @@ export function ParallaxLayer({ children }: { children: ReactNode }) {
         yPercent: 4,
         ease: "none",
         scrollTrigger: {
-          trigger: el.parentElement,
+          trigger: el,
           start: "top bottom",
           end: "bottom top",
           scrub: true,
@@ -33,8 +34,8 @@ export function ParallaxLayer({ children }: { children: ReactNode }) {
   });
 
   return (
-    <div ref={scope as React.RefObject<HTMLDivElement>} className="h-full w-full">
-      <div ref={inner} className="h-full w-full scale-[1.12] will-change-transform">
+    <div ref={scope as React.RefObject<HTMLDivElement>}>
+      <div ref={inner} className="will-change-transform">
         {children}
       </div>
     </div>

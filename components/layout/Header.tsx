@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { NAV_ITEMS, SITE } from "@/lib/site";
+import { useActiveBand } from "@/lib/useActiveBand";
 
 /*
   Floating pill nav (design §5.1). Phase 2: hides on scroll-down past 400px,
@@ -15,7 +16,7 @@ import { NAV_ITEMS, SITE } from "@/lib/site";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [onLight, setOnLight] = useState(false);
+  const onLight = useActiveBand() === "light";
   const lastY = useRef(0);
 
   // Hide on scroll-down past 400px, show on scroll-up.
@@ -28,23 +29,6 @@ export function Header() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Detect whether a light band sits under the nav line (~y=40).
-  useEffect(() => {
-    const bands = Array.from(document.querySelectorAll<HTMLElement>("[data-band]"));
-    if (!bands.length) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) setOnLight(e.target.getAttribute("data-band") === "light");
-        }
-      },
-      // Thin detection sliver aligned with the nav's vertical position.
-      { rootMargin: "-38px 0px -100% 0px", threshold: 0 },
-    );
-    bands.forEach((b) => io.observe(b));
-    return () => io.disconnect();
   }, []);
 
   return (

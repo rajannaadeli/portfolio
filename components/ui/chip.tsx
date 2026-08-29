@@ -15,7 +15,7 @@ interface ChipProps {
 const VARIANT = {
   default: "bg-surface-2 text-muted border border-border",
   accent:
-    "border text-[color:var(--accent)] border-[color:var(--accent)]/35 bg-[color:var(--accent)]/8",
+    "border text-(--accent) border-[color:var(--accent)]/35 bg-(--accent)/8",
   outline: "border border-border text-dim",
 } as const;
 
