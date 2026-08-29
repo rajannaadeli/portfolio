@@ -34,7 +34,7 @@ export function Header() {
   return (
     <header
       className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4 transition-transform duration-300"
-      style={{ transform: hidden && !open ? "translateY(-140%)" : "translateY(0)" }}
+      // style={{ transform: hidden && !open ? "translateY(-140%)" : "translateY(0)" }}
     >
       <nav
         aria-label="Primary"
