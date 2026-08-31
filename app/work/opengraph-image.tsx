@@ -4,17 +4,17 @@ import { OG_SIZE, OG_CONTENT_TYPE, renderOgCard } from "@/lib/og";
 // and is correct regardless: nothing here depends on the request.
 export const dynamic = "force-static";
 
-export const alt = "Rajanna Adeli — workforce and operations software developer";
+export const alt = "Work — six shipped workforce and operations systems";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
 export default function Image() {
   return renderOgCard({
-    eyebrow: "Rajanna Adeli",
-    title: "Software for teams that never sit at a desk.",
+    eyebrow: "Work",
+    title: "Six systems, shipped.",
     subtitle:
-      "Rostering, GPS time-tracking and compliance systems, plus the field apps their crews use.",
-    facts: ["6 shipped systems", "1 live demo", "AU · US · UK clients", "Pune, India"],
-    accent: "orange",
+      "Rostering, workforce platforms, document control, scheduling, and point of sale — each a production build.",
+    facts: ["Workforce", "Documents", "Scheduling", "Retail"],
+    accent: "violet",
   });
 }

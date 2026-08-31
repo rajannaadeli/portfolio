@@ -4,12 +4,14 @@ const nextConfig: NextConfig = {
   // Every route in this site is statically prerendered. We do not use
   // `output: 'export'` (it would disable the image optimizer we may want in
   // later phases), but nothing here opts into dynamic rendering either.
+  output: "export",
   poweredByHeader: false,
   compress: true,
   images: {
     // Case screenshots are served as pre-encoded <picture> AVIF/WebP (see
     // DeviceFrame + DECISIONS.md). These formats still apply to any use of
     // next/image elsewhere.
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
   },
   // Keep production client bundles free of source maps.

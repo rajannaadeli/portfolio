@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import { Section } from "@/components/ui/layout";
 import { Heading, Text, MetaLabel } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
+
+// A 404 already returns the right status code, but the explicit directive stops
+// any crawler that reached this URL through a stale link from queuing it.
+export const metadata: Metadata = {
+  title: "Page not found",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

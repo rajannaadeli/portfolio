@@ -85,7 +85,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       root
       options={{
         lerp: 0.09,
-        duration: 1.1,
+        duration: 1,
         anchors: true,
         autoRaf: true,
       }}

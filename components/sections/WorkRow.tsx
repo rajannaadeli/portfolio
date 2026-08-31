@@ -131,7 +131,7 @@ export function WorkRow({ c, flip }: { c: CaseStudy; flip: boolean }) {
           href={`/work/${c.slug}`}
           className="mt-6 inline-block font-mono text-meta uppercase text-(--accent-text) underline decoration-transparent underline-offset-4 transition-[text-decoration-color] hover:decoration-current"
         >
-          Read the case →
+          Read the {c.name} case →
         </Link>
       </div>
     </div>

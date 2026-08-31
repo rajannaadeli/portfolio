@@ -1,5 +1,19 @@
 # DECISIONS.md
 
+## Work index & case pages
+
+- **The "red monospace wall" was the proof chips, not frontmatter.** A.1 read as leaked frontmatter, but the cause was `proofChips` (full sentences) rendered as accent-coloured mono `Chip`s — on WhiteFleet the accent is orange, so three wrapped sentences stacked into a block of red mono under the facts strip. Fixed at the presentation layer: facts now render as hairline mono pills (Role / Timeline / Status / links), and proof points render as body text with a small drawn accent chevron, matching the home page's featured case. No case can regress into the old treatment.
+- **Bracketed markers are stripped at the pipeline, not per file.** The old filter only caught `> [SCREENSHOT`, so `> [DIAGRAM: …]` shipped as visible body text. The strip is now a general rule — any line that is an all-caps bracketed instruction (optionally a blockquote) is removed before render — so `[SCREENSHOT]`, `[DIAGRAM]`, `[TBD]` and anything similar can never reach the page. The two `[DIAGRAM]` markers (WhiteFleet, DocFort) were **stripped rather than illustrated**: authoring an architecture diagram would mean inventing structure the source doesn't specify.
+- **`--accent-text` must resolve per band, never per page.** Setting the darkened accent on the case wrapper broke contrast on the dark hero (darkened orange on black = 3.6:1). It is now unset at the wrapper (inheriting the vivid accent, correct on dark) and set to the darkened per-case value only on the light body band. Same fix on `/work`: tiles are on a dark page, so accent-as-text there stays vivid.
+- **`text-black` is a trap inside the light band.** The primary `Button` used the `--black` token for its label, and `.band-light` remaps `--black` to paper — so button text became paper-on-orange (3.1:1) wherever a primary button sat on a light band. The primary variant now uses a literal `#0a0a0a`.
+- **`/work` filtering avoids `useSearchParams`.** Reading the query during render forces the bento behind a Suspense boundary, which kept it out of the SSR HTML and produced CLS 0.311 / Perf 83. The grid now renders "ALL" on the server and reads/syncs the query via `history` after mount: CLS 0, Perf 100, and the URL stays shareable.
+- **Case-page image placement is structural, not manifest-driven.** No `case-images.json` contains `placement` or `proves` fields, so images cannot be matched to the claim they prove. The page splits the rendered body at each `<h2>` and distributes shortlisted images between sections (alternating full-width and inset), with leftovers in a closing gallery. Every case places 5–6 inline, above the 4-image threshold. Claim-matched placement needs that manifest data.
+- **Pull-quotes were not invented.** C.4 asks for one promoted sentence per major section, detected from a blockquote convention. The source markdown contains **zero** blockquotes (the only `>` lines were the authoring markers now stripped), so nothing was promoted and no sentence was written.
+- **Decision blocks are detected, not assumed.** Only DocFort uses the situation → decision → why → result convention (bold-led paragraphs). Consecutive runs of those paragraphs are wrapped at build time into a `.decision` panel with an accent rule and a mono DECISION label — 3 blocks render. The other five cases have no such convention and are left alone.
+- **Heading underlines draw on reveal without risking a no-JS blank.** The CSS only arms the `scaleX(0) → scaleX(1)` transition once a `.prose-anim` class is added by script, so with no JS (or before hydration) the underline is simply static and visible. Reduced motion no-ops it.
+- **Tile shape follows image shape.** Wide tiles take landscape screenshots, tall tiles take phone/portrait ones, and light-UI shots sit on an inset paper panel inside the dark tile. Measured row heights are 709/709, 541/541, 834/834 — 1.00× within every row, against the 1.5× ceiling.
+
+
 ## Route thread (replaces the spine)
 
 - **The straight scroll spine was deleted entirely** — component, node/label CSS, and page usage — and replaced by `RouteThread`: one continuous, meandering, variable-width filled ribbon (Catmull-Rom through one anchor per section) that weaves behind content and surfaces at band boundaries. No nodes, circles, or section labels anywhere. `useActiveBand()` stays (nav still uses it); the ribbon derives its own band colours from measured band rectangles.
@@ -75,3 +89,112 @@ Ambiguity resolutions, logged as required by the build prompt. Newest at top.
 ## Rendering / static
 
 - No `output: 'export'`. Every route is statically prerendered via `generateStaticParams` + default static rendering; `output: export` is avoided only so nothing silently forces dynamic. No server-side data fetching at request time, no middleware.
+
+---
+
+## SEO pass
+
+**Structured data mirrors visible copy, enforced structurally.** Google treats
+JSON-LD that does not match rendered content as spam. Rather than trusting
+discipline, the FAQ copy moved to `lib/faq.ts` and is imported by both the
+accordion and `faqEntity()`. They cannot drift. Same principle for case
+entities, which read `lib/content.ts` rather than restating facts.
+
+**Case titles skip the `— Rajanna Adeli` suffix.** Google now renders the site
+name separately, reading `og:site_name` and the `WebSite` entity — both present.
+Repeating the name in a case title would spend ~16 characters of a ~65-character
+budget that the case's own descriptor needs. Home and `/work` keep the name
+because they are the pages that must win the name query.
+
+**RosterBay and GAD Builder needed a hand-written title descriptor.** Every other
+case markdown heading carries one after an em-dash ("DocFort — a drawing vault
+for LHP Motors"), which `caseTitle()` uses directly. Those two have a bare
+product name, which tells a searcher who has never heard of it nothing. Their
+`titleTail` in `CASE_SEO` is condensed from their own lede — not invented, and
+overridable by editing the markdown heading.
+
+**AI crawlers explicitly allowed, and given `/llms.txt`.** For a portfolio the
+asymmetry is stark: nothing here is worth protecting, and being quotable inside
+an AI answer about workforce developers is real reach. `robots.ts` names GPTBot,
+ClaudeBot, PerplexityBot, OAI-SearchBot and Google-Extended so a future blanket
+rule cannot accidentally exclude them. `/llms.txt` is generated from the same
+content source as the pages, so it cannot go stale.
+
+**Sitemap `lastModified` reads case markdown mtimes, not `new Date()`.** A
+sitemap that claims every page changed on every build teaches Google to ignore
+the field. Screenshots ship as image entries because all 86 already carry
+descriptive alt text — the manifests were built for exactly this.
+
+**`headline` → `alternateName` on the project entity.** `headline` is an Article
+property; on `SoftwareApplication`/`CreativeWork` the descriptor belongs in
+`alternateName`. The Article entity beside it keeps its own `headline`.
+
+**Per-case OG facts are condensed at render, not in the content.** The facts line
+is prose ("Solo — data model, design system, web + mobile, ops") and wrapped to
+three rows on a 1200×630 card. `shortRole()`/`shortTimeline()` in the OG route
+trim to the part before the first dash and to a year span. The case content is
+untouched.
+
+**Two visible author markers were removed, not left for launch.** `[Draft —
+pending approval]` beside the FAQ heading and `[TBD — country label]` in the
+testimonial attribution. Same reasoning as the pipeline-level marker stripping in
+`lib/content.ts`: a bracketed instruction to the author must never ship.
+
+**`public/_headers` noindexes the `pages.dev` hosts, never the apex.** Every
+Cloudflare Pages project serves byte-identical content at `<project>.pages.dev`
+and `<commit>.<project>.pages.dev`; indexed, they split the ranking signal.
+
+**`trailingSlash` deliberately left off.** Every canonical is emitted without a
+trailing slash. `DEPLOYMENT_PLAN.MD` suggests `trailingSlash: true` for the
+static export; turning it on without also changing the canonicals creates the
+duplicate it is meant to prevent. Documented in SEO-GUIDE.md §2.2.
+
+**`pnpm seo:check` is a gate, not a report.** `scripts/seo-check.mjs` crawls the
+sitemap and exits non-zero on a failure, so a deploy can depend on it. Length
+limits are warnings, not failures — Google rewrites descriptions often enough
+that a few characters over is not worth blocking a release.
+
+---
+
+## Deployment: static export on Cloudflare Workers
+
+**Not vinext, not OpenNext.** Cloudflare's current guidance points Next.js users
+at vinext (a Vite plugin reimplementing the Next.js API surface), with OpenNext
+as the fallback. Both exist to run a *Next.js server* on Workers. This site has
+no server-rendered route — ten HTML files, images, and one form endpoint — so a
+Next.js runtime would add cold starts, compatibility surface, and an adapter
+upgrade treadmill in exchange for nothing. Static export plus one Worker is
+smaller in every dimension.
+
+**Workers static assets, not Pages.** Pages still works and is not deprecated,
+but Cloudflare now recommends Workers for new projects and ships new capability
+there. Same free tier, same edge, and the form endpoint lives in the same
+deployment instead of a separate Functions concept.
+
+**`Content-Type` on OG images was a real, silent bug.** Next exports image routes
+to extensionless paths (`out/opengraph-image`). Cloudflare derives MIME type from
+the file extension, so every generated card would have been served as
+`application/octet-stream` — no error anywhere, just a blank preview on every
+platform. `public/_headers` now forces `image/png` on all 14. Caught by serving
+the export through `wrangler dev` rather than by reading the code.
+
+**`generateImageMetadata` removed to unblock the export.** It gave each case OG
+image a per-case `alt`, but introduced a `[__metadata_id__]` dynamic segment that
+`output: "export"` cannot resolve without also enumerating that param. The alt is
+read only by screen readers on social platforms; a static one is a fair trade for
+a working export.
+
+**www → apex lives in a Cloudflare Redirect Rule, not `_redirects`.** A
+cross-hostname redirect belongs at the edge, before the Worker, where it keeps
+working regardless of how the site is deployed later. `_redirects` keeps only
+path-only shortlinks, which are portable.
+
+**Wrangler is invoked via `npx`, not added as a devDependency.** Git-connected
+deploys never need it locally, and installing it churned 215 lines of lockfile
+and wrote placeholder junk into `pnpm-workspace.yaml`. `npx --yes wrangler@4`
+in the two scripts costs a download on first use and keeps the dependency tree
+as it was.
+
+**The Worker reproduces the route handler's JSON contract exactly.** Same status
+codes, same `errors` shape, same honeypot behaviour, so `ContactForm.tsx` needed
+no changes and the migration is invisible to the client.

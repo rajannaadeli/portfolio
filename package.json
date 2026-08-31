@@ -8,9 +8,12 @@
     "dev": "next dev",
     "prebuild": "node scripts/copy-case-images.mjs",
     "build": "next build",
-    "start": "next start",
+    "start": "npx --yes wrangler@4 dev",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "seo:check": "node scripts/seo-check.mjs",
+    "deploy": "pnpm build && npx --yes wrangler@4 deploy",
+    "preview": "pnpm build && npx --yes wrangler@4 dev"
   },
   "dependencies": {
     "framer-motion": "^13.1.1",

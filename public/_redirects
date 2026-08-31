@@ -1,0 +1,14 @@
+# Cloudflare redirects. First match wins; redirects are applied before headers.
+#
+# NOTE: www -> apex is deliberately NOT here. Cross-hostname redirects belong in
+# a Cloudflare Redirect Rule (dashboard → Rules → Redirect Rules), which runs at
+# the edge before the Worker and works no matter how the site is deployed. See
+# DEPLOY-GUIDE.md step 4.
+#
+# These are path-only shortlinks, worth having on a card, a signature, or a CV.
+/cv        /rajanna-adeli-resume.pdf  302
+/resume    /rajanna-adeli-resume.pdf  302
+/hire      https://www.upwork.com/freelancers/~01e368e57669434d77  302
+/demo      https://rosterbay.com  302
+/linkedin  https://www.linkedin.com/in/rajannaadeli/  302
+/github    https://github.com/rajannaadeli  302

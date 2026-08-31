@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     "scripts/**",
     "lib/generated/**",
     "cases/**",
+    // Wrangler's bundling scratch directory.
+    ".wrangler/**",
   ]),
   // Override default ignores of eslint-config-next.
   globalIgnores([

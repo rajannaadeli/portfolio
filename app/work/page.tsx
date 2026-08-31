@@ -2,13 +2,34 @@ import type { Metadata } from "next";
 import { Section } from "@/components/ui/layout";
 import { Heading, Text, MetaLabel } from "@/components/ui/typography";
 import { WorkBento, type Tile } from "@/components/sections/WorkBento";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllCases, getShortlisted, getImageByUse } from "@/lib/content";
 import { SITE } from "@/lib/site";
+import { ID, breadcrumbEntity, caseSeo, graph } from "@/lib/seo";
+
+const WORK_TITLE = "Work — Workforce & Operations Systems";
+const WORK_DESCRIPTION =
+  "Six production systems, built end to end: a live rostering and GPS time-tracking platform, two Australian workforce platforms, document control, and a retail POS.";
 
 export const metadata: Metadata = {
-  title: "Work",
-  description: "Six production systems: rostering, workforce, document control, scheduling, and retail POS.",
+  // Kept to ~52 characters with the name, so nothing truncates in results.
+  title: { absolute: `${WORK_TITLE} — Rajanna Adeli` },
+  description: WORK_DESCRIPTION,
+  keywords: [
+    "workforce software case studies",
+    "rostering software portfolio",
+    "multi-tenant SaaS case study",
+    "React Native field app portfolio",
+    "freelance developer work samples",
+  ],
   alternates: { canonical: "/work" },
+  openGraph: {
+    type: "website",
+    url: `${SITE.url}/work`,
+    title: WORK_TITLE,
+    description: WORK_DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image", title: WORK_TITLE, description: WORK_DESCRIPTION },
 };
 
 const CFG: Record<string, { span: string; ratio: string; portrait: boolean }> = {
@@ -66,8 +87,45 @@ export default function WorkIndexPage() {
     };
   });
 
+  /*
+    CollectionPage + ItemList tells Google these six URLs are one set, which is
+    what makes them eligible to appear as sitelinks under the site's own result.
+    The breadcrumb gives every case page a labelled path back to the index.
+  */
+  const jsonLd = graph(
+    {
+      "@type": "CollectionPage",
+      "@id": `${SITE.url}/work#webpage`,
+      url: `${SITE.url}/work`,
+      name: WORK_TITLE,
+      description: WORK_DESCRIPTION,
+      isPartOf: { "@id": ID.website },
+      about: { "@id": ID.person },
+      inLanguage: "en",
+    },
+    breadcrumbEntity([
+      { name: "Home", path: "/" },
+      { name: "Work", path: "/work" },
+    ]),
+    {
+      "@type": "ItemList",
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      numberOfItems: tiles.length,
+      itemListElement: tiles.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE.url}/work/${t.slug}`,
+        name: t.name,
+        description: t.lede,
+        image: `${SITE.url}${t.thumb.webp}`,
+        additionalType: caseSeo(t.slug).schema,
+      })),
+    },
+  );
+
   return (
     <Section className="pt-40 sm:pt-48">
+      <JsonLd data={jsonLd} />
       <MetaLabel>Work</MetaLabel>
       <Heading variant="display" as="h1" className="mt-4 max-w-[14ch]">
         Six systems, shipped.

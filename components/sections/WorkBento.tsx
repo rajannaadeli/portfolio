@@ -40,9 +40,9 @@ export function WorkBento({ tiles }: { tiles: Tile[] }) {
   const [active, setActive] = useState("ALL");
 
   // Read the URL filter after mount so SSR stays "ALL" (no CLS, no Suspense).
-  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => {
     const f = (new URLSearchParams(window.location.search).get("filter") ?? "ALL").toUpperCase();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (FILTERS.includes(f)) setActive(f);
   }, []);
 
@@ -148,8 +148,10 @@ export function WorkBento({ tiles }: { tiles: Tile[] }) {
                 </div>
                 <p className="line-clamp-2 font-body text-body text-muted">{t.lede}</p>
                 <div className="mt-auto font-mono text-meta uppercase text-dim">{t.meta}</div>
+                {/* py-2 on both children below lifts the tap target past the
+                    24px WCAG 2.2 minimum without changing the visual rhythm. */}
                 {t.live ? (
-                  <div className="flex gap-3 pt-1">
+                  <div className="flex items-center gap-3">
                     <button
                       type="button"
                       onClick={(e) => {
@@ -157,11 +159,13 @@ export function WorkBento({ tiles }: { tiles: Tile[] }) {
                         e.stopPropagation();
                         window.open(t.live, "_blank", "noopener");
                       }}
-                      className="font-mono text-meta uppercase text-text underline decoration-(--accent) decoration-2 underline-offset-4"
+                      className="inline-block py-2 font-mono text-meta uppercase text-text underline decoration-(--accent) decoration-2 underline-offset-4"
                     >
-                      Open the demo ↗
+                      Open the {t.name} demo ↗
                     </button>
-                    <span className="font-mono text-meta uppercase text-dim">Read the case →</span>
+                    <span className="py-2 font-mono text-meta uppercase text-dim">
+                      Read the {t.name} case →
+                    </span>
                   </div>
                 ) : null}
               </div>

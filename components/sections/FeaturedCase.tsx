@@ -66,7 +66,7 @@ export function FeaturedCase() {
               </Button>
             </Magnetic>
             <Button href={`/work/${c.slug}`} variant="secondary">
-              Read the case →
+              Read the {c.name} case →
             </Button>
           </div>
         </Reveal>

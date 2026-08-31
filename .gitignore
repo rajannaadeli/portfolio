@@ -44,3 +44,5 @@ next-env.d.ts
 
 # generated at build from cases/<slug>/ui by scripts/copy-case-images.mjs
 /public/cases/
+# Cloudflare Wrangler build output
+.wrangler

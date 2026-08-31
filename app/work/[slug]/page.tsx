@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Prose } from "@/components/ui/prose";
 import { DeviceFrame } from "@/components/ui/device-frame";
 import { CaseRail } from "@/components/sections/CaseRail";
+import { RevealHeadings } from "@/components/sections/RevealHeadings";
 import {
   getCase,
   getShortlisted,
@@ -16,7 +17,9 @@ import {
   type CaseImage,
   type CaseStudy,
 } from "@/lib/content";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE } from "@/lib/site";
+import { ID, breadcrumbEntity, caseEntity, caseSeo, caseTitle, graph } from "@/lib/seo";
 
 export function generateStaticParams() {
   return CASE_ORDER.map((slug) => ({ slug }));
@@ -28,16 +31,27 @@ export async function generateMetadata({ params }: CaseParams): Promise<Metadata
   const { slug } = await params;
   const c = getCase(slug);
   if (!c) return {};
+  const seo = caseSeo(slug);
+  // Deliberately absolute — it skips the "%s — Rajanna Adeli" template. The case
+  // name plus its descriptor already fills the ~60 characters a result shows,
+  // and Google renders the site name separately from og:site_name anyway.
+  const title = caseTitle(c.name, c.deck, c.slug);
   return {
-    title: c.name,
+    title: { absolute: title },
     description: c.lede,
+    keywords: [...seo.keywords, ...c.facts.stack, c.name],
     alternates: { canonical: `/work/${c.slug}` },
     openGraph: {
       type: "article",
-      title: `${c.name} — Rajanna Adeli`,
+      title,
       description: c.lede,
       url: `${SITE.url}/work/${c.slug}`,
+      publishedTime: seo.published,
+      modifiedTime: seo.modified,
+      authors: [SITE.url],
+      tags: seo.keywords,
     },
+    twitter: { card: "summary_large_image", title, description: c.lede },
   };
 }
 
@@ -132,8 +146,42 @@ export default async function CasePage({ params }: CaseParams) {
     ? { label: "Open the demo ↗", href: liveLink(c)!.url, external: true }
     : { label: "Hire me ↗", href: SITE.links.upwork, external: true };
 
+  /*
+    The project entity (SoftwareApplication for anything runnable) plus the
+    Article that describes it, joined by `about`/`mainEntity` so a crawler reads
+    them as one thing rather than two competing pages. Breadcrumb completes the
+    Home → Work → Case path.
+  */
+  const seo = caseSeo(slug);
+  const jsonLd = graph(
+    caseEntity(c),
+    {
+      "@type": "Article",
+      "@id": `${SITE.url}/work/${c.slug}#article`,
+      headline: caseTitle(c.name, c.deck, c.slug),
+      description: c.lede,
+      url: `${SITE.url}/work/${c.slug}`,
+      datePublished: seo.published,
+      dateModified: seo.modified,
+      author: { "@id": ID.person },
+      publisher: { "@id": ID.person },
+      isPartOf: { "@id": ID.website },
+      about: { "@id": `${SITE.url}/work/${c.slug}/#project` },
+      mainEntity: { "@id": `${SITE.url}/work/${c.slug}/#project` },
+      inLanguage: "en",
+      ...(heroImage ? { image: `${SITE.url}${heroImage.webp}` } : {}),
+      articleSection: c.category,
+    },
+    breadcrumbEntity([
+      { name: "Home", path: "/" },
+      { name: "Work", path: "/work" },
+      { name: c.name, path: `/work/${c.slug}` },
+    ]),
+  );
+
   return (
     <div style={{ "--accent": c.accentVar } as React.CSSProperties}>
+      <JsonLd data={jsonLd} />
       {/* ── HERO (dark) ─────────────────────────────────────────────── */}
       <div data-band="dark">
         <Section className="pt-40 sm:pt-44">
@@ -227,6 +275,7 @@ export default async function CasePage({ params }: CaseParams) {
               </aside>
 
               <div id="case-body" className="lg:col-span-8 lg:col-start-5">
+                <RevealHeadings targetId="case-body" />
                 {intro ? <Prose variant="case" html={intro} /> : null}
                 {parts.map((part, i) => {
                   const img = inlineImgs[i];

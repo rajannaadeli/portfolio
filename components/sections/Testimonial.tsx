@@ -27,7 +27,7 @@ export function Testimonial() {
               forth. I&rsquo;d happily work with him again.
             </blockquote>
             <figcaption className="mt-8 font-mono text-meta uppercase text-dim">
-              Client · OMAC engagement <span className="text-dim">[TBD — country label]</span>
+              Client · OMAC engagement
             </figcaption>
           </figure>
         </Reveal>

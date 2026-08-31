@@ -364,6 +364,43 @@ body {
   color: var(--accent-text);
 }
 
+/* Decision blocks (C.4) — situation → decision → why → result, wrapped at build
+   time where the source uses that convention (DocFort today). */
+.prose-case .decision {
+  background: var(--color-surface-1);
+  border-left: 2px solid var(--accent-text);
+  border-radius: var(--radius-sm);
+  padding: 1.4em 1.6em 1.2em;
+  margin-top: 2em;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.prose-case .decision::before {
+  content: "Decision";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 0.9em;
+}
+.prose-case .decision > p + p {
+  margin-top: 0.9em;
+}
+
+/* Heading underline draws left-to-right on reveal. The .prose-anim class is
+   added by JS, so with no JS (or before hydration) the underline is simply
+   static and visible. Reduced-motion collapses the transition globally. */
+.prose-anim h2::after {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1) 120ms;
+}
+.prose-anim h2.is-revealed::after {
+  transform: scaleX(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

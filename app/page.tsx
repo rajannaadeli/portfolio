@@ -11,6 +11,10 @@ import { Contact } from "@/components/sections/Contact";
 import { FloatingCTA } from "@/components/motion/FloatingCTA";
 import { Marquee } from "@/components/motion/Marquee";
 import { RouteThread } from "@/components/motion/RouteThread";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { getAllCases } from "@/lib/content";
+import { SITE } from "@/lib/site";
+import { ID, faqEntity, graph } from "@/lib/seo";
 
 const TECH = [
   "TypeScript", "React 19", "Next.js", "React Native", "Expo", "Node", "NestJS",
@@ -25,8 +29,44 @@ const TECH = [
 */
 
 export default function HomePage() {
+  /*
+    Home carries three entities beyond the site-wide graph: the page itself
+    (bound to the Person so "Rajanna Adeli" queries resolve to a profile), the
+    FAQ (eligible for an expandable rich result, and read verbatim by AI search),
+    and the work as an ItemList so the six cases can surface as sitelinks.
+  */
+  const cases = getAllCases();
+  const home = graph(
+    {
+      "@type": ["WebPage", "ProfilePage"],
+      "@id": ID.home,
+      url: SITE.url,
+      name: "Rajanna Adeli — Workforce & Operations Software Developer",
+      description: SITE.positioning,
+      isPartOf: { "@id": ID.website },
+      about: { "@id": ID.person },
+      mainEntity: { "@id": ID.person },
+      inLanguage: "en",
+    },
+    faqEntity(),
+    {
+      "@type": "ItemList",
+      "@id": `${SITE.url}/#work`,
+      name: "Selected work",
+      numberOfItems: cases.length,
+      itemListElement: cases.map((c, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: c.name,
+        description: c.lede,
+        url: `${SITE.url}/work/${c.slug}`,
+      })),
+    },
+  );
+
   return (
     <div className="relative isolate">
+      <JsonLd data={home} />
       <RouteThread />
 
       {/* DARK — hero, stats, featured */}

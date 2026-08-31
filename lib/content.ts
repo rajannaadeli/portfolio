@@ -472,6 +472,14 @@ function readCase(slug: CaseSlug): CaseStudy {
 
   // Render body, inject anchor ids on each <h2>, and collect the section list.
   let bodyHtml = marked.parse(bodyMarkdown, { async: false }) as string;
+
+  // Decision blocks (C.4): where the source follows the situation → decision →
+  // why → result convention (bold-led paragraphs), wrap the consecutive run so
+  // it renders as one panel. Only DocFort uses this convention today.
+  bodyHtml = bodyHtml.replace(
+    /((?:<p><strong>(?:The situation|The decision|Why, and what I rejected|What it produced)[^<]*<\/strong>[\s\S]*?<\/p>\s*)+)/g,
+    '<div class="decision">$1</div>',
+  );
   const sections: { id: string; text: string }[] = [];
   bodyHtml = bodyHtml.replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner: string) => {
     const text = inner.replace(/<[^>]+>/g, "").trim();
