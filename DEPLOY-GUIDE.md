@@ -256,7 +256,7 @@ ten.
 
 1. Resend → **API Keys** → **Create** → name `rajanna-dev-contact`, permission
    **Sending access**. Copy it now; it is shown once.
-2. Cloudflare → your Worker → **Settings** → **Variables and Secrets** → **Add**:
+2. Cloudflare → your Worker → **Settings** → **Variables and Secrets** → **Add**: .
 
    | Name | Value | Type |
    |---|---|---|
