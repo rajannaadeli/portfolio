@@ -46,3 +46,7 @@ next-env.d.ts
 /public/cases/
 # Cloudflare Wrangler build output
 .wrangler
+
+# Local wrangler secrets — never commit
+.dev.vars
+.dev.vars.*

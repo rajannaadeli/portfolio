@@ -198,3 +198,22 @@ as it was.
 **The Worker reproduces the route handler's JSON contract exactly.** Same status
 codes, same `errors` shape, same honeypot behaviour, so `ContactForm.tsx` needed
 no changes and the migration is invisible to the client.
+
+**Contact form 503 in production: the key was in the wrong variable store.**
+Cloudflare Workers Builds has two stores that render near-identically in the
+dashboard — "Build variables and secrets" (scoped to the build container, sits
+beside `NODE_VERSION` between *API token* and *Deploy Hooks*) and runtime
+variables/secrets, which are what populate `env`. `RESEND_API_KEY` was in the
+first, so `env.RESEND_API_KEY` was undefined and the Worker correctly returned
+its 503. Three changes so this cannot recur silently:
+
+1. `CONTACT_TO`/`CONTACT_FROM` moved into `wrangler.jsonc` `vars`. Neither is
+   secret, and `wrangler deploy` reconciles the Worker against that file — a
+   plain-text var set only in the dashboard is wiped on the next deploy. Secrets
+   are exempt from that, which is why the key stays out of version control.
+2. `GET /api/contact` is now a config probe returning `resendKeyPresent` as a
+   boolean (never the key). One curl answers "is it actually wired?" without
+   submitting the form.
+3. A Resend failure now logs `Resend <status>: <body>` before returning the
+   visitor-facing 502. Swallowing the upstream reason is what turns a five-minute
+   fix into an afternoon.

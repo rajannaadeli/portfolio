@@ -22,5 +22,22 @@
     "run_worker_first": ["/api/*"]
   },
 
+  // Runtime variables. These live here, in version control, rather than in the
+  // dashboard for two reasons:
+  //
+  //   1. `wrangler deploy` reconciles the Worker's config with this file, so a
+  //      plain-text var set only in the dashboard is wiped on the next deploy.
+  //      (Secrets are never deleted by a deploy — only vars.)
+  //   2. Neither address is secret; both are already published on the site.
+  //
+  // RESEND_API_KEY is deliberately NOT here. It is a runtime *secret*, set with
+  //   npx wrangler secret put RESEND_API_KEY
+  // Do not put it in "Build variables and secrets" in the dashboard — those are
+  // scoped to the build container and never reach `env` at runtime.
+  "vars": {
+    "CONTACT_TO": "hello@rajanna.dev",
+    "CONTACT_FROM": "Portfolio <hello@rajanna.dev>"
+  },
+
   "observability": { "enabled": true }
 }

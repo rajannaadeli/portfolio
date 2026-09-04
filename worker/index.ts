@@ -45,7 +45,28 @@ function validate(b: Body): Record<string, string> {
   return errors;
 }
 
+/*
+  GET /api/contact is a config probe, not part of the form flow.
+
+  It answers the only question worth asking when the form says "not configured":
+  is RESEND_API_KEY actually visible in `env` at runtime? Cloudflare has two
+  separate variable stores — "Build variables and secrets" (scoped to the build
+  container) and runtime variables/secrets — and a key placed in the first never
+  reaches `env`. This reports a boolean, never the key itself.
+
+    curl -s https://rajanna.dev/api/contact
+*/
+function probe(env: Env): Response {
+  return json({
+    endpoint: "contact",
+    resendKeyPresent: Boolean(env.RESEND_API_KEY),
+    to: env.CONTACT_TO ?? SITE.email,
+    from: env.CONTACT_FROM ?? `Portfolio <${SITE.email}>`,
+  });
+}
+
 async function contact(request: Request, env: Env): Promise<Response> {
+  if (request.method === "GET") return probe(env);
   if (request.method !== "POST") return json({ ok: false, error: "Method not allowed." }, 405);
 
   let body: Body;
@@ -65,6 +86,10 @@ async function contact(request: Request, env: Env): Promise<Response> {
   if (!env.RESEND_API_KEY) {
     // Honest failure beats a fake success: the visitor is told to email directly
     // rather than believing a message was delivered into a void.
+    console.error(
+      "RESEND_API_KEY missing from runtime env. It must be a runtime secret " +
+        "(wrangler secret put RESEND_API_KEY), not a Workers Builds build variable.",
+    );
     return json(
       { ok: false, error: "Email isn't configured yet. Please email me directly for now." },
       503,
@@ -86,7 +111,15 @@ async function contact(request: Request, env: Env): Promise<Response> {
     }),
   });
 
-  if (!res.ok) return json({ ok: false, error: "Could not send. Try email instead." }, 502);
+  if (!res.ok) {
+    // The visitor gets a plain message; the real reason (unverified domain,
+    // bad key, malformed from-address) goes to the Worker log, where
+    // `wrangler tail` can read it. Swallowing it silently is what makes this
+    // class of failure take an afternoon to diagnose.
+    const detail = await res.text().catch(() => "");
+    console.error(`Resend ${res.status}: ${detail}`);
+    return json({ ok: false, error: "Could not send. Try email instead." }, 502);
+  }
   return json({ ok: true });
 }
 
