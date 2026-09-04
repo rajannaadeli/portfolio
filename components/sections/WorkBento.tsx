@@ -114,7 +114,7 @@ export function WorkBento({ tiles }: { tiles: Tile[] }) {
                         height={t.thumb.height}
                         loading="lazy"
                         decoding="async"
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        className="h-full w-full rounded-md object-cover transition-transform duration-300 scale-[0.98] group-hover:scale-[0.96]"
                         style={t.thumb.blur ? { backgroundImage: `url(${t.thumb.blur})`, backgroundSize: "cover" } : undefined}
                       />
                     </picture>

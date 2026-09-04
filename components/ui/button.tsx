@@ -41,6 +41,7 @@ interface AsButton extends CommonProps {
   external?: never;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 export function Button(props: AsLink | AsButton) {
@@ -61,9 +62,15 @@ export function Button(props: AsLink | AsButton) {
     );
   }
 
-  const { onClick, type = "button" } = props as AsButton;
+  const { onClick, type = "button", disabled } = props as AsButton;
   return (
-    <button type={type} onClick={onClick} className={classes} style={style}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={cn(classes, disabled && "cursor-not-allowed opacity-60")}
+      style={style}
+    >
       {children}
     </button>
   );

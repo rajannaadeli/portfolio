@@ -33,9 +33,9 @@ export const metadata: Metadata = {
 };
 
 const CFG: Record<string, { span: string; ratio: string; portrait: boolean }> = {
-  rosterbay: { span: "lg:col-span-8", ratio: "16 / 10", portrait: false },
-  whitefleet: { span: "lg:col-span-4", ratio: "3 / 4", portrait: true },
-  gad: { span: "lg:col-span-6", ratio: "16 / 10", portrait: false },
+  rosterbay: { span: "lg:col-span-8", ratio: "15 / 9", portrait: false },
+  whitefleet: { span: "lg:col-span-4", ratio: "2.7 / 5", portrait: true },
+  gad: { span: "lg:col-span-6", ratio: "16.2 / 9.3", portrait: false },
   docfort: { span: "lg:col-span-6", ratio: "16 / 10", portrait: false },
   planit: { span: "lg:col-span-5", ratio: "3 / 4", portrait: true },
   dilpos: { span: "lg:col-span-7", ratio: "16 / 10", portrait: false },

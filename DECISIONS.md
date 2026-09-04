@@ -217,3 +217,35 @@ its 503. Three changes so this cannot recur silently:
 3. A Resend failure now logs `Resend <status>: <body>` before returning the
    visitor-facing 502. Swallowing the upstream reason is what turns a five-minute
    fix into an afternoon.
+
+**The form reported "Network error" on a message that had already sent.**
+`ContactForm` called `e.currentTarget.reset()` after two `await`s. React nulls
+out a synthetic event's `currentTarget` once the handler returns synchronously,
+so that line threw a TypeError — inside the `try`, where the `catch` swallowed it
+and relabelled a successful send as a transport failure. The email had gone out;
+only the UI was wrong. Fixed by reading the form into a `FormData` before any
+await, and holding a ref for the reset.
+
+**The submission experience now has four states, not two.** The one that earns
+its place is `undelivered`: on a 502/503/network failure the fields are left
+untouched, and the panel offers a `mailto:` prefilled with everything typed plus
+a copy button. A contact form that loses what someone wrote is worse than no form
+at all, and a delivery failure is exactly when a prospect is most likely to give
+up.
+
+**Success and failure copy read from the submitted payload, never from the DOM.**
+`mailto` was first built by reading `FormData` during render, which produced
+`null` for every field: at that point the inputs still carry the *previous*
+commit's `disabled` attribute, and disabled controls are excluded from FormData.
+Holding the payload in state removes the whole class of problem.
+
+**Client-side validation mirrors the Worker's `validate()` exactly**, so an
+obviously empty form costs no round trip, and focus moves to the first rejected
+field. The server stays authoritative — the client copy is an optimisation, not
+the gate.
+
+**The confirmation animates with stroke-dashoffset, opacity and transform only.**
+Under `prefers-reduced-motion` the global duration override collapses each
+animation to its end state; `forwards`/`both` fill means the checkmark ends
+*drawn* and the panel *visible* rather than stuck at frame zero. Verified in
+Chrome with the media feature emulated: `stroke-dashoffset: 0px`, `opacity: 1`.
