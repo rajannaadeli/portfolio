@@ -28,7 +28,7 @@ const CONFIG = {
 
   // ── Thickness (px) ─────────────────────────────────────────────────────────
   baseWidth: 1, // in the quiet gaps
-  peakWidth: 8, // at each section centre (the swell that replaces nodes)
+  peakWidth: 4, // at each section centre (the swell that replaces nodes)
 
   // ── Scroll-velocity thinning ────────────────────────────────────────────────
   velocityThin: 0.4, // max width reduction at fast scroll (0..1)

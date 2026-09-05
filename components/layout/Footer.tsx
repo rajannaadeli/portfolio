@@ -26,11 +26,11 @@ export function Footer() {
             <div className="font-display text-h3 text-text">Rajanna Adeli</div>
             <a
               href={`mailto:${SITE.email}`}
-              className="mt-2 inline-block font-mono text-meta uppercase text-[color:var(--color-accent-orange)]"
+              className="mt-2 inline-block font-mono text-xl text-accent-orange"
             >
               {SITE.email}
             </a>
-            <p className="mt-3 max-w-sm font-body text-body text-muted">{SITE.location}</p>
+            <p className="mt-3 max-w-sm font-mono text-body text-muted">{SITE.location}</p>
           </div>
 
           <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-3">
@@ -41,7 +41,7 @@ export function Footer() {
                   href={l.href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="font-mono text-meta uppercase text-muted transition-colors hover:text-text"
+                  className="text-meta uppercase text-muted transition-colors hover:text-text"
                 >
                   {l.label}
                 </a>
@@ -49,7 +49,7 @@ export function Footer() {
                 <Link
                   key={l.label}
                   href={l.href}
-                  className="font-mono text-meta uppercase text-muted transition-colors hover:text-text"
+                  className="text-meta uppercase text-muted transition-colors hover:text-text"
                 >
                   {l.label}
                 </Link>

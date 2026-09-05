@@ -20,7 +20,7 @@ export function Contact() {
     <Section fullBleed id="contact">
       <Container>
         <Reveal>
-          <Heading variant="display" as="h2" className="max-w-[16ch]">
+          <Heading variant="display" as="h2" className="w-full">
             Tell me what your team is drowning in.
           </Heading>
 

@@ -1,6 +1,7 @@
 import { Section } from "@/components/ui/layout";
 import { Text, MetaLabel } from "@/components/ui/typography";
 import { Reveal } from "@/components/motion/Reveal";
+import Image from "next/image";
 
 /*
   2.8 About (light) — asymmetric 4/8 split. Monogram + mono meta stack on the
@@ -15,8 +16,8 @@ export function About() {
     <Section id="about">
       <Reveal className="grid grid-cols-1 gap-gutter md:grid-cols-12">
         <div className="md:col-span-4">
-          <div className="flex h-28 w-28 items-center justify-center rounded-card border border-border bg-surface-1 font-display text-[64px] leading-none text-text">
-            RA
+          <div className="bg-[#000000] aspect-square w-[140px] flex items-center justify-center rounded-4xl">
+            <Image src="/icon.svg" alt="Logo" width={100} height={100} />
           </div>
           <ul className="mt-6 flex flex-col gap-2">
             {META.map((m) => (
