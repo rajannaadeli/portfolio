@@ -249,3 +249,26 @@ Under `prefers-reduced-motion` the global duration override collapses each
 animation to its end state; `forwards`/`both` fill means the checkmark ends
 *drawn* and the panel *visible* rather than stuck at frame zero. Verified in
 Chrome with the media feature emulated: `stroke-dashoffset: 0px`, `opacity: 1`.
+
+**Cross-page hash links landed at the previous page's scroll limit.** Clicking
+About or FAQ from `/work` navigated home but stopped mid-page. Measured: `/work`
+has scrollHeight 3839 and a max scroll of 2939; `#about` sits at 9754; the final
+position was exactly 2939. Lenis caches the document dimensions it measured for
+the outgoing route and clamps every `scrollTo` against that stale limit, so the
+target was pinned to the old page's bottom. `ScrollManager` fired a single rAF
+after the pathname changed, which was not enough for Lenis to re-measure.
+
+`scrollToHash` now calls `lenis.resize()` first, then samples the target's offset
+across frames until it stops moving before committing, with a ~1s frame cap so it
+cannot spin. Same-page anchors are untouched — Lenis's `anchors: true` already
+handles those smoothly, and the effect does not even run, since `usePathname()`
+does not change on a hash-only click.
+
+`immediate: true` for the cross-page case, deliberately: it is what a browser
+does for a cross-document anchor, and animating ~10,000px of home page would be
+slow and disorienting rather than elegant.
+
+Verified at 1280x900, delta 0 in all five paths: `/work` → About, `/work` → FAQ,
+`/work/rosterbay` → About, a same-page About → FAQ chain, and a cold deep link to
+`/#about`. Plain `/` → `/work` still lands at 0, and reduced motion (where Lenis
+is bypassed entirely and native anchor behaviour applies) is also 0.

@@ -4,6 +4,15 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { ReactLenis, useLenis } from "lenis/react";
 
+/** The two Lenis methods this file needs; avoids importing the full type. */
+interface LenisInstance {
+  resize: () => void;
+  scrollTo: (
+    target: number | string | HTMLElement,
+    options?: { offset?: number; immediate?: boolean },
+  ) => void;
+}
+
 /*
   SmoothScroll — global Lenis smooth scroll (design §4: lerp 0.09, duration 1.1).
 
@@ -25,8 +34,57 @@ import { ReactLenis, useLenis } from "lenis/react";
     client-side navigations and prevents Next.js's own scroll-to-top logic
     from working.
 
+  - Cross-page hash links (/work → /#about) need more than a single rAF, and
+    that is what `scrollToHash` below exists for. See its comment.
+
   Entirely disabled under prefers-reduced-motion, and destroyed on unmount.
 */
+
+/*
+  Scroll to a hash target after a cross-page navigation.
+
+  Lenis caches the document dimensions it measured for the *previous* page and
+  clamps every scrollTo against that stale limit. Arriving at the long home page
+  from a short one, `/work` (scrollHeight 3839, max scroll 2939) → `/#about`
+  (target 9754) landed at exactly 2939 — the old page's bottom — which read as
+  "it scrolled to a random place". `lenis.resize()` re-measures first.
+
+  Even after a resize the target can still move for a frame or two while the new
+  route paints, so the offset is sampled until it stops changing before we
+  commit. `immediate` matches what a browser does for a cross-document anchor:
+  animating 10,000px of home page would be slow and disorienting. Same-page
+  anchor clicks are untouched — Lenis's `anchors: true` handles those, smoothly.
+*/
+function scrollToHash(lenis: LenisInstance, hash: string) {
+  const MAX_FRAMES = 60; // ~1s at 60fps, then give up rather than spin
+  let frames = 0;
+  let lastTop: number | null = null;
+
+  const step = () => {
+    if (frames++ > MAX_FRAMES) return;
+    let el: Element | null = null;
+    try {
+      el = document.querySelector(hash);
+    } catch {
+      return; // not a valid selector (e.g. "#123"); nothing to scroll to
+    }
+    if (!el) {
+      requestAnimationFrame(step);
+      return;
+    }
+
+    lenis.resize();
+    const top = Math.round(el.getBoundingClientRect().top + window.scrollY);
+    if (lastTop === null || top !== lastTop) {
+      lastTop = top;
+      requestAnimationFrame(step);
+      return;
+    }
+    lenis.scrollTo(el as HTMLElement, { offset: 0, immediate: true });
+  };
+
+  requestAnimationFrame(step);
+}
 
 /** Resets scroll on route change & handles hash-fragment scrolling. */
 function ScrollManager() {
@@ -37,34 +95,20 @@ function ScrollManager() {
   useEffect(() => {
     if (!lenis) return;
 
-    // Skip scroll-to-top on the initial render (the page already loads at
-    // the correct position). Only act on subsequent client-side navigations.
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
+    const wasFirstRender = isFirstRender.current;
+    isFirstRender.current = false;
 
-      // But still handle an initial hash (e.g. direct link to /#about).
-      const hash = window.location.hash;
-      if (hash) {
-        // Give the DOM a tick to settle after hydration before scrolling.
-        requestAnimationFrame(() => {
-          lenis.scrollTo(hash, { offset: 0 });
-        });
-      }
+    // A hash is handled the same way whether it arrived by deep link or by a
+    // client-side navigation from another route.
+    const hash = window.location.hash;
+    if (hash) {
+      scrollToHash(lenis, hash);
       return;
     }
 
-    // Route changed — check if the new URL has a hash fragment.
-    const hash = window.location.hash;
-    if (hash) {
-      // Hash navigation (e.g. /#about, /#faq): scroll to the target element.
-      // Use requestAnimationFrame to ensure the DOM has been updated first.
-      requestAnimationFrame(() => {
-        lenis.scrollTo(hash, { offset: 0 });
-      });
-    } else {
-      // Normal page navigation: immediately reset to top.
-      lenis.scrollTo(0, { immediate: true });
-    }
+    // Plain navigation to a new route starts at the top. The initial render
+    // already loads at the right position, so leave it alone.
+    if (!wasFirstRender) lenis.scrollTo(0, { immediate: true });
   }, [pathname, lenis]);
 
   return null;
